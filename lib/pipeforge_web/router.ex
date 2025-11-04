@@ -28,6 +28,7 @@ defmodule PipeForgeWeb.Router do
     get "/", PageController, :home
     live "/ingestion/upload", CSVUploadLive, :index
     live "/ingestion/failures", FailedRecordsLive, :index
+    live "/dashboard/revenue", RevenueDashboardLive, :index
   end
 
   # Other scopes may use custom stacks.
