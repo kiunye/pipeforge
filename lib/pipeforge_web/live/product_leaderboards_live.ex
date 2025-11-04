@@ -163,7 +163,7 @@ defmodule PipeForgeWeb.ProductLeaderboardsLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <div phx-hook="DownloadCSV">
+    <div id="download-csv-hook" phx-hook="DownloadCSV">
       <Layouts.app flash={@flash}>
       <div class="max-w-7xl mx-auto px-4 py-8">
         <div class="mb-8">
