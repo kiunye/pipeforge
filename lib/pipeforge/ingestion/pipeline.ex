@@ -6,7 +6,7 @@ defmodule PipeForge.Ingestion.Pipeline do
   use Broadway
 
   alias Broadway.Message
-  alias PipeForge.Ingestion.{CSVValidator, IngestionFile}
+  alias PipeForge.Ingestion.{CSVValidator, FailedRecord, IngestionFile}
   alias PipeForge.{Repo, Storage}
 
   def start_link(_opts) do
@@ -98,6 +98,27 @@ defmodule PipeForge.Ingestion.Pipeline do
       {:error, e}
   end
 
+  defp persist_failed_records(invalid_rows, ingestion_file_id) when is_list(invalid_rows) do
+    Enum.each(invalid_rows, fn {row_number, raw_row, errors} ->
+      %FailedRecord{}
+      |> FailedRecord.changeset(%{
+        ingestion_file_id: ingestion_file_id,
+        row_number: row_number,
+        raw_data: Enum.with_index(raw_row) |> Enum.into(%{}),
+        error_reasons: List.wrap(errors),
+        retry_count: 0,
+        status: "pending"
+      })
+      |> Repo.insert()
+      |> case do
+        {:ok, _} -> :ok
+        {:error, _changeset} -> :ok
+      end
+    end)
+  end
+
+  defp persist_failed_records(_, _), do: :ok
+
   defp get_ingestion_file(file_id) do
     case Repo.get(IngestionFile, file_id) do
       nil -> {:error, "Ingestion file not found"}
@@ -140,11 +161,14 @@ defmodule PipeForge.Ingestion.Pipeline do
   defp validate_single_row(row, idx, header_map, valid, invalid) do
     case CSVValidator.validate_row(row, header_map) do
       {:ok, mapped} -> {[mapped | valid], invalid}
-      {:error, errors} -> {valid, [{idx, errors} | invalid]}
+      {:error, errors} -> {valid, [{idx, row, errors} | invalid]}
     end
   end
 
-  defp insert_records({valid_rows, _invalid_rows}, _ingestion_file) do
+  defp insert_records({valid_rows, invalid_rows}, ingestion_file) do
+    # Persist failed records
+    persist_failed_records(invalid_rows, ingestion_file.id)
+
     # Record insertion will be implemented when database schema is finalized
     {:ok, length(valid_rows)}
   end
