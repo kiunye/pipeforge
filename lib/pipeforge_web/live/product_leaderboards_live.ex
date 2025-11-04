@@ -298,8 +298,8 @@ defmodule PipeForgeWeb.ProductLeaderboardsLive do
           </div>
         </div>
       </div>
-      </div>
-    </Layouts.app>
+      </Layouts.app>
+    </div>
     """
   end
 
