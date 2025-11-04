@@ -12,8 +12,7 @@ defmodule PipeForge.Application do
       PipeForge.Repo,
       {DNSCluster, query: Application.get_env(:pipeforge, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: PipeForge.PubSub},
-      # Start a worker by calling: PipeForge.Worker.start_link(arg)
-      # {PipeForge.Worker, arg},
+      PipeForge.Ingestion.Pipeline,
       # Start to serve requests, typically the last entry
       PipeForgeWeb.Endpoint
     ]

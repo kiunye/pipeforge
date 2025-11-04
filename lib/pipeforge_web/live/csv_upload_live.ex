@@ -2,7 +2,7 @@ defmodule PipeForgeWeb.CSVUploadLive do
   use PipeForgeWeb, :live_view
 
   alias PipeForge.Repo
-  alias PipeForge.Ingestion.{FileHasher, IngestionFile}
+  alias PipeForge.Ingestion.{FileHasher, IngestionFile, Producer}
   alias PipeForge.Storage
 
   @impl true
@@ -65,9 +65,8 @@ defmodule PipeForgeWeb.CSVUploadLive do
       with {:ok, content_hash} <- hash_file(path),
            :ok <- check_duplicate(content_hash),
            {:ok, file_key} <- upload_to_storage(path, entry.client_name),
-           {:ok, ingestion_file} <- create_ingestion_record(entry, file_key, content_hash) do
-        # Enqueue to RabbitMQ for processing (will be implemented in next task)
-        # For now, just return success
+           {:ok, ingestion_file} <- create_ingestion_record(entry, file_key, content_hash),
+           :ok <- Producer.publish_file(ingestion_file.id, file_key, entry.client_name) do
         {:ok, ingestion_file}
       else
         {:error, :duplicate} ->

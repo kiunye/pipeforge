@@ -81,6 +81,8 @@ defmodule PipeForge.MixProject do
       {:ex_aws_s3, "~> 2.5"},
       {:hackney, "~> 1.25"},
       {:sweet_xml, "~> 0.7"},
+      # CSV parsing
+      {:nimble_csv, "~> 1.2"},
       # BigQuery
       {:google_api_big_query, "~> 0.88"},
       {:goth, "~> 1.4"},

@@ -42,8 +42,27 @@ defmodule PipeForge.Storage do
     end
   end
 
+  @doc """
+  Downloads a file from storage to a temporary location.
+  """
+  def download_file(key, bucket \\ bucket()) do
+    temp_path = System.tmp_dir!() |> Path.join("csv_#{System.unique_integer([:positive])}.csv")
+
+    case bucket
+         |> S3.get_object(key)
+         |> ExAws.request() do
+      {:ok, %{body: content}} ->
+        File.write!(temp_path, content)
+        {:ok, temp_path}
+
+      {:error, reason} ->
+        {:error, "Failed to download file: #{inspect(reason)}"}
+    end
+  end
+
   defp bucket do
     Application.get_env(:pipeforge, :storage)[:bucket] || "pipeforge-uploads"
   end
 end
+
 
