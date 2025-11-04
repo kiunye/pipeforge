@@ -102,4 +102,3 @@ defmodule PipeForge.Analytics.ProductQueries do
     where(query, [p, oi, o], o.payment_method == ^method)
   end
 end
-

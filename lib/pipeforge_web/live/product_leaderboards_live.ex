@@ -317,4 +317,3 @@ defmodule PipeForgeWeb.ProductLeaderboardsLive do
 
   defp format_currency(amount), do: "$#{amount || "0.00"}"
 end
-
