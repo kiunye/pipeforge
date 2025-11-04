@@ -317,4 +317,3 @@ defmodule PipeForgeWeb.FailedRecordsLive do
   defp status_color("failed"), do: "bg-red-100 text-red-800"
   defp status_color(_), do: "bg-gray-100 text-gray-800"
 end
-

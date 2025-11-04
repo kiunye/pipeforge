@@ -6,7 +6,7 @@ defmodule PipeForge.Ingestion.Pipeline do
   use Broadway
 
   alias Broadway.Message
-  alias PipeForge.Ingestion.{CSVValidator, FailedRecord, IngestionFile}
+  alias PipeForge.Ingestion.{CSVValidator, FailedRecord, IngestionFile, SalesInserter}
   alias PipeForge.{Repo, Storage}
 
   def start_link(_opts) do
@@ -169,8 +169,11 @@ defmodule PipeForge.Ingestion.Pipeline do
     # Persist failed records
     persist_failed_records(invalid_rows, ingestion_file.id)
 
-    # Record insertion will be implemented when database schema is finalized
-    {:ok, length(valid_rows)}
+    # Insert valid records
+    case SalesInserter.insert_records(valid_rows, ingestion_file) do
+      {:ok, count} -> {:ok, count}
+      {:error, reason} -> {:error, "Failed to insert records: #{inspect(reason)}"}
+    end
   end
 
   defp update_ingestion_file_status(file_id, status, error_message) do
