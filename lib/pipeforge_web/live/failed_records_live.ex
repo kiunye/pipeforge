@@ -1,6 +1,8 @@
 defmodule PipeForgeWeb.FailedRecordsLive do
   use PipeForgeWeb, :live_view
 
+  import Ecto.Query
+
   alias PipeForge.{Ingestion, Repo}
   alias PipeForge.Ingestion.{FailedRecord, IngestionFile, Producer}
 
