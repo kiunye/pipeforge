@@ -1,4 +1,8 @@
 defmodule PipeForge.Ingestion.IngestionFile do
+  @moduledoc """
+  Schema for tracking CSV ingestion files and their processing status.
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 

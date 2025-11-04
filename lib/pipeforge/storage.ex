@@ -64,5 +64,3 @@ defmodule PipeForge.Storage do
     Application.get_env(:pipeforge, :storage)[:bucket] || "pipeforge-uploads"
   end
 end
-
-

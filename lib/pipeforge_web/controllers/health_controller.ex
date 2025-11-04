@@ -23,13 +23,11 @@ defmodule PipeForgeWeb.HealthController do
   end
 
   defp check_database do
-    try do
-      PipeForge.Repo.query!("SELECT 1", [], timeout: 5_000)
-      :ok
-    rescue
-      e -> {:error, e}
-    catch
-      :exit, reason -> {:error, reason}
-    end
+    PipeForge.Repo.query!("SELECT 1", [], timeout: 5_000)
+    :ok
+  rescue
+    e -> {:error, e}
+  catch
+    :exit, reason -> {:error, reason}
   end
 end

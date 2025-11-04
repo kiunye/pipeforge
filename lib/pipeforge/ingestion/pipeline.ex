@@ -6,7 +6,7 @@ defmodule PipeForge.Ingestion.Pipeline do
   use Broadway
 
   alias Broadway.Message
-  alias PipeForge.{Repo, Storage}
+  alias PipeForge.{Ingestion, Repo, Storage}
   alias PipeForge.Ingestion.{CSVValidator, IngestionFile}
 
   def start_link(_opts) do
@@ -54,22 +54,17 @@ defmodule PipeForge.Ingestion.Pipeline do
 
   @impl true
   def handle_batch(_batcher, messages, _batch_info, _context) do
-    Enum.each(messages, fn message ->
-      case message.status do
-        :ok ->
-          # File processed successfully
-          :ok
-
-        {:failed, reason} ->
-          # Update ingestion file status to failed
-          if file_id = message.data[:file_id] do
-            update_ingestion_file_status(file_id, "failed", inspect(reason))
-          end
-      end
-    end)
-
+    Enum.each(messages, &process_batch_message/1)
     messages
   end
+
+  defp process_batch_message(%{status: :ok}), do: :ok
+
+  defp process_batch_message(%{status: {:failed, reason}, data: %{file_id: file_id}}) do
+    update_ingestion_file_status(file_id, "failed", inspect(reason))
+  end
+
+  defp process_batch_message(_), do: :ok
 
   defp process_file(file_id, file_path, _filename) do
     with {:ok, ingestion_file} <- get_ingestion_file(file_id),
@@ -83,26 +78,24 @@ defmodule PipeForge.Ingestion.Pipeline do
   end
 
   defp process_file_with_path(file_id, temp_path, ingestion_file) do
-    try do
-      with {:ok, rows} <- parse_csv(temp_path),
-           {:ok, validated_rows} <- validate_rows(rows),
-           :ok <- update_ingestion_file_status(file_id, "processing", nil),
-           {:ok, _} <- insert_records(validated_rows, ingestion_file) do
+    with {:ok, rows} <- parse_csv(temp_path),
+         {:ok, validated_rows} <- validate_rows(rows),
+         :ok <- update_ingestion_file_status(file_id, "processing", nil),
+         {:ok, _} <- insert_records(validated_rows, ingestion_file) do
+      File.rm(temp_path)
+      update_ingestion_file_status(file_id, "completed", nil)
+      {:ok, file_id}
+    else
+      {:error, reason} ->
         File.rm(temp_path)
-        update_ingestion_file_status(file_id, "completed", nil)
-        {:ok, file_id}
-      else
-        {:error, reason} ->
-          File.rm(temp_path)
-          update_ingestion_file_status(file_id, "failed", inspect(reason))
-          {:error, reason}
-      end
-    rescue
-      e ->
-        File.rm(temp_path)
-        update_ingestion_file_status(file_id, "failed", inspect(e))
-        {:error, e}
+        update_ingestion_file_status(file_id, "failed", inspect(reason))
+        {:error, reason}
     end
+  rescue
+    e ->
+      File.rm(temp_path)
+      update_ingestion_file_status(file_id, "failed", inspect(e))
+      {:error, e}
   end
 
   defp get_ingestion_file(file_id) do
@@ -128,16 +121,7 @@ defmodule PipeForge.Ingestion.Pipeline do
   defp validate_rows([header | rows]) do
     case CSVValidator.validate_header(header) do
       {:ok, header_map} ->
-        validated =
-          rows
-          |> Enum.with_index(1)
-          |> Enum.reduce({[], []}, fn {row, idx}, {valid, invalid} ->
-            case CSVValidator.validate_row(row, header_map) do
-              {:ok, mapped} -> {[mapped | valid], invalid}
-              {:error, errors} -> {valid, [{idx, errors} | invalid]}
-            end
-          end)
-
+        validated = validate_rows_with_header(rows, header_map)
         {:ok, validated}
 
       {:error, :missing_columns, missing} ->
@@ -145,9 +129,23 @@ defmodule PipeForge.Ingestion.Pipeline do
     end
   end
 
+  defp validate_rows_with_header(rows, header_map) do
+    rows
+    |> Enum.with_index(1)
+    |> Enum.reduce({[], []}, fn {row, idx}, {valid, invalid} ->
+      validate_single_row(row, idx, header_map, valid, invalid)
+    end)
+  end
+
+  defp validate_single_row(row, idx, header_map, valid, invalid) do
+    case CSVValidator.validate_row(row, header_map) do
+      {:ok, mapped} -> {[mapped | valid], invalid}
+      {:error, errors} -> {valid, [{idx, errors} | invalid]}
+    end
+  end
+
   defp insert_records({valid_rows, _invalid_rows}, _ingestion_file) do
-    # TODO: Insert records into database
-    # This will be implemented in the next step
+    # Record insertion will be implemented when database schema is finalized
     {:ok, length(valid_rows)}
   end
 
@@ -182,4 +180,3 @@ defmodule PipeForge.Ingestion.Pipeline do
     ]
   end
 end
-

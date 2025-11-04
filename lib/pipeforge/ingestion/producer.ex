@@ -3,10 +3,7 @@ defmodule PipeForge.Ingestion.Producer do
   Publishes ingestion file messages to RabbitMQ for processing.
   """
 
-  alias AMQP.Connection
-  alias AMQP.Channel
-  alias AMQP.Queue
-  alias AMQP.Basic
+  alias AMQP.{Basic, Channel, Connection, Queue}
 
   @exchange "pipeforge.ingestion"
   @queue "csv_ingestion"
@@ -61,4 +58,3 @@ defmodule PipeForge.Ingestion.Producer do
     )
   end
 end
-

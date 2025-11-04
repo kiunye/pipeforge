@@ -1,9 +1,8 @@
 defmodule PipeForgeWeb.CSVUploadLive do
   use PipeForgeWeb, :live_view
 
-  alias PipeForge.Repo
+  alias PipeForge.{Ingestion, Repo, Storage}
   alias PipeForge.Ingestion.{FileHasher, IngestionFile, Producer}
-  alias PipeForge.Storage
 
   @impl true
   def mount(_params, _session, socket) do
@@ -79,12 +78,10 @@ defmodule PipeForgeWeb.CSVUploadLive do
   end
 
   defp hash_file(path) do
-    try do
-      hash = FileHasher.hash_file(path)
-      {:ok, hash}
-    rescue
-      e -> {:error, "Failed to hash file: #{inspect(e)}"}
-    end
+    hash = FileHasher.hash_file(path)
+    {:ok, hash}
+  rescue
+    e -> {:error, "Failed to hash file: #{inspect(e)}"}
   end
 
   defp check_duplicate(content_hash) do
@@ -228,4 +225,3 @@ defmodule PipeForgeWeb.CSVUploadLive do
   defp format_file_size(bytes) when bytes < 1_073_741_824, do: "#{Float.round(bytes / 1_048_576, 1)} MB"
   defp format_file_size(bytes), do: "#{Float.round(bytes / 1_073_741_824, 1)} GB"
 end
-

@@ -19,4 +19,3 @@ defmodule PipeForge.Ingestion.FileHasher do
     |> Base.encode16(case: :lower)
   end
 end
-
