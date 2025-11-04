@@ -1,8 +1,8 @@
 defmodule PipeForgeWeb.CSVUploadLive do
   use PipeForgeWeb, :live_view
 
-  alias PipeForge.{Ingestion, Repo, Storage}
   alias PipeForge.Ingestion.{FileHasher, IngestionFile, Producer}
+  alias PipeForge.{Repo, Storage}
 
   @impl true
   def mount(_params, _session, socket) do

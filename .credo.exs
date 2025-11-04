@@ -45,7 +45,7 @@
         {Credo.Check.Refactor.CyclomaticComplexity, max_complexity: 9},
         {Credo.Check.Refactor.FunctionArity, []},
         {Credo.Check.Refactor.LongQuoteBlocks, []},
-        {Credo.Check.Refactor.MapInto, []},
+        {Credo.Check.Refactor.MapInto, false},
         {Credo.Check.Refactor.MatchInCondition, []},
         {Credo.Check.Refactor.NegatedConditionsInUnless, []},
         {Credo.Check.Refactor.NegatedConditionsWithElse, []},
@@ -59,7 +59,7 @@
         {Credo.Check.Warning.ExpensiveEmptyEnumCheck, []},
         {Credo.Check.Warning.IExPry, []},
         {Credo.Check.Warning.IoInspect, []},
-        {Credo.Check.Warning.LazyLogging, []},
+        {Credo.Check.Warning.LazyLogging, false},
         {Credo.Check.Warning.OperationOnSameValues, []},
         {Credo.Check.Warning.OperationWithConstantResult, []},
         {Credo.Check.Warning.RaiseInsideRescue, []},
@@ -77,10 +77,7 @@
         {Credo.Check.Consistency.LineEndings, []},
         {Credo.Check.Consistency.ParameterPatternMatching, []},
         {Credo.Check.Consistency.SpaceAroundOperators, []},
-        {Credo.Check.Consistency.TabsOrSpaces, []},
-
-        # Deprecated checks (still useful)
-        {Credo.Check.Deprecated.MapGet, []}
+        {Credo.Check.Consistency.TabsOrSpaces, []}
       ]
     }
   ]

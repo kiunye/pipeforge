@@ -6,8 +6,8 @@ defmodule PipeForge.Ingestion.Pipeline do
   use Broadway
 
   alias Broadway.Message
-  alias PipeForge.{Ingestion, Repo, Storage}
   alias PipeForge.Ingestion.{CSVValidator, IngestionFile}
+  alias PipeForge.{Repo, Storage}
 
   def start_link(_opts) do
     Broadway.start_link(__MODULE__,
@@ -155,15 +155,15 @@ defmodule PipeForge.Ingestion.Pipeline do
         :ok
 
       file ->
-        file
-        |> IngestionFile.changeset(%{
-          status: status,
-          error_message: error_message,
-          started_at: if(status == "processing", do: DateTime.utc_now(), else: file.started_at),
-          completed_at: if(status in ["completed", "failed"], do: DateTime.utc_now(), else: file.completed_at)
-        })
-        |> Repo.update()
-        |> case do
+        changeset =
+          IngestionFile.changeset(file, %{
+            status: status,
+            error_message: error_message,
+            started_at: if(status == "processing", do: DateTime.utc_now(), else: file.started_at),
+            completed_at: if(status in ["completed", "failed"], do: DateTime.utc_now(), else: file.completed_at)
+          })
+
+        case Repo.update(changeset) do
           {:ok, _} -> :ok
           {:error, _} -> :ok
         end
