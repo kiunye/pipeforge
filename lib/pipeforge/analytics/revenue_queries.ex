@@ -59,12 +59,11 @@ defmodule PipeForge.Analytics.RevenueQueries do
   defp maybe_filter_by_category(query, nil), do: query
 
   defp maybe_filter_by_category(query, category) do
-    from([o] in query,
-      join: oi in assoc(o, :order_items),
-      join: p in assoc(oi, :product),
-      where: p.category == ^category,
-      distinct: o.id
-    )
+    query
+    |> join(:inner, [o], oi in assoc(o, :order_items))
+    |> join(:inner, [o, oi], p in assoc(oi, :product))
+    |> where([o, oi, p], p.category == ^category)
+    |> distinct([o], o.id)
   end
 
   defp maybe_filter_by_payment_method(query, nil), do: query
