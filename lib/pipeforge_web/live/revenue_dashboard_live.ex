@@ -200,4 +200,3 @@ defmodule PipeForgeWeb.RevenueDashboardLive do
 
   defp format_currency(amount), do: "$#{amount}"
 end
-

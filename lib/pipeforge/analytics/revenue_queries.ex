@@ -79,4 +79,3 @@ defmodule PipeForge.Analytics.RevenueQueries do
   end
   defp normalize_date(_), do: DateTime.utc_now()
 end
-

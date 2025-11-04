@@ -210,4 +210,3 @@ defmodule PipeForge.Ingestion.SalesInserter do
 
   defp normalize_payment_method(_), do: "other"
 end
-
