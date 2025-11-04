@@ -9,6 +9,7 @@ defmodule PipeForge.Application do
   def start(_type, _args) do
     children = [
       PipeForgeWeb.Telemetry,
+      PipeForge.Repo,
       {DNSCluster, query: Application.get_env(:pipeforge, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: PipeForge.PubSub},
       # Start a worker by calling: PipeForge.Worker.start_link(arg)

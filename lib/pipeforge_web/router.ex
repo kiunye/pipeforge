@@ -14,6 +14,14 @@ defmodule PipeForgeWeb.Router do
     plug :accepts, ["json"]
   end
 
+  # Health check endpoints (no authentication required)
+  scope "/", PipeForgeWeb do
+    pipe_through :api
+
+    get "/healthz", HealthController, :health
+    get "/readyz", HealthController, :ready
+  end
+
   scope "/", PipeForgeWeb do
     pipe_through :browser
 

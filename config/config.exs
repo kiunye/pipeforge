@@ -9,6 +9,7 @@ import Config
 
 config :pipeforge,
   namespace: PipeForge,
+  ecto_repos: [PipeForge.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint

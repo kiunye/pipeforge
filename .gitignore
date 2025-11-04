@@ -35,3 +35,4 @@ pipeforge-*.tar
 npm-debug.log
 /assets/node_modules/
 
+.cursor/*
