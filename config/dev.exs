@@ -11,6 +11,21 @@ config :pipeforge, PipeForge.Repo,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
+# Configure ExAws for MinIO/S3
+config :ex_aws,
+  access_key_id: System.get_env("MINIO_ACCESS_KEY") || "minioadmin",
+  secret_access_key: System.get_env("MINIO_SECRET_KEY") || "minioadmin",
+  region: System.get_env("MINIO_REGION") || "us-east-1"
+
+config :ex_aws, :s3,
+  scheme: "http://",
+  host: System.get_env("MINIO_ENDPOINT") || "localhost",
+  port: 9000
+
+config :pipeforge, :storage,
+  bucket: System.get_env("MINIO_BUCKET") || "pipeforge-uploads",
+  region: System.get_env("MINIO_REGION") || "us-east-1"
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

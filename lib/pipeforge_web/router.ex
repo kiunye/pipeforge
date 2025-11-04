@@ -26,6 +26,7 @@ defmodule PipeForgeWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    live "/ingestion/upload", CSVUploadLive, :index
   end
 
   # Other scopes may use custom stacks.

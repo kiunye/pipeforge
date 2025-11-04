@@ -96,4 +96,21 @@ if config_env() == :prod do
   #       force_ssl: [hsts: true]
   #
   # Check `Plug.SSL` for all available options in `force_ssl`.
+
+  # Configure ExAws for MinIO/S3 in production
+  config :ex_aws,
+    access_key_id: System.get_env("MINIO_ACCESS_KEY"),
+    secret_access_key: System.get_env("MINIO_SECRET_KEY"),
+    region: System.get_env("MINIO_REGION") || "us-east-1"
+
+  s3_endpoint = System.get_env("MINIO_ENDPOINT") || raise "MINIO_ENDPOINT environment variable is required"
+
+  config :ex_aws, :s3,
+    scheme: "https://",
+    host: s3_endpoint,
+    port: 443
+
+  config :pipeforge, :storage,
+    bucket: System.get_env("MINIO_BUCKET") || "pipeforge-uploads",
+    region: System.get_env("MINIO_REGION") || "us-east-1"
 end
