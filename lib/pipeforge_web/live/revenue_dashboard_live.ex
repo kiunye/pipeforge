@@ -16,9 +16,13 @@ defmodule PipeForgeWeb.RevenueDashboardLive do
       |> assign(:end_date, end_date)
       |> assign(:loading, false)
       |> assign(:revenue_data, [])
+      |> assign(:cohort_data, [])
       |> assign(:total_revenue, Decimal.new("0"))
       |> assign(:filters, %{category: nil, payment_method: nil})
+      |> assign(:categories, RevenueQueries.available_categories())
+      |> assign(:payment_methods, RevenueQueries.available_payment_methods())
       |> load_revenue_data()
+      |> load_cohort_data()
 
     {:ok, socket}
   end
@@ -39,6 +43,7 @@ defmodule PipeForgeWeb.RevenueDashboardLive do
       |> assign(:end_date, end_date)
       |> assign(:filters, filters)
       |> load_revenue_data()
+      |> load_cohort_data()
 
     {:noreply, socket}
   end
@@ -53,13 +58,15 @@ defmodule PipeForgeWeb.RevenueDashboardLive do
       |> assign(:start_date, start_date)
       |> assign(:end_date, end_date)
       |> load_revenue_data()
+      |> load_cohort_data()
 
     {:noreply, push_patch(socket, to: build_dashboard_path(socket.assigns))}
   end
 
   @impl true
   def handle_event("apply_filter", %{"filter" => filter, "value" => value}, socket) do
-    filters = Map.put(socket.assigns.filters, String.to_atom(filter), value)
+    filter_value = if value == "", do: nil, else: value
+    filters = Map.put(socket.assigns.filters, String.to_atom(filter), filter_value)
 
     socket =
       socket
@@ -88,6 +95,15 @@ defmodule PipeForgeWeb.RevenueDashboardLive do
     |> assign(:total_revenue, total_revenue)
     |> assign(:query_time_ms, div(time_ms, 1000))
     |> assign(:loading, false)
+  end
+
+  defp load_cohort_data(socket) do
+    start_date = socket.assigns.start_date
+    end_date = socket.assigns.end_date
+
+    cohort_data = RevenueQueries.cohort_retention(start_date, end_date)
+
+    assign(socket, :cohort_data, cohort_data)
   end
 
   defp parse_date(nil), do: nil
@@ -148,7 +164,7 @@ defmodule PipeForgeWeb.RevenueDashboardLive do
           </div>
 
           <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-            <form phx-change="update_date_range" class="flex items-end space-x-4">
+            <form phx-change="update_date_range" class="flex flex-wrap items-end gap-4">
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
                 <input
@@ -167,6 +183,38 @@ defmodule PipeForgeWeb.RevenueDashboardLive do
                   class="px-3 py-2 border border-gray-300 rounded-lg"
                 />
               </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                <select
+                  name="category"
+                  phx-change="apply_filter"
+                  phx-value-filter="category"
+                  class="px-3 py-2 border border-gray-300 rounded-lg"
+                >
+                  <option value="">All Categories</option>
+                  <%= for category <- @categories do %>
+                    <option value={category} selected={@filters.category == category}>
+                      <%= category %>
+                    </option>
+                  <% end %>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Payment Method</label>
+                <select
+                  name="payment_method"
+                  phx-change="apply_filter"
+                  phx-value-filter="payment_method"
+                  class="px-3 py-2 border border-gray-300 rounded-lg capitalize"
+                >
+                  <option value="">All Methods</option>
+                  <%= for method <- @payment_methods do %>
+                    <option value={method} selected={@filters.payment_method == method}>
+                      <%= String.replace(method, "_", " ") |> String.capitalize() %>
+                    </option>
+                  <% end %>
+                </select>
+              </div>
               <button
                 type="submit"
                 class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
@@ -176,13 +224,27 @@ defmodule PipeForgeWeb.RevenueDashboardLive do
             </form>
           </div>
 
-          <div class="bg-white rounded-lg shadow-md p-6">
-            <div :if={@loading} class="text-center py-8">
-              <p class="text-gray-500">Loading revenue data...</p>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h2 class="text-xl font-semibold mb-4">Revenue Trend</h2>
+              <div :if={@loading} class="text-center py-8">
+                <p class="text-gray-500">Loading revenue data...</p>
+              </div>
+
+              <div :if={not @loading} id="revenue-chart-container" class="h-64">
+                <canvas id="revenue-chart" phx-hook="RevenueChart" data-chart-data={Jason.encode!(@revenue_data)}></canvas>
+              </div>
             </div>
 
-            <div :if={not @loading} id="revenue-chart-container">
-              <canvas id="revenue-chart" phx-hook="RevenueChart" data-chart-data={Jason.encode!(@revenue_data)}></canvas>
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h2 class="text-xl font-semibold mb-4">Customer Cohort Retention</h2>
+              <div :if={@loading} class="text-center py-8">
+                <p class="text-gray-500">Loading cohort data...</p>
+              </div>
+
+              <div :if={not @loading} id="cohort-chart-container" class="h-64">
+                <canvas id="cohort-chart" phx-hook="CohortChart" data-chart-data={Jason.encode!(@cohort_data)}></canvas>
+              </div>
             </div>
           </div>
         </div>
@@ -195,8 +257,8 @@ defmodule PipeForgeWeb.RevenueDashboardLive do
     amount
     |> Decimal.to_float()
     |> :erlang.float_to_binary(decimals: 2)
-    |> then(&"$#{&1}")
+    |> then(&"KES #{&1}")
   end
 
-  defp format_currency(amount), do: "$#{amount}"
+  defp format_currency(amount), do: "KES #{amount}"
 end
