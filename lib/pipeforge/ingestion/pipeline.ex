@@ -147,25 +147,49 @@ defmodule PipeForge.Ingestion.Pipeline do
   end
 
   defp parse_csv(file_path) do
+    require Logger
+
     case File.read(file_path) do
       {:ok, content} ->
-        rows = NimbleCSV.RFC4180.parse_string(content)
-        {:ok, rows}
+        if byte_size(content) == 0 do
+          Logger.error("CSV file is empty: #{file_path}")
+          {:error, "CSV file is empty"}
+        else
+          rows = NimbleCSV.RFC4180.parse_string(content)
+          Logger.info("Parsed CSV: #{length(rows)} rows found (including header)")
+          if length(rows) == 0 do
+            Logger.error("CSV parsing resulted in empty rows")
+            {:error, "CSV file appears to be empty or invalid"}
+          else
+            Logger.info("First row (header): #{inspect(Enum.at(rows, 0))}")
+            {:ok, rows}
+          end
+        end
 
       {:error, reason} ->
+        Logger.error("Failed to read CSV file: #{inspect(reason)}")
         {:error, "Failed to read file: #{inspect(reason)}"}
     end
   end
 
-  defp validate_rows([]), do: {:ok, []}
+  defp validate_rows([]) do
+    require Logger
+    Logger.error("CSV file has no rows")
+    {:error, "CSV file has no rows"}
+  end
 
   defp validate_rows([header | rows]) do
+    require Logger
+    Logger.info("Validating header: #{inspect(header)}")
+
     case CSVValidator.validate_header(header) do
       {:ok, header_map} ->
+        Logger.info("Header validation passed. Found columns: #{inspect(Map.keys(header_map))}")
         validated = validate_rows_with_header(rows, header_map)
         {:ok, validated}
 
       {:error, :missing_columns, missing} ->
+        Logger.error("Missing required columns: #{inspect(missing)}. Header was: #{inspect(header)}")
         {:error, "Missing required columns: #{inspect(missing)}"}
     end
   end
