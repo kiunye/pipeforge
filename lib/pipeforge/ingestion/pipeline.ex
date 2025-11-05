@@ -34,27 +34,37 @@ defmodule PipeForge.Ingestion.Pipeline do
 
   @impl true
   def handle_message(_processor, %Message{data: data} = message, _context) do
+    require Logger
+
     case Jason.decode(data) do
       {:ok, %{"file_id" => file_id_string, "file_path" => file_path, "filename" => filename}} ->
         # Convert UUID string back to binary for Ecto
         case Ecto.UUID.cast(file_id_string) do
           {:ok, file_id} ->
+            Logger.info("Processing ingestion file: #{filename} (#{file_id_string})")
+
             case process_file(file_id, file_path, filename) do
               {:ok, _result} ->
+                Logger.info("Successfully processed file: #{filename}")
                 message
 
               {:error, reason} ->
+                Logger.error("Failed to process file #{filename}: #{inspect(reason)}")
+                # Mark as failed and don't requeue
                 Message.failed(message, reason)
             end
 
           :error ->
+            Logger.error("Invalid file_id format: #{file_id_string}")
             Message.failed(message, "Invalid file_id format: #{file_id_string}")
         end
 
       {:ok, _} ->
+        Logger.error("Invalid message format")
         Message.failed(message, "Invalid message format")
 
       {:error, reason} ->
+        Logger.error("Failed to decode JSON: #{inspect(reason)}")
         Message.failed(message, "Failed to decode JSON: #{inspect(reason)}")
     end
   end
