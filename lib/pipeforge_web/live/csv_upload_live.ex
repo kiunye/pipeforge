@@ -79,8 +79,9 @@ defmodule PipeForgeWeb.CSVUploadLive do
            :ok <- Producer.publish_file(ingestion_file.id, file_key, entry.client_name) do
         {:ok, ingestion_file}
       else
-        {:error, :duplicate} ->
-          {:error, "File with this content has already been uploaded"}
+        {:error, {:duplicate, existing_file}} ->
+          status_msg = format_status_message(existing_file)
+          {:error, "File with this content has already been uploaded. #{status_msg}"}
 
         error ->
           {:error, inspect(error)}
@@ -106,8 +107,16 @@ defmodule PipeForgeWeb.CSVUploadLive do
 
   defp check_duplicate(content_hash) do
     case Repo.get_by(IngestionFile, content_hash: content_hash) do
-      nil -> :ok
-      _ -> {:error, :duplicate}
+      nil ->
+        :ok
+
+      existing_file ->
+        # Allow re-upload if previous upload failed
+        if existing_file.status == "failed" do
+          :ok
+        else
+          {:error, {:duplicate, existing_file}}
+        end
     end
   end
 
@@ -244,4 +253,32 @@ defmodule PipeForgeWeb.CSVUploadLive do
   defp format_file_size(bytes) when bytes < 1_048_576, do: "#{Float.round(bytes / 1024, 1)} KB"
   defp format_file_size(bytes) when bytes < 1_073_741_824, do: "#{Float.round(bytes / 1_048_576, 1)} MB"
   defp format_file_size(bytes), do: "#{Float.round(bytes / 1_073_741_824, 1)} GB"
+
+  defp format_status_message(file) do
+    status = String.capitalize(file.status || "unknown")
+    uploaded_at = format_datetime(file.inserted_at)
+
+    case file.status do
+      "completed" ->
+        rows_info = if file.total_rows, do: " (#{file.processed_rows}/#{file.total_rows} rows processed)", else: ""
+        "Previous upload was #{status} on #{uploaded_at}#{rows_info}."
+
+      "processing" ->
+        "Previous upload is currently #{status} (started #{uploaded_at})."
+
+      "pending" ->
+        "Previous upload is #{status} (uploaded #{uploaded_at})."
+
+      "failed" ->
+        error_info = if file.error_message, do: " Error: #{String.slice(file.error_message, 0..100)}", else: ""
+        "Previous upload #{status} on #{uploaded_at}.#{error_info}"
+
+      _ ->
+        "Previous upload status: #{status} (uploaded #{uploaded_at})."
+    end
+  end
+
+  defp format_datetime(nil), do: "unknown date"
+  defp format_datetime(%DateTime{} = dt), do: Calendar.strftime(dt, "%Y-%m-%d %H:%M:%S")
+  defp format_datetime(_), do: "unknown date"
 end
