@@ -50,7 +50,9 @@ defmodule PipeForge.Ingestion.Producer do
   end
 
   defp publish_message(chan, file_id, file_path, filename) do
-    message = Jason.encode!(%{file_id: file_id, file_path: file_path, filename: filename})
+    # Convert UUID binary to string for JSON encoding
+    file_id_string = Ecto.UUID.cast!(file_id)
+    message = Jason.encode!(%{file_id: file_id_string, file_path: file_path, filename: filename})
 
     Basic.publish(chan, @exchange, @routing_key, message,
       persistent: true,
