@@ -135,28 +135,56 @@ defmodule PipeForge.Storage do
   # Local file storage fallback functions
 
   defp upload_file_local(file_path, key) do
+    require Logger
     storage_dir = local_storage_dir()
     File.mkdir_p!(storage_dir)
 
     dest_path = Path.join(storage_dir, sanitize_key(key))
 
-    case File.copy(file_path, dest_path) do
-      {:ok, _bytes} -> {:ok, %{}}
-      error -> {:error, "Failed to copy file locally: #{inspect(error)}"}
+    # Read the source file to verify it has content
+    case File.read(file_path) do
+      {:ok, content} ->
+        Logger.info("Uploading file to local storage: #{key}, size: #{byte_size(content)} bytes")
+        # Log first 200 bytes for debugging
+        preview = String.slice(content, 0..200)
+        Logger.info("Source file preview (first 200 bytes): #{inspect(preview)}")
+        
+        case File.write(dest_path, content) do
+          :ok -> {:ok, %{}}
+          error -> {:error, "Failed to write file: #{inspect(error)}"}
+        end
+
+      {:error, reason} ->
+        Logger.error("Failed to read source file for upload: #{inspect(reason)}")
+        {:error, "Failed to read source file: #{inspect(reason)}"}
     end
   end
 
   defp download_file_local(key) do
+    require Logger
     storage_dir = local_storage_dir()
     source_path = Path.join(storage_dir, sanitize_key(key))
 
+    Logger.info("Downloading file from local storage: #{source_path}")
+
     if File.exists?(source_path) do
-      temp_path = System.tmp_dir!() |> Path.join("csv_#{System.unique_integer([:positive])}.csv")
-      case File.copy(source_path, temp_path) do
-        {:ok, _bytes} -> {:ok, temp_path}
-        error -> {:error, "Failed to copy file: #{inspect(error)}"}
+      case File.read(source_path) do
+        {:ok, content} ->
+          Logger.info("Read file from local storage: #{key}, size: #{byte_size(content)} bytes")
+          # Log first 200 bytes for debugging
+          preview = String.slice(content, 0..200)
+          Logger.info("File preview (first 200 bytes): #{inspect(preview)}")
+          
+          temp_path = System.tmp_dir!() |> Path.join("csv_#{System.unique_integer([:positive])}.csv")
+          File.write!(temp_path, content)
+          {:ok, temp_path}
+
+        {:error, reason} ->
+          Logger.error("Failed to read local file: #{inspect(reason)}")
+          {:error, "Failed to read file: #{inspect(reason)}"}
       end
     else
+      Logger.error("Local file not found: #{source_path}")
       {:error, "File not found: #{key}"}
     end
   end
