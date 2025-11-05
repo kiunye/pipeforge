@@ -279,7 +279,7 @@ defmodule PipeForgeWeb.CSVUploadLive do
         "Previous upload is currently #{status} (started #{uploaded_at})."
 
       "pending" ->
-        if stale_pending?(existing_file) do
+        if stale_pending?(file) do
           "Previous upload is #{status} (uploaded #{uploaded_at}) and appears stuck. You can re-upload to retry."
         else
           "Previous upload is #{status} (uploaded #{uploaded_at}). It should start processing shortly."
