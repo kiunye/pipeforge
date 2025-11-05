@@ -87,10 +87,14 @@ defmodule PipeForge.Ingestion.Pipeline do
   defp process_file_with_path(file_id, temp_path, ingestion_file) do
     with {:ok, rows} <- parse_csv(temp_path),
          {:ok, validated_rows} <- validate_rows(rows),
-         :ok <- update_ingestion_file_status(file_id, "processing", nil),
-         {:ok, _} <- insert_records(validated_rows, ingestion_file) do
+         :ok <- update_ingestion_file_started(file_id),
+         {:ok, processed_count} <- insert_records(validated_rows, ingestion_file) do
+      {valid_rows, invalid_rows} = validated_rows
+      total_rows = length(rows) - 1 # Subtract header row
+      failed_count = length(invalid_rows)
+      
       File.rm(temp_path)
-      update_ingestion_file_status(file_id, "completed", nil)
+      update_ingestion_file_completed(file_id, total_rows, processed_count, failed_count)
       {:ok, file_id}
     else
       {:error, reason} ->
@@ -195,6 +199,47 @@ defmodule PipeForge.Ingestion.Pipeline do
             error_message: error_message,
             started_at: if(status == "processing", do: DateTime.utc_now(), else: file.started_at),
             completed_at: if(status in ["completed", "failed"], do: DateTime.utc_now(), else: file.completed_at)
+          })
+
+        case Repo.update(changeset) do
+          {:ok, _} -> :ok
+          {:error, _} -> :ok
+        end
+    end
+  end
+
+  defp update_ingestion_file_started(file_id) do
+    case Repo.get(IngestionFile, file_id) do
+      nil ->
+        :ok
+
+      file ->
+        changeset =
+          IngestionFile.changeset(file, %{
+            status: "processing",
+            started_at: DateTime.utc_now()
+          })
+
+        case Repo.update(changeset) do
+          {:ok, _} -> :ok
+          {:error, _} -> :ok
+        end
+    end
+  end
+
+  defp update_ingestion_file_completed(file_id, total_rows, processed_rows, failed_rows) do
+    case Repo.get(IngestionFile, file_id) do
+      nil ->
+        :ok
+
+      file ->
+        changeset =
+          IngestionFile.changeset(file, %{
+            status: "completed",
+            total_rows: total_rows,
+            processed_rows: processed_rows,
+            failed_rows: failed_rows,
+            completed_at: DateTime.utc_now()
           })
 
         case Repo.update(changeset) do
