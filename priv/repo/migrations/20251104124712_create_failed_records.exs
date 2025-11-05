@@ -9,7 +9,7 @@ defmodule PipeForge.Repo.Migrations.CreateFailedRecords do
       add :retry_count, :integer
       add :status, :string
       add :last_retried_at, :utc_datetime
-      add :ingestion_file_id, references(:ingestion_files, on_delete: :nothing)
+      add :ingestion_file_id, references(:ingestion_files, type: :uuid, on_delete: :nothing)
 
       timestamps(type: :utc_datetime)
     end

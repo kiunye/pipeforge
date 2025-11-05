@@ -24,7 +24,8 @@ config :ex_aws, :s3,
 
 config :pipeforge, :storage,
   bucket: System.get_env("MINIO_BUCKET") || "pipeforge-uploads",
-  region: System.get_env("MINIO_REGION") || "us-east-1"
+  region: System.get_env("MINIO_REGION") || "us-east-1",
+  local_dir: System.get_env("STORAGE_LOCAL_DIR") || "priv/storage"
 
 # For development, we disable any cache and enable
 # debugging and code reloading.

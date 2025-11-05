@@ -6,6 +6,8 @@ defmodule PipeForge.Ingestion.IngestionFile do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @primary_key {:id, :binary_id, autogenerate: true}
+
   schema "ingestion_files" do
     field :filename, :string
     field :file_path, :string

@@ -7,6 +7,9 @@ defmodule PipeForge.Application do
 
   @impl true
   def start(_type, _args) do
+    # Ensure MinIO bucket exists on startup
+    ensure_storage_bucket()
+
     children = [
       PipeForgeWeb.Telemetry,
       PipeForge.Repo,
@@ -21,6 +24,18 @@ defmodule PipeForge.Application do
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: PipeForge.Supervisor]
     Supervisor.start_link(children, opts)
+  end
+
+  defp ensure_storage_bucket do
+    case PipeForge.Storage.ensure_bucket() do
+      :ok ->
+        :ok
+
+      {:error, reason} ->
+        require Logger
+        Logger.warning("Failed to ensure storage bucket exists: #{inspect(reason)}")
+        :ok
+    end
   end
 
   # Tell Phoenix to update the endpoint configuration

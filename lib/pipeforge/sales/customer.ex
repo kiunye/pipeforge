@@ -6,6 +6,8 @@ defmodule PipeForge.Sales.Customer do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @primary_key {:id, :binary_id, autogenerate: true}
+
   schema "customers" do
     field :email_hash, :string
     field :region, :string

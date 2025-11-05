@@ -33,33 +33,44 @@ defmodule PipeForgeWeb.CSVUploadLive do
 
   @impl true
   def handle_event("save", _params, socket) do
-    if uploaded_entries = uploaded_entries(socket, :csv) do
-      socket = assign(socket, :uploading, true)
+    case uploaded_entries(socket, :csv) do
+      {entries, []} when entries != [] ->
+        socket = assign(socket, :uploading, true)
 
-      case process_upload(uploaded_entries, socket) do
-        {:ok, _ingestion_file} ->
-          socket =
-            socket
-            |> assign(:uploading, false)
-            |> put_flash(:info, "File uploaded successfully. Processing will begin shortly.")
+        case process_upload(entries, socket) do
+          {:ok, _ingestion_file} ->
+            socket =
+              socket
+              |> assign(:uploading, false)
+              |> put_flash(:info, "File uploaded successfully. Processing will begin shortly.")
 
-          {:noreply, socket}
+            {:noreply, socket}
 
-        {:error, reason} ->
-          socket =
-            socket
-            |> assign(:uploading, false)
-            |> assign(:upload_errors, [reason])
-            |> put_flash(:error, "Upload failed: #{inspect(reason)}")
+          {:error, reason} ->
+            socket =
+              socket
+              |> assign(:uploading, false)
+              |> assign(:upload_errors, [reason])
+              |> put_flash(:error, "Upload failed: #{inspect(reason)}")
 
-          {:noreply, socket}
-      end
-    else
-      {:noreply, put_flash(socket, :error, "Please select a CSV file to upload")}
+            {:noreply, socket}
+        end
+
+      {[], _errors} ->
+        {:noreply, put_flash(socket, :error, "Please select a CSV file to upload")}
+
+      {_entries, errors} when errors != [] ->
+        {:noreply,
+         socket
+         |> assign(:upload_errors, errors)
+         |> put_flash(:error, "Upload validation failed")}
+
+      _ ->
+        {:noreply, put_flash(socket, :error, "Please select a CSV file to upload")}
     end
   end
 
-  defp process_upload([{entry, _}], socket) do
+  defp process_upload([entry | _], socket) do
     consume_uploaded_entry(socket, entry, fn %{path: path} ->
       with {:ok, content_hash} <- hash_file(path),
            :ok <- check_duplicate(content_hash),
@@ -72,16 +83,25 @@ defmodule PipeForgeWeb.CSVUploadLive do
           {:error, "File with this content has already been uploaded"}
 
         error ->
-          error
+          {:error, inspect(error)}
       end
     end)
   end
 
+  defp process_upload([], socket) do
+    {:error, "No entries to process"}
+  end
+
+  defp hash_file(path) when is_binary(path) do
+    case FileHasher.hash_file(path) do
+      hash when is_binary(hash) -> {:ok, hash}
+      {:error, reason} -> {:error, "Failed to hash file: #{inspect(reason)}"}
+      other -> {:error, "Unexpected result from hash_file: #{inspect(other)}"}
+    end
+  end
+
   defp hash_file(path) do
-    hash = FileHasher.hash_file(path)
-    {:ok, hash}
-  rescue
-    e -> {:error, "Failed to hash file: #{inspect(e)}"}
+    {:error, "Invalid path provided: #{inspect(path)}"}
   end
 
   defp check_duplicate(content_hash) do

@@ -1,3 +1,5 @@
+import { Chart } from "chart.js/auto"
+
 export const RevenueChart = {
   mounted() {
     this.chart = null
@@ -24,8 +26,8 @@ export const RevenueChart = {
     const labels = data.map(item => item.date)
     const revenue = data.map(item => parseFloat(item.revenue || 0))
 
-    // Use Chart.js if available, otherwise render simple SVG
-    if (window.Chart) {
+    // Use Chart.js to render chart
+    try {
       const ctx = canvas.getContext("2d")
       this.chart = new Chart(ctx, {
         type: "line",
@@ -50,7 +52,7 @@ export const RevenueChart = {
             tooltip: {
               callbacks: {
                 label: function(context) {
-                  return "$" + context.parsed.y.toFixed(2)
+                  return "KES " + context.parsed.y.toFixed(2)
                 }
               }
             }
@@ -60,23 +62,24 @@ export const RevenueChart = {
               beginAtZero: true,
               ticks: {
                 callback: function(value) {
-                  return "$" + value.toFixed(0)
+                  return "KES " + value.toFixed(0)
                 }
               }
             }
           }
         }
       })
-    } else {
+    } catch (error) {
       // Fallback: render simple text representation
+      console.error("Chart.js error:", error)
       canvas.parentElement.innerHTML = `
         <div class="p-4">
-          <p class="text-sm text-gray-500 mb-2">Chart.js not loaded. Install with: npm install chart.js</p>
+          <p class="text-sm text-gray-500 mb-2">Chart rendering failed. Showing data as list.</p>
           <div class="space-y-1">
             ${data.map(item => `
               <div class="flex justify-between text-sm">
                 <span>${item.date}</span>
-                <span class="font-medium">$${parseFloat(item.revenue || 0).toFixed(2)}</span>
+                <span class="font-medium">KES ${parseFloat(item.revenue || 0).toFixed(2)}</span>
               </div>
             `).join("")}
           </div>

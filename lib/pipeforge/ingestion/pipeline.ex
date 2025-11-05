@@ -129,7 +129,7 @@ defmodule PipeForge.Ingestion.Pipeline do
   defp parse_csv(file_path) do
     case File.read(file_path) do
       {:ok, content} ->
-        rows = NimbleCSV.RFC4180.parse(content)
+        rows = NimbleCSV.RFC4180.parse_string(content)
         {:ok, rows}
 
       {:error, reason} ->

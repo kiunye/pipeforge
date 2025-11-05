@@ -6,6 +6,8 @@ defmodule PipeForge.Sales.Order do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @primary_key {:id, :binary_id, autogenerate: true}
+
   schema "orders" do
     field :order_ref, :string
     field :order_date, :utc_datetime
