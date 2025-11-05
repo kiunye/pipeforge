@@ -84,9 +84,34 @@ defmodule PipeForge.Ingestion.Pipeline do
   defp process_batch_message(_), do: :ok
 
   defp process_file(file_id, file_path, _filename) do
+    require Logger
+
     with {:ok, ingestion_file} <- get_ingestion_file(file_id),
          {:ok, temp_path} <- Storage.download_file(file_path) do
-      process_file_with_path(file_id, temp_path, ingestion_file)
+      # Verify downloaded file has content
+      case File.read(temp_path) do
+        {:ok, content} ->
+          Logger.info("Downloaded file size: #{byte_size(content)} bytes")
+          preview = String.slice(content, 0..500)
+          Logger.info("First 500 bytes of downloaded file: #{inspect(preview)}")
+          
+          # Check if file starts with header
+          if String.starts_with?(content, "order_ref") or String.starts_with?(content, "order_ref,order_date") do
+            Logger.info("File appears to have header row")
+            process_file_with_path(file_id, temp_path, ingestion_file)
+          else
+            Logger.error("Downloaded file does not start with expected header. First 100 chars: #{String.slice(content, 0..100)}")
+            File.rm(temp_path)
+            update_ingestion_file_status(file_id, "failed", "Downloaded file is missing header row")
+            {:error, "Downloaded file is missing header row"}
+          end
+
+        {:error, reason} ->
+          Logger.error("Failed to read downloaded file: #{inspect(reason)}")
+          File.rm(temp_path)
+          update_ingestion_file_status(file_id, "failed", "Failed to read downloaded file: #{inspect(reason)}")
+          {:error, "Failed to read downloaded file: #{inspect(reason)}"}
+      end
     else
       {:error, reason} ->
         update_ingestion_file_status(file_id, "failed", inspect(reason))
