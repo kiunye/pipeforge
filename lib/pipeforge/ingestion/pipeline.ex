@@ -155,13 +155,23 @@ defmodule PipeForge.Ingestion.Pipeline do
           Logger.error("CSV file is empty: #{file_path}")
           {:error, "CSV file is empty"}
         else
+          # Remove BOM if present (UTF-8 BOM is EF BB BF)
+          content = remove_bom(content)
+          
+          # Log first 200 bytes for debugging
+          preview = String.slice(content, 0..200)
+          Logger.info("CSV file preview (first 200 bytes): #{inspect(preview)}")
+          
           rows = NimbleCSV.RFC4180.parse_string(content)
           Logger.info("Parsed CSV: #{length(rows)} rows found (including header)")
+          
           if length(rows) == 0 do
             Logger.error("CSV parsing resulted in empty rows")
             {:error, "CSV file appears to be empty or invalid"}
           else
-            Logger.info("First row (header): #{inspect(Enum.at(rows, 0))}")
+            header_row = Enum.at(rows, 0)
+            Logger.info("First row (header): #{inspect(header_row)}")
+            Logger.info("Header row length: #{length(header_row)}")
             {:ok, rows}
           end
         end
@@ -171,6 +181,9 @@ defmodule PipeForge.Ingestion.Pipeline do
         {:error, "Failed to read file: #{inspect(reason)}"}
     end
   end
+
+  defp remove_bom(<<0xEF, 0xBB, 0xBF, rest::binary>>), do: rest
+  defp remove_bom(content), do: content
 
   defp validate_rows([]) do
     require Logger

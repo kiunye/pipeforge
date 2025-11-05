@@ -86,11 +86,11 @@ defmodule PipeForgeWeb.CSVUploadLive do
   defp process_upload([entry | _], socket) do
     require Logger
 
-    try do
-      consume_uploaded_entry(socket, entry, fn %{path: path} ->
-        Logger.info("Processing upload: #{entry.client_name}")
+    result =
+      try do
+        consume_uploaded_entry(socket, entry, fn %{path: path} ->
+          Logger.info("Processing upload: #{entry.client_name}")
 
-        result =
           with {:ok, content_hash} <- hash_file(path),
                {:ok, existing_file} <- check_duplicate_or_existing(content_hash),
                {:ok, file_key} <- upload_to_storage(path, entry.client_name),
@@ -112,13 +112,20 @@ defmodule PipeForgeWeb.CSVUploadLive do
               Logger.error("Unexpected error uploading #{entry.client_name}: #{inspect(error)}")
               {:error, "Upload failed: #{inspect(error)}"}
           end
+        end)
+      catch
+        kind, error ->
+          Logger.error("Exception during upload: #{inspect(kind)} - #{inspect(error)}")
+          {:error, "Upload failed: #{inspect(error)}"}
+      end
 
-        result
-      end)
-    catch
-      kind, error ->
-        Logger.error("Exception during upload: #{inspect(kind)} - #{inspect(error)}")
-        {:error, "Upload failed: #{inspect(error)}"}
+    # Ensure we always return {:ok, _} or {:error, _}
+    case result do
+      {:ok, _} = ok -> ok
+      {:error, _} = error -> error
+      other ->
+        Logger.error("process_upload returned unexpected value: #{inspect(other)}")
+        {:error, "Upload failed: unexpected error"}
     end
   end
 

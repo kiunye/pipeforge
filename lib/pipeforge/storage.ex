@@ -70,9 +70,16 @@ defmodule PipeForge.Storage do
   Downloads a file from storage to a temporary location.
   """
   def download_file(key, bucket \\ bucket()) do
+    require Logger
+
     # Try MinIO first
     case bucket |> S3.get_object(key) |> ExAws.request() do
       {:ok, %{body: content}} ->
+        Logger.info("Downloaded file from MinIO: #{key}, size: #{byte_size(content)} bytes")
+        # Log first 200 bytes for debugging
+        preview = String.slice(content, 0..200)
+        Logger.info("File preview (first 200 bytes): #{inspect(preview)}")
+        
         temp_path = System.tmp_dir!() |> Path.join("csv_#{System.unique_integer([:positive])}.csv")
         File.write!(temp_path, content)
         {:ok, temp_path}
@@ -81,7 +88,10 @@ defmodule PipeForge.Storage do
         download_file_local(key)
     end
   rescue
-    _ -> download_file_local(key)
+    e ->
+      require Logger
+      Logger.error("Error downloading from MinIO: #{inspect(e)}")
+      download_file_local(key)
   end
 
   @doc """
