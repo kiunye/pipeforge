@@ -86,10 +86,9 @@ defmodule PipeForge.Ingestion.Pipeline do
 
   defp process_file_with_path(file_id, temp_path, ingestion_file) do
     with {:ok, rows} <- parse_csv(temp_path),
-         {:ok, validated_rows} <- validate_rows(rows),
+         {:ok, {valid_rows, invalid_rows}} <- validate_rows(rows),
          :ok <- update_ingestion_file_started(file_id),
-         {:ok, processed_count} <- insert_records(validated_rows, ingestion_file) do
-      {valid_rows, invalid_rows} = validated_rows
+         {:ok, processed_count} <- insert_records({valid_rows, invalid_rows}, ingestion_file) do
       total_rows = length(rows) - 1 # Subtract header row
       failed_count = length(invalid_rows)
       
