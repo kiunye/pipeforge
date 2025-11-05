@@ -88,29 +88,40 @@ defmodule PipeForgeWeb.CSVUploadLive do
 
     result =
       try do
+        # Verify file has header before processing
+        verify_file_header(socket, entry)
+
         consume_uploaded_entry(socket, entry, fn %{path: path} ->
           Logger.info("Processing upload: #{entry.client_name}")
 
-          with {:ok, content_hash} <- hash_file(path),
-               {:ok, existing_file} <- check_duplicate_or_existing(content_hash),
-               {:ok, file_key} <- upload_to_storage(path, entry.client_name),
-               {:ok, ingestion_file} <- get_or_update_ingestion_record(existing_file, entry, file_key, content_hash),
-               :ok <- Producer.publish_file(ingestion_file.id, file_key, entry.client_name) do
-            Logger.info("Successfully uploaded and queued: #{entry.client_name}")
-            {:ok, ingestion_file}
-          else
-            {:error, {:duplicate, existing_file}} ->
-              status_msg = format_status_message(existing_file)
-              Logger.warning("Duplicate file detected: #{entry.client_name}")
-              {:error, "File with this content has already been uploaded. #{status_msg}"}
+          # Verify the file has a valid header before uploading
+          case verify_csv_header(path) do
+            :ok ->
+              with {:ok, content_hash} <- hash_file(path),
+                   {:ok, existing_file} <- check_duplicate_or_existing(content_hash),
+                   {:ok, file_key} <- upload_to_storage(path, entry.client_name),
+                   {:ok, ingestion_file} <- get_or_update_ingestion_record(existing_file, entry, file_key, content_hash),
+                   :ok <- Producer.publish_file(ingestion_file.id, file_key, entry.client_name) do
+                Logger.info("Successfully uploaded and queued: #{entry.client_name}")
+                {:ok, ingestion_file}
+              else
+                {:error, {:duplicate, existing_file}} ->
+                  status_msg = format_status_message(existing_file)
+                  Logger.warning("Duplicate file detected: #{entry.client_name}")
+                  {:error, "File with this content has already been uploaded. #{status_msg}"}
 
-            {:error, reason} = error ->
-              Logger.error("Upload failed for #{entry.client_name}: #{inspect(reason)}")
-              error
+                {:error, reason} = error ->
+                  Logger.error("Upload failed for #{entry.client_name}: #{inspect(reason)}")
+                  error
 
-            error ->
-              Logger.error("Unexpected error uploading #{entry.client_name}: #{inspect(error)}")
-              {:error, "Upload failed: #{inspect(error)}"}
+                error ->
+                  Logger.error("Unexpected error uploading #{entry.client_name}: #{inspect(error)}")
+                  {:error, "Upload failed: #{inspect(error)}"}
+              end
+
+            {:error, reason} ->
+              Logger.error("CSV header validation failed: #{inspect(reason)}")
+              {:error, "Invalid CSV file: #{reason}"}
           end
         end)
       catch
@@ -126,6 +137,46 @@ defmodule PipeForgeWeb.CSVUploadLive do
       other ->
         Logger.error("process_upload returned unexpected value: #{inspect(other)}")
         {:error, "Upload failed: unexpected error"}
+    end
+  end
+
+  defp verify_file_header(_socket, _entry), do: :ok
+
+  defp verify_csv_header(file_path) do
+    require Logger
+
+    case File.read(file_path) do
+      {:ok, content} ->
+        if byte_size(content) == 0 do
+          {:error, "File is empty"}
+        else
+          # Parse just the first line to check header
+          rows = NimbleCSV.RFC4180.parse_string(content)
+          
+          if length(rows) == 0 do
+            {:error, "CSV file has no rows"}
+          else
+            header = Enum.at(rows, 0)
+            Logger.info("Verifying CSV header: #{inspect(header)}")
+            
+            # Check if first row looks like a header (contains expected column names)
+            header_str = Enum.join(header, ",") |> String.downcase()
+            expected_columns = ["order_ref", "order_date", "customer_email", "product_sku"]
+            
+            has_header = Enum.any?(expected_columns, fn col -> String.contains?(header_str, col) end)
+            
+            if has_header do
+              Logger.info("CSV header validation passed")
+              :ok
+            else
+              Logger.error("CSV header validation failed. First row: #{inspect(header)}")
+              {:error, "CSV file appears to be missing header row. First row looks like data: #{inspect(Enum.take(header, 3))}"}
+            end
+          end
+        end
+
+      {:error, reason} ->
+        {:error, "Failed to read file: #{inspect(reason)}"}
     end
   end
 
