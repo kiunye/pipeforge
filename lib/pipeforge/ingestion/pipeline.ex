@@ -19,7 +19,7 @@ defmodule PipeForge.Ingestion.Pipeline do
              queue: "csv_ingestion",
              connection: rabbitmq_connection_options(),
              declare: [durable: true],
-             on_failure: :reject_and_requeue
+             on_failure: :reject
            ]},
         concurrency: 1
       ],

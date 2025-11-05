@@ -71,21 +71,35 @@ defmodule PipeForgeWeb.CSVUploadLive do
   end
 
   defp process_upload([entry | _], socket) do
-    consume_uploaded_entry(socket, entry, fn %{path: path} ->
-      with {:ok, content_hash} <- hash_file(path),
-           {:ok, existing_file} <- check_duplicate_or_existing(content_hash),
-           {:ok, file_key} <- upload_to_storage(path, entry.client_name),
-           {:ok, ingestion_file} <- get_or_update_ingestion_record(existing_file, entry, file_key, content_hash),
-           :ok <- Producer.publish_file(ingestion_file.id, file_key, entry.client_name) do
-        {:ok, ingestion_file}
-      else
-        {:error, {:duplicate, existing_file}} ->
-          status_msg = format_status_message(existing_file)
-          {:error, "File with this content has already been uploaded. #{status_msg}"}
+    require Logger
 
-        error ->
-          {:error, inspect(error)}
-      end
+    consume_uploaded_entry(socket, entry, fn %{path: path} ->
+      Logger.info("Processing upload: #{entry.client_name}")
+
+      result =
+        with {:ok, content_hash} <- hash_file(path),
+             {:ok, existing_file} <- check_duplicate_or_existing(content_hash),
+             {:ok, file_key} <- upload_to_storage(path, entry.client_name),
+             {:ok, ingestion_file} <- get_or_update_ingestion_record(existing_file, entry, file_key, content_hash),
+             :ok <- Producer.publish_file(ingestion_file.id, file_key, entry.client_name) do
+          Logger.info("Successfully uploaded and queued: #{entry.client_name}")
+          {:ok, ingestion_file}
+        else
+          {:error, {:duplicate, existing_file}} ->
+            status_msg = format_status_message(existing_file)
+            Logger.warning("Duplicate file detected: #{entry.client_name}")
+            {:error, "File with this content has already been uploaded. #{status_msg}"}
+
+          {:error, reason} = error ->
+            Logger.error("Upload failed for #{entry.client_name}: #{inspect(reason)}")
+            error
+
+          error ->
+            Logger.error("Unexpected error uploading #{entry.client_name}: #{inspect(error)}")
+            {:error, "Upload failed: #{inspect(error)}"}
+        end
+
+      result
     end)
   end
 
