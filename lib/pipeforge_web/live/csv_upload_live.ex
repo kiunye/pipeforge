@@ -111,12 +111,24 @@ defmodule PipeForgeWeb.CSVUploadLive do
         :ok
 
       existing_file ->
-        # Allow re-upload if previous upload failed
-        if existing_file.status == "failed" do
-          :ok
-        else
-          {:error, {:duplicate, existing_file}}
+        # Allow re-upload if previous upload failed or stuck in pending for > 5 minutes
+        cond do
+          existing_file.status == "failed" ->
+            :ok
+
+          existing_file.status == "pending" and stale_pending?(existing_file) ->
+            :ok
+
+          true ->
+            {:error, {:duplicate, existing_file}}
         end
+    end
+  end
+
+  defp stale_pending?(file) do
+    case file.inserted_at do
+      nil -> false
+      inserted_at -> DateTime.diff(DateTime.utc_now(), inserted_at, :second) > 300 # 5 minutes
     end
   end
 
@@ -267,7 +279,11 @@ defmodule PipeForgeWeb.CSVUploadLive do
         "Previous upload is currently #{status} (started #{uploaded_at})."
 
       "pending" ->
-        "Previous upload is #{status} (uploaded #{uploaded_at})."
+        if stale_pending?(existing_file) do
+          "Previous upload is #{status} (uploaded #{uploaded_at}) and appears stuck. You can re-upload to retry."
+        else
+          "Previous upload is #{status} (uploaded #{uploaded_at}). It should start processing shortly."
+        end
 
       "failed" ->
         error_info = if file.error_message, do: " Error: #{String.slice(file.error_message, 0..100)}", else: ""
