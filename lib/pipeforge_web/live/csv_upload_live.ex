@@ -73,9 +73,9 @@ defmodule PipeForgeWeb.CSVUploadLive do
   defp process_upload([entry | _], socket) do
     consume_uploaded_entry(socket, entry, fn %{path: path} ->
       with {:ok, content_hash} <- hash_file(path),
-           :ok <- check_duplicate(content_hash),
+           {:ok, existing_file} <- check_duplicate_or_existing(content_hash),
            {:ok, file_key} <- upload_to_storage(path, entry.client_name),
-           {:ok, ingestion_file} <- create_ingestion_record(entry, file_key, content_hash),
+           {:ok, ingestion_file} <- get_or_update_ingestion_record(existing_file, entry, file_key, content_hash),
            :ok <- Producer.publish_file(ingestion_file.id, file_key, entry.client_name) do
         {:ok, ingestion_file}
       else
@@ -105,19 +105,19 @@ defmodule PipeForgeWeb.CSVUploadLive do
     {:error, "Invalid path provided: #{inspect(path)}"}
   end
 
-  defp check_duplicate(content_hash) do
+  defp check_duplicate_or_existing(content_hash) do
     case Repo.get_by(IngestionFile, content_hash: content_hash) do
       nil ->
-        :ok
+        {:ok, nil}
 
       existing_file ->
         # Allow re-upload if previous upload failed or stuck in pending for > 5 minutes
         cond do
           existing_file.status == "failed" ->
-            :ok
+            {:ok, existing_file}
 
           existing_file.status == "pending" and stale_pending?(existing_file) ->
-            :ok
+            {:ok, existing_file}
 
           true ->
             {:error, {:duplicate, existing_file}}
@@ -142,7 +142,8 @@ defmodule PipeForgeWeb.CSVUploadLive do
     end
   end
 
-  defp create_ingestion_record(entry, file_key, content_hash) do
+  defp get_or_update_ingestion_record(nil, entry, file_key, content_hash) do
+    # Create new record
     %IngestionFile{}
     |> IngestionFile.changeset(%{
       filename: entry.client_name,
@@ -154,6 +155,23 @@ defmodule PipeForgeWeb.CSVUploadLive do
       failed_rows: 0
     })
     |> Repo.insert()
+  end
+
+  defp get_or_update_ingestion_record(existing_file, entry, file_key, _content_hash) do
+    # Update existing record to retry processing
+    existing_file
+    |> IngestionFile.changeset(%{
+      filename: entry.client_name,
+      file_path: file_key,
+      status: "pending",
+      total_rows: 0,
+      processed_rows: 0,
+      failed_rows: 0,
+      error_message: nil,
+      started_at: nil,
+      completed_at: nil
+    })
+    |> Repo.update()
   end
 
   @impl true
