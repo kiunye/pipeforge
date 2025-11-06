@@ -83,6 +83,10 @@ defmodule PipeForge.MixProject do
       {:sweet_xml, "~> 0.7"},
       # CSV parsing
       {:nimble_csv, "~> 1.2"},
+      # HTTP client for Slack webhooks
+      {:finch, "~> 0.20"},
+      # Email
+      {:swoosh, "~> 1.15"},
       # BigQuery
       {:google_api_big_query, "~> 0.88"},
       {:goth, "~> 1.4"},

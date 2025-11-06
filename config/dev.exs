@@ -109,7 +109,27 @@ config :pipeforge, Oban,
     {Oban.Plugins.Cron,
      crontab: [
        # Run daily rollups at 2 AM UTC
-       {"0 2 * * *", PipeForge.Rollups.DailyRollupWorker, args: %{}}
+       {"0 2 * * *", PipeForge.Rollups.DailyRollupWorker, args: %{}},
+       # Run sales alerts at 2:30 AM UTC
+       {"30 2 * * *", PipeForge.Alerts.SalesAlertWorker, args: %{}}
      ]},
     Oban.Plugins.Pruner
   ]
+
+# Configure Swoosh for email alerts (development)
+config :pipeforge, PipeForge.Alerts.EmailNotifier,
+  adapter: Swoosh.Adapters.SMTP,
+  relay: System.get_env("SMTP_HOST") || "localhost",
+  port: String.to_integer(System.get_env("SMTP_PORT") || "587"),
+  username: System.get_env("SMTP_USERNAME"),
+  password: System.get_env("SMTP_PASSWORD"),
+  ssl: false,
+  tls: :if_available,
+  auth: :if_available,
+  retries: 1
+
+# Alert configuration (development)
+config :pipeforge,
+  slack_webhook_url: System.get_env("SLACK_WEBHOOK_URL"),
+  alert_email_recipients: System.get_env("ALERT_EMAIL_RECIPIENTS"),
+  alert_from_email: System.get_env("ALERT_FROM_EMAIL") || "alerts@pipeforge.local"

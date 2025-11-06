@@ -43,10 +43,29 @@ if config_env() == :prod do
     plugins: [
       {Oban.Plugins.Cron,
        crontab: [
-         {"0 2 * * *", PipeForge.Rollups.DailyRollupWorker, args: %{}}
+         {"0 2 * * *", PipeForge.Rollups.DailyRollupWorker, args: %{}},
+         {"30 2 * * *", PipeForge.Alerts.SalesAlertWorker, args: %{}}
        ]},
       Oban.Plugins.Pruner
     ]
+
+  # Configure Swoosh for email alerts in production
+  config :pipeforge, PipeForge.Alerts.EmailNotifier,
+    adapter: Swoosh.Adapters.SMTP,
+    relay: System.get_env("SMTP_HOST") || raise "SMTP_HOST environment variable is required",
+    port: String.to_integer(System.get_env("SMTP_PORT") || "587"),
+    username: System.get_env("SMTP_USERNAME"),
+    password: System.get_env("SMTP_PASSWORD"),
+    ssl: true,
+    tls: :always,
+    auth: :always,
+    retries: 3
+
+  # Alert configuration in production
+  config :pipeforge,
+    slack_webhook_url: System.get_env("SLACK_WEBHOOK_URL"),
+    alert_email_recipients: System.get_env("ALERT_EMAIL_RECIPIENTS"),
+    alert_from_email: System.get_env("ALERT_FROM_EMAIL") || "alerts@pipeforge.com"
 
   # The secret key base is used to sign/encrypt cookies and other secrets.
   # A default value is used in config/dev.exs and config/test.exs but you

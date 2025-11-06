@@ -113,4 +113,3 @@ defmodule PipeForge.Rollups.DailyRollupWorker do
     results
   end
 end
-

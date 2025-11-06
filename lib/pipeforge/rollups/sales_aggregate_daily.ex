@@ -50,4 +50,3 @@ defmodule PipeForge.Rollups.SalesAggregateDaily do
     |> validate_number(:unique_customers, greater_than_or_equal_to: 0)
   end
 end
-
