@@ -10,7 +10,7 @@ defmodule PipeForge.Alerts.SalesAlertWorker do
   import Ecto.Query
   alias PipeForge.{Repo, Alerts}
   alias PipeForge.Rollups.SalesAggregateDaily
-  alias PipeForge.Sales.{Order, Product}
+  alias PipeForge.Sales.Order
 
   # Thresholds for alerts (configurable)
   @drop_threshold -10.0  # Alert if revenue drops by 10% or more
@@ -176,4 +176,3 @@ defmodule PipeForge.Alerts.SalesAlertWorker do
     Alerts.SlackNotifier.send_sales_alert(alert_type, current_decimal, previous_decimal, date, change_percent)
   end
 end
-

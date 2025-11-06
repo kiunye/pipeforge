@@ -81,7 +81,7 @@ defmodule PipeForge.Alerts.SlackNotifier do
       System.get_env("SLACK_WEBHOOK_URL")
   end
 
-  defp format_currency(value) when is_decimal(value) do
+  defp format_currency(%Decimal{} = value) do
     "KES #{value |> Decimal.to_float() |> :erlang.float_to_binary(decimals: 2)}"
   end
 
