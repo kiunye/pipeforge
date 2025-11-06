@@ -68,8 +68,7 @@ defmodule PipeForge.MixProject do
       {:broadway, "~> 1.2"},
       {:broadway_rabbitmq, "~> 0.8"},
       {:amqp, "~> 4.1"},
-      # Override rabbit_common for OTP 28 compatibility
-      {:rabbit_common, "~> 4.0", override: true},
+      {:rabbit_common, "~> 4.0.3"},
       # Background Jobs
       {:oban, "~> 2.20"},
       # OAuth

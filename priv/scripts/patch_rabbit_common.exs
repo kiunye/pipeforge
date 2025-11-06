@@ -2,9 +2,10 @@
 # Script to patch rabbit_common for OTP 28 compatibility
 # Run this after mix deps.get if rabbit_common fails to compile
 
-Mix.install([])
+Code.require_file("../../mix.exs", __DIR__)
 
-rabbit_cert_file = Path.join([Mix.Project.deps_path(), "rabbit_common", "src", "rabbit_cert_info.erl"])
+deps_path = Path.join([File.cwd!(), "deps"])
+rabbit_cert_file = Path.join([deps_path, "rabbit_common", "src", "rabbit_cert_info.erl"])
 
 if File.exists?(rabbit_cert_file) do
   content = File.read!(rabbit_cert_file)
@@ -13,7 +14,7 @@ if File.exists?(rabbit_cert_file) do
     patched_content = String.replace(
       content,
       "{?'street-address'               , \"STREET\"},",
-      "{{2,5,4,9}                       , \"STREET\"}, %% streetAddress OID (OTP 28 compatibility - ?'street-address' macro removed),"
+      "{{2,5,4,9}                       , \"STREET\"}, %% streetAddress OID (OTP 28 compatibility)"
     )
     
     File.write!(rabbit_cert_file, patched_content)
@@ -25,4 +26,3 @@ else
   IO.puts("⚠ rabbit_cert_info.erl not found at #{rabbit_cert_file}")
   IO.puts("  Run 'mix deps.get' first")
 end
-
