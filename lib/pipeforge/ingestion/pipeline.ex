@@ -94,7 +94,7 @@ defmodule PipeForge.Ingestion.Pipeline do
           Logger.info("Downloaded file size: #{byte_size(content)} bytes")
           preview = String.slice(content, 0..500)
           Logger.info("First 500 bytes of downloaded file: #{inspect(preview)}")
-          
+
           # Check if file starts with header
           if String.starts_with?(content, "order_ref") or String.starts_with?(content, "order_ref,order_date") do
             Logger.info("File appears to have header row")
@@ -126,7 +126,7 @@ defmodule PipeForge.Ingestion.Pipeline do
          {:ok, processed_count} <- insert_records({valid_rows, invalid_rows}, ingestion_file) do
       total_rows = length(rows) - 1 # Subtract header row
       failed_count = length(invalid_rows)
-      
+
       File.rm(temp_path)
       update_ingestion_file_completed(file_id, total_rows, processed_count, failed_count)
       {:ok, file_id}
@@ -182,14 +182,14 @@ defmodule PipeForge.Ingestion.Pipeline do
         else
           # Remove BOM if present (UTF-8 BOM is EF BB BF)
           content = remove_bom(content)
-          
+
           # Log first 200 bytes for debugging
           preview = String.slice(content, 0..200)
           Logger.info("CSV file preview (first 200 bytes): #{inspect(preview)}")
-          
+
           rows = NimbleCSV.RFC4180.parse_string(content)
           Logger.info("Parsed CSV: #{length(rows)} rows found (including header)")
-          
+
           if length(rows) == 0 do
             Logger.error("CSV parsing resulted in empty rows")
             {:error, "CSV file appears to be empty or invalid"}

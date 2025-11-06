@@ -52,6 +52,19 @@ config :logger, :default_formatter,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Configure Oban for background jobs
+config :pipeforge, Oban,
+  engine: Oban.Engines.Basic,
+  queues: [rollups: 10, alerts: 5, default: 10],
+  plugins: [
+    {Oban.Plugins.Cron,
+     crontab: [
+       # Run daily rollups at 2 AM UTC (after midnight data is complete)
+       {"0 2 * * *", PipeForge.Rollups.DailyRollupWorker, args: %{}}
+     ]},
+    Oban.Plugins.Pruner
+  ]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"

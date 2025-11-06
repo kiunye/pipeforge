@@ -152,19 +152,19 @@ defmodule PipeForgeWeb.CSVUploadLive do
         else
           # Parse just the first line to check header
           rows = NimbleCSV.RFC4180.parse_string(content)
-          
+
           if length(rows) == 0 do
             {:error, "CSV file has no rows"}
           else
             header = Enum.at(rows, 0)
             Logger.info("Verifying CSV header: #{inspect(header)}")
-            
+
             # Check if first row looks like a header (contains expected column names)
             header_str = Enum.join(header, ",") |> String.downcase()
             expected_columns = ["order_ref", "order_date", "customer_email", "product_sku"]
-            
+
             has_header = Enum.any?(expected_columns, fn col -> String.contains?(header_str, col) end)
-            
+
             if has_header do
               Logger.info("CSV header validation passed")
               :ok

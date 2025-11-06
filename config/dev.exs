@@ -100,3 +100,16 @@ config :phoenix_live_view,
   debug_attributes: true,
   # Enable helpful, but potentially expensive runtime checks
   enable_expensive_runtime_checks: true
+
+# Configure Oban for development
+config :pipeforge, Oban,
+  engine: Oban.Engines.Basic,
+  queues: [rollups: 5, alerts: 2, default: 5],
+  plugins: [
+    {Oban.Plugins.Cron,
+     crontab: [
+       # Run daily rollups at 2 AM UTC
+       {"0 2 * * *", PipeForge.Rollups.DailyRollupWorker, args: %{}}
+     ]},
+    Oban.Plugins.Pruner
+  ]

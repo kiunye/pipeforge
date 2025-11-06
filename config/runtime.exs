@@ -35,7 +35,19 @@ if config_env() == :prod do
     pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
 end
 
+# Configure Oban in production
 if config_env() == :prod do
+  config :pipeforge, Oban,
+    engine: Oban.Engines.Basic,
+    queues: [rollups: 10, alerts: 5, default: 10],
+    plugins: [
+      {Oban.Plugins.Cron,
+       crontab: [
+         {"0 2 * * *", PipeForge.Rollups.DailyRollupWorker, args: %{}}
+       ]},
+      Oban.Plugins.Pruner
+    ]
+
   # The secret key base is used to sign/encrypt cookies and other secrets.
   # A default value is used in config/dev.exs and config/test.exs but you
   # want to use a different value for prod and you most likely don't want

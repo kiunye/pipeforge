@@ -79,7 +79,7 @@ defmodule PipeForge.Storage do
         # Log first 200 bytes for debugging
         preview = String.slice(content, 0..200)
         Logger.info("File preview (first 200 bytes): #{inspect(preview)}")
-        
+
         temp_path = System.tmp_dir!() |> Path.join("csv_#{System.unique_integer([:positive])}.csv")
         File.write!(temp_path, content)
         {:ok, temp_path}
@@ -148,7 +148,7 @@ defmodule PipeForge.Storage do
         # Log first 200 bytes for debugging
         preview = String.slice(content, 0..200)
         Logger.info("Source file preview (first 200 bytes): #{inspect(preview)}")
-        
+
         case File.write(dest_path, content) do
           :ok -> {:ok, %{}}
           error -> {:error, "Failed to write file: #{inspect(error)}"}
@@ -174,7 +174,7 @@ defmodule PipeForge.Storage do
           # Log first 200 bytes for debugging
           preview = String.slice(content, 0..200)
           Logger.info("File preview (first 200 bytes): #{inspect(preview)}")
-          
+
           temp_path = System.tmp_dir!() |> Path.join("csv_#{System.unique_integer([:positive])}.csv")
           File.write!(temp_path, content)
           {:ok, temp_path}

@@ -13,6 +13,7 @@ defmodule PipeForge.Application do
     children = [
       PipeForgeWeb.Telemetry,
       PipeForge.Repo,
+      {Oban, Application.get_env(:pipeforge, Oban)},
       {DNSCluster, query: Application.get_env(:pipeforge, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: PipeForge.PubSub},
       PipeForge.Ingestion.Pipeline,
