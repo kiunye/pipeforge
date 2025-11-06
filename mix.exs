@@ -87,6 +87,7 @@ defmodule PipeForge.MixProject do
       {:finch, "~> 0.20"},
       # Email
       {:swoosh, "~> 1.15"},
+      {:gen_smtp, "~> 1.2"},
       # BigQuery
       {:google_api_big_query, "~> 0.88"},
       {:goth, "~> 1.4"},

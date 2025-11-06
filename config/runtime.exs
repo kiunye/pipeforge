@@ -50,9 +50,11 @@ if config_env() == :prod do
     ]
 
   # Configure Swoosh for email alerts in production
+  smtp_host = System.get_env("SMTP_HOST") || raise "SMTP_HOST environment variable is required"
+
   config :pipeforge, PipeForge.Alerts.EmailNotifier,
     adapter: Swoosh.Adapters.SMTP,
-    relay: System.get_env("SMTP_HOST") || raise "SMTP_HOST environment variable is required",
+    relay: smtp_host,
     port: String.to_integer(System.get_env("SMTP_PORT") || "587"),
     username: System.get_env("SMTP_USERNAME"),
     password: System.get_env("SMTP_PASSWORD"),

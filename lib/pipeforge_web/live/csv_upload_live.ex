@@ -83,6 +83,10 @@ defmodule PipeForgeWeb.CSVUploadLive do
     end
   end
 
+  defp process_upload([], _socket) do
+    {:error, "No entries to process"}
+  end
+
   defp process_upload([entry | _], socket) do
     require Logger
 
@@ -179,10 +183,6 @@ defmodule PipeForgeWeb.CSVUploadLive do
       {:error, reason} ->
         {:error, "Failed to read file: #{inspect(reason)}"}
     end
-  end
-
-  defp process_upload([], _socket) do
-    {:error, "No entries to process"}
   end
 
   defp hash_file(path) when is_binary(path) do

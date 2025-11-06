@@ -3,7 +3,7 @@ defmodule PipeForgeWeb.FailedRecordsLive do
 
   import Ecto.Query
 
-  alias PipeForge.{Ingestion, Repo}
+  alias PipeForge.Repo
   alias PipeForge.Ingestion.{FailedRecord, IngestionFile, Producer}
 
   @impl true
