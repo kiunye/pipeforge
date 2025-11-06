@@ -189,17 +189,33 @@ defmodule PipeForge.Ingestion.Pipeline do
           preview = String.slice(content, 0..200)
           Logger.info("CSV file preview (first 200 bytes): #{inspect(preview)}")
 
-          rows = NimbleCSV.RFC4180.parse_string(content)
-          Logger.info("Parsed CSV: #{length(rows)} rows found (including header)")
+          # NimbleCSV.parse_string/1 automatically skips the header row,
+          # so we need to extract it manually
+          header_line =
+            content
+            |> String.split("\n", parts: 2)
+            |> List.first()
+            |> String.trim()
 
-          if Enum.empty?(rows) do
-            Logger.error("CSV parsing resulted in empty rows")
-            {:error, "CSV file appears to be empty or invalid"}
+          if header_line == "" or is_nil(header_line) do
+            Logger.error("CSV file has no header row")
+            {:error, "CSV file has no header row"}
           else
-            header_row = Enum.at(rows, 0)
-            Logger.info("First row (header): #{inspect(header_row)}")
-            Logger.info("Header row length: #{length(header_row)}")
-            {:ok, rows}
+            # Parse header separately
+            [header_row] = NimbleCSV.RFC4180.parse_string(header_line <> "\n", skip_headers: false)
+            Logger.info("Extracted header: #{inspect(header_row)}")
+
+            # Parse all data rows (header is automatically skipped)
+            data_rows = NimbleCSV.RFC4180.parse_string(content)
+            Logger.info("Parsed CSV: #{length(data_rows)} data rows found")
+
+            if Enum.empty?(data_rows) do
+              Logger.error("CSV parsing resulted in empty rows")
+              {:error, "CSV file has no data rows"}
+            else
+              # Return header + data rows
+              {:ok, [header_row | data_rows]}
+            end
           end
         end
 

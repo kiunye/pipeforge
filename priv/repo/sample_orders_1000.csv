@@ -1,0 +1,1001 @@
+order_ref,order_date,customer_email,product_sku,product_name,product_category,quantity,unit_price,total_amount,payment_method,region
+ORD-000001,2025-09-03,customer182@yahoo.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,4,3071.79,12287.16,mpesa,Thika
+ORD-000002,2025-10-10,customer72@gmail.com,SKU-CLOTH-003,Running Shoes,Clothing,5,5928.61,29643.05,mpesa,Busia
+ORD-000003,2025-09-06,customer82@gmail.com,SKU-HOME-002,Blender Pro,Home & Kitchen,3,9456.53,28369.59,paystack,Eldoret
+ORD-000004,2025-10-24,customer130@outlook.com,SKU-BOOK-004,System Architecture,Books,2,2722.42,5444.84,card,Kakamega
+ORD-000005,2025-08-31,customer102@outlook.com,SKU-BOOK-005,DevOps Handbook,Books,3,2565.93,7697.79,other,Garissa
+ORD-000006,2025-08-24,customer42@yahoo.com,SKU-BOOK-005,DevOps Handbook,Books,1,3171.91,3171.91,paystack,Nairobi
+ORD-000007,2025-09-08,customer39@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,2,8838.95,17677.9,mpesa,Eldoret
+ORD-000008,2025-09-26,customer149@yahoo.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,4,79867.85,319471.4,mpesa,Kisumu
+ORD-000009,2025-08-26,customer128@kenya.co.ke,SKU-BOOK-004,System Architecture,Books,1,2957.41,2957.41,mpesa,Eldoret
+ORD-000010,2025-08-10,customer148@yahoo.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,3,3230.41,9691.23,mpesa,Thika
+ORD-000011,2025-10-16,customer8@yahoo.co.ke,SKU-BOOK-001,Programming Guide,Books,1,2282.89,2282.89,bank_transfer,Nairobi
+ORD-000012,2025-10-17,customer143@outlook.com,SKU-ELEC-004,Smart Watch,Electronics,2,20205.99,40411.98,card,Malindi
+ORD-000013,2025-09-16,customer150@yahoo.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,1,1332.6,1332.6,bank_transfer,Nyeri
+ORD-000014,2025-10-12,customer50@gmail.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,5,1740.23,8701.15,other,Eldoret
+ORD-000015,2025-10-07,customer81@outlook.com,SKU-HOME-002,Blender Pro,Home & Kitchen,2,9469.52,18939.04,mpesa,Kitale
+ORD-000016,2025-10-22,customer84@kenya.co.ke,SKU-ELEC-003,Wireless Headphones,Electronics,1,9365.42,9365.42,mpesa,Kisumu
+ORD-000017,2025-09-15,customer156@yahoo.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,1,6832.51,6832.51,mpesa,Thika
+ORD-000018,2025-10-02,customer183@gmail.com,SKU-ELEC-005,Tablet Max,Electronics,1,34934.35,34934.35,mpesa,Eldoret
+ORD-000019,2025-09-26,customer57@outlook.com,SKU-BOOK-002,Data Science Book,Books,1,2800.31,2800.31,paystack,Nyeri
+ORD-000020,2025-09-14,customer194@yahoo.com,SKU-BOOK-001,Programming Guide,Books,5,2202.01,11010.05,paystack,Eldoret
+ORD-000021,2025-09-25,customer64@yahoo.com,SKU-CLOTH-002,Denim Jeans,Clothing,1,4446.73,4446.73,bank_transfer,Nyeri
+ORD-000022,2025-10-18,customer107@yahoo.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,1,129966.06,129966.06,paystack,Machakos
+ORD-000023,2025-09-15,customer189@yahoo.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,2,8891.04,17782.08,mpesa,Nyeri
+ORD-000024,2025-08-26,customer32@yahoo.co.ke,SKU-ELEC-003,Wireless Headphones,Electronics,5,8587.2,42936.0,paystack,Eldoret
+ORD-000025,2025-11-04,customer46@outlook.com,SKU-CLOTH-002,Denim Jeans,Clothing,3,4274.84,12824.52,mpesa,Nairobi
+ORD-000026,2025-09-04,customer15@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,4,8526.4,34105.6,mpesa,Thika
+ORD-000027,2025-10-21,customer46@outlook.com,SKU-CLOTH-002,Denim Jeans,Clothing,3,3593.61,10780.83,bank_transfer,Meru
+ORD-000028,2025-09-17,customer36@gmail.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,1,7236.26,7236.26,bank_transfer,Kisumu
+ORD-000029,2025-10-18,customer97@yahoo.com,SKU-ELEC-004,Smart Watch,Electronics,2,20078.51,40157.02,paystack,Nakuru
+ORD-000030,2025-11-05,customer92@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,7452.68,37263.4,mpesa,Kakamega
+ORD-000031,2025-09-11,customer115@yahoo.co.ke,SKU-BOOK-004,System Architecture,Books,3,2789.04,8367.12,bank_transfer,Garissa
+ORD-000032,2025-10-11,customer145@kenya.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,4,8183.18,32732.72,mpesa,Eldoret
+ORD-000033,2025-08-08,customer200@gmail.com,SKU-BOOK-004,System Architecture,Books,2,3258.96,6517.92,mpesa,Thika
+ORD-000034,2025-08-19,customer28@kenya.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,5,3883.34,19416.7,mpesa,Nyeri
+ORD-000035,2025-09-24,customer34@kenya.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,2,1442.31,2884.62,mpesa,Nyeri
+ORD-000036,2025-09-20,customer169@yahoo.com,SKU-HOME-005,Air Purifier,Home & Kitchen,3,15281.38,45844.14,mpesa,Nyeri
+ORD-000037,2025-09-10,customer168@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,4,15195.14,60780.56,card,Malindi
+ORD-000038,2025-09-20,customer114@yahoo.com,SKU-ELEC-001,Smartphone Pro,Electronics,2,79911.47,159822.94,mpesa,Garissa
+ORD-000039,2025-08-25,customer187@gmail.com,SKU-CLOTH-004,Winter Jacket,Clothing,4,7514.76,30059.04,mpesa,Meru
+ORD-000040,2025-09-03,customer44@outlook.com,SKU-ELEC-004,Smart Watch,Electronics,2,19640.57,39281.14,card,Kitale
+ORD-000041,2025-09-01,customer16@yahoo.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,2,6609.79,13219.58,mpesa,Kakamega
+ORD-000042,2025-08-20,customer93@yahoo.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,3,6819.67,20459.01,mpesa,Malindi
+ORD-000043,2025-10-18,customer56@outlook.com,SKU-CLOTH-004,Winter Jacket,Clothing,5,8308.22,41541.1,bank_transfer,Machakos
+ORD-000044,2025-09-04,customer130@outlook.com,SKU-CLOTH-005,Baseball Cap,Clothing,4,1108.15,4432.6,mpesa,Thika
+ORD-000045,2025-09-22,customer185@kenya.co.ke,SKU-BOOK-002,Data Science Book,Books,5,2469.06,12345.3,paystack,Kakamega
+ORD-000046,2025-10-16,customer61@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,6634.15,33170.75,bank_transfer,Kitale
+ORD-000047,2025-09-10,customer10@yahoo.com,SKU-CLOTH-003,Running Shoes,Clothing,1,5792.16,5792.16,mpesa,Meru
+ORD-000048,2025-09-07,customer89@yahoo.co.ke,SKU-ELEC-005,Tablet Max,Electronics,4,34821.79,139287.16,mpesa,Nakuru
+ORD-000049,2025-10-29,customer147@yahoo.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,4,80311.06,321244.24,mpesa,Nakuru
+ORD-000050,2025-09-16,customer105@outlook.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,5,1093.04,5465.2,mpesa,Nyeri
+ORD-000051,2025-09-11,customer152@gmail.com,SKU-ELEC-005,Tablet Max,Electronics,3,35445.35,106336.05,mpesa,Machakos
+ORD-000052,2025-10-23,customer1@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,5,130329.1,651645.5,mpesa,Meru
+ORD-000053,2025-10-25,customer56@outlook.com,SKU-BOOK-001,Programming Guide,Books,4,1754.83,7019.32,bank_transfer,Bungoma
+ORD-000054,2025-09-21,customer12@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,7358.29,36791.45,mpesa,Nairobi
+ORD-000055,2025-10-12,customer193@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,3,5069.52,15208.56,mpesa,Machakos
+ORD-000056,2025-10-06,customer133@yahoo.com,SKU-BOOK-003,Design Patterns,Books,1,1952.89,1952.89,bank_transfer,Nakuru
+ORD-000057,2025-09-01,customer16@yahoo.com,SKU-ELEC-005,Tablet Max,Electronics,5,35438.59,177192.95,mpesa,Garissa
+ORD-000058,2025-10-10,customer10@yahoo.com,SKU-BOOK-005,DevOps Handbook,Books,2,2965.57,5931.14,mpesa,Thika
+ORD-000059,2025-10-11,customer130@outlook.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,1,7167.22,7167.22,mpesa,Nairobi
+ORD-000060,2025-09-15,customer84@kenya.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,4,1412.23,5648.92,mpesa,Meru
+ORD-000061,2025-08-28,customer100@yahoo.com,SKU-ELEC-004,Smart Watch,Electronics,5,20321.86,101609.3,mpesa,Nakuru
+ORD-000062,2025-09-17,customer95@yahoo.com,SKU-BOOK-001,Programming Guide,Books,5,2448.81,12244.05,bank_transfer,Meru
+ORD-000063,2025-10-23,customer83@kenya.co.ke,SKU-BOOK-003,Design Patterns,Books,1,2630.8,2630.8,mpesa,Kitale
+ORD-000064,2025-08-31,customer186@yahoo.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,1,1112.51,1112.51,bank_transfer,Kisumu
+ORD-000065,2025-09-18,customer137@yahoo.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1068.94,4275.76,mpesa,Busia
+ORD-000066,2025-08-30,customer144@outlook.com,SKU-BOOK-005,DevOps Handbook,Books,2,3011.75,6023.5,bank_transfer,Kakamega
+ORD-000067,2025-10-26,customer158@outlook.com,SKU-ELEC-004,Smart Watch,Electronics,1,19989.27,19989.27,mpesa,Malindi
+ORD-000068,2025-09-30,customer38@yahoo.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,5,15228.15,76140.75,mpesa,Malindi
+ORD-000069,2025-09-11,customer67@gmail.com,SKU-CLOTH-003,Running Shoes,Clothing,3,5649.9,16949.7,mpesa,Bungoma
+ORD-000070,2025-10-12,customer3@gmail.com,SKU-BOOK-001,Programming Guide,Books,1,1526.23,1526.23,paystack,Garissa
+ORD-000071,2025-09-10,customer175@yahoo.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,4,7137.5,28550.0,mpesa,Thika
+ORD-000072,2025-09-04,customer167@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,4,15201.23,60804.92,mpesa,Kitale
+ORD-000073,2025-10-23,customer160@kenya.co.ke,SKU-BOOK-001,Programming Guide,Books,4,1697.45,6789.8,mpesa,Busia
+ORD-000074,2025-09-03,customer184@gmail.com,SKU-CLOTH-005,Baseball Cap,Clothing,1,648.06,648.06,mpesa,Kisumu
+ORD-000075,2025-10-16,customer121@gmail.com,SKU-ELEC-001,Smartphone Pro,Electronics,3,80157.06,240471.18,paystack,Meru
+ORD-000076,2025-09-25,customer179@gmail.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,3,1881.31,5643.93,paystack,Kakamega
+ORD-000077,2025-10-19,customer174@gmail.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,5,1828.6,9143.0,bank_transfer,Bungoma
+ORD-000078,2025-10-28,customer50@gmail.com,SKU-ELEC-003,Wireless Headphones,Electronics,2,8507.0,17014.0,mpesa,Thika
+ORD-000079,2025-09-19,customer19@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,4,9360.59,37442.36,mpesa,Meru
+ORD-000080,2025-09-22,customer157@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,4,8939.98,35759.92,paystack,Meru
+ORD-000081,2025-10-05,customer14@yahoo.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,3,129638.53,388915.59,mpesa,Kitale
+ORD-000082,2025-10-16,customer161@outlook.com,SKU-CLOTH-002,Denim Jeans,Clothing,4,3821.83,15287.32,other,Garissa
+ORD-000083,2025-08-16,customer154@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,1,129763.85,129763.85,card,Machakos
+ORD-000084,2025-10-14,customer117@kenya.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1100.33,4401.32,mpesa,Busia
+ORD-000085,2025-08-13,customer51@kenya.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,1,14595.88,14595.88,mpesa,Garissa
+ORD-000086,2025-09-10,customer61@kenya.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,3,14561.66,43684.98,mpesa,Kitale
+ORD-000087,2025-08-15,customer151@yahoo.com,SKU-HOME-002,Blender Pro,Home & Kitchen,1,8901.6,8901.6,paystack,Kisumu
+ORD-000088,2025-08-30,customer2@yahoo.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,5383.92,21535.68,mpesa,Eldoret
+ORD-000089,2025-09-11,customer112@kenya.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,1,4514.62,4514.62,mpesa,Nairobi
+ORD-000090,2025-09-03,customer28@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,3,7075.81,21227.43,paystack,Kakamega
+ORD-000091,2025-10-06,customer84@kenya.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,1,8069.94,8069.94,mpesa,Garissa
+ORD-000092,2025-08-23,customer97@yahoo.com,SKU-HOME-002,Blender Pro,Home & Kitchen,5,8829.88,44149.4,mpesa,Kisumu
+ORD-000093,2025-08-08,customer199@kenya.co.ke,SKU-BOOK-001,Programming Guide,Books,4,1740.27,6961.08,card,Meru
+ORD-000094,2025-08-12,customer57@outlook.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,2,4952.47,9904.94,mpesa,Garissa
+ORD-000095,2025-10-15,customer28@kenya.co.ke,SKU-BOOK-001,Programming Guide,Books,4,2460.0,9840.0,bank_transfer,Nakuru
+ORD-000096,2025-08-12,customer37@kenya.co.ke,SKU-BOOK-001,Programming Guide,Books,3,2227.65,6682.95,mpesa,Nakuru
+ORD-000097,2025-10-16,customer23@gmail.com,SKU-ELEC-004,Smart Watch,Electronics,4,19759.18,79036.72,mpesa,Nairobi
+ORD-000098,2025-09-03,customer59@yahoo.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,5,15067.16,75335.8,bank_transfer,Garissa
+ORD-000099,2025-10-06,customer163@gmail.com,SKU-BOOK-005,DevOps Handbook,Books,3,3334.64,10003.92,mpesa,Garissa
+ORD-000100,2025-10-21,customer174@gmail.com,SKU-BOOK-005,DevOps Handbook,Books,5,3438.18,17190.9,mpesa,Mombasa
+ORD-000101,2025-09-25,customer51@kenya.co.ke,SKU-BOOK-004,System Architecture,Books,3,2631.74,7895.22,mpesa,Bungoma
+ORD-000102,2025-10-19,customer86@gmail.com,SKU-ELEC-001,Smartphone Pro,Electronics,3,79505.75,238517.25,mpesa,Thika
+ORD-000103,2025-08-29,customer166@gmail.com,SKU-ELEC-005,Tablet Max,Electronics,1,34850.93,34850.93,mpesa,Nairobi
+ORD-000104,2025-09-20,customer44@outlook.com,SKU-CLOTH-003,Running Shoes,Clothing,1,6109.44,6109.44,other,Thika
+ORD-000105,2025-10-24,customer97@yahoo.com,SKU-BOOK-005,DevOps Handbook,Books,5,2646.32,13231.6,paystack,Nairobi
+ORD-000106,2025-09-13,customer135@outlook.com,SKU-CLOTH-005,Baseball Cap,Clothing,5,684.71,3423.55,card,Nyeri
+ORD-000107,2025-09-05,customer161@outlook.com,SKU-ELEC-005,Tablet Max,Electronics,1,35100.15,35100.15,mpesa,Busia
+ORD-000108,2025-09-04,customer188@outlook.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3827.36,7654.72,mpesa,Kisumu
+ORD-000109,2025-10-17,customer191@gmail.com,SKU-BOOK-002,Data Science Book,Books,3,2682.05,8046.15,paystack,Machakos
+ORD-000110,2025-09-28,customer105@outlook.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,1,1994.44,1994.44,mpesa,Kisumu
+ORD-000111,2025-09-10,customer60@outlook.com,SKU-BOOK-001,Programming Guide,Books,3,2269.9,6809.7,other,Thika
+ORD-000112,2025-08-18,customer144@outlook.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,3,3966.95,11900.85,paystack,Busia
+ORD-000113,2025-09-03,customer56@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,2,9493.3,18986.6,mpesa,Malindi
+ORD-000114,2025-10-24,customer117@kenya.co.ke,SKU-BOOK-005,DevOps Handbook,Books,4,3416.04,13664.16,mpesa,Meru
+ORD-000115,2025-08-11,customer187@gmail.com,SKU-CLOTH-004,Winter Jacket,Clothing,1,8325.56,8325.56,other,Mombasa
+ORD-000116,2025-11-05,customer148@yahoo.com,SKU-ELEC-001,Smartphone Pro,Electronics,1,80091.35,80091.35,paystack,Meru
+ORD-000117,2025-11-06,customer8@yahoo.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,4,80174.82,320699.28,paystack,Kakamega
+ORD-000118,2025-11-06,customer20@outlook.com,SKU-ELEC-001,Smartphone Pro,Electronics,1,80262.22,80262.22,mpesa,Eldoret
+ORD-000119,2025-10-28,customer122@kenya.co.ke,SKU-ELEC-003,Wireless Headphones,Electronics,4,9398.0,37592.0,mpesa,Malindi
+ORD-000120,2025-09-06,customer93@yahoo.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,1,6048.17,6048.17,card,Kisumu
+ORD-000121,2025-08-23,customer29@yahoo.co.ke,SKU-BOOK-004,System Architecture,Books,4,3134.66,12538.64,mpesa,Nakuru
+ORD-000122,2025-10-22,customer79@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,5,130107.83,650539.15,mpesa,Thika
+ORD-000123,2025-11-02,customer130@outlook.com,SKU-BOOK-005,DevOps Handbook,Books,1,2790.48,2790.48,mpesa,Garissa
+ORD-000124,2025-10-18,customer7@kenya.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1712.76,6851.04,mpesa,Machakos
+ORD-000125,2025-10-21,customer114@yahoo.com,SKU-BOOK-001,Programming Guide,Books,5,1796.81,8984.05,other,Bungoma
+ORD-000126,2025-10-01,customer80@yahoo.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,3,6887.1,20661.3,bank_transfer,Mombasa
+ORD-000127,2025-08-22,customer200@gmail.com,SKU-ELEC-005,Tablet Max,Electronics,5,35215.68,176078.4,card,Busia
+ORD-000128,2025-10-18,customer145@kenya.co.ke,SKU-BOOK-003,Design Patterns,Books,1,2147.77,2147.77,other,Thika
+ORD-000129,2025-09-16,customer79@outlook.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,4550.43,18201.72,mpesa,Mombasa
+ORD-000130,2025-09-23,customer170@kenya.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,3,5937.38,17812.14,paystack,Kitale
+ORD-000131,2025-09-13,customer144@outlook.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,2,1753.36,3506.72,other,Kisumu
+ORD-000132,2025-08-12,customer45@kenya.co.ke,SKU-ELEC-004,Smart Watch,Electronics,2,19599.2,39198.4,mpesa,Garissa
+ORD-000133,2025-11-01,customer116@yahoo.co.ke,SKU-ELEC-003,Wireless Headphones,Electronics,1,8544.69,8544.69,bank_transfer,Malindi
+ORD-000134,2025-10-12,customer143@outlook.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,2,1506.99,3013.98,mpesa,Kisumu
+ORD-000135,2025-11-02,customer165@yahoo.com,SKU-ELEC-003,Wireless Headphones,Electronics,1,8817.95,8817.95,mpesa,Meru
+ORD-000136,2025-09-22,customer165@yahoo.com,SKU-BOOK-003,Design Patterns,Books,4,2214.99,8859.96,mpesa,Eldoret
+ORD-000137,2025-10-05,customer46@outlook.com,SKU-CLOTH-003,Running Shoes,Clothing,5,5535.38,27676.9,mpesa,Malindi
+ORD-000138,2025-09-30,customer178@outlook.com,SKU-ELEC-005,Tablet Max,Electronics,5,34688.97,173444.85,mpesa,Eldoret
+ORD-000139,2025-10-23,customer132@gmail.com,SKU-BOOK-003,Design Patterns,Books,1,2647.76,2647.76,card,Eldoret
+ORD-000140,2025-08-17,customer174@gmail.com,SKU-ELEC-005,Tablet Max,Electronics,4,35398.74,141594.96,other,Eldoret
+ORD-000141,2025-08-10,customer74@kenya.co.ke,SKU-BOOK-002,Data Science Book,Books,1,2506.23,2506.23,mpesa,Eldoret
+ORD-000142,2025-09-16,customer47@gmail.com,SKU-BOOK-001,Programming Guide,Books,5,2046.38,10231.9,other,Nyeri
+ORD-000143,2025-09-08,customer132@gmail.com,SKU-CLOTH-003,Running Shoes,Clothing,5,6465.04,32325.2,mpesa,Mombasa
+ORD-000144,2025-10-03,customer187@gmail.com,SKU-CLOTH-005,Baseball Cap,Clothing,5,980.13,4900.65,mpesa,Eldoret
+ORD-000145,2025-10-31,customer192@yahoo.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,2,14698.07,29396.14,mpesa,Mombasa
+ORD-000146,2025-10-05,customer5@yahoo.com,SKU-BOOK-002,Data Science Book,Books,5,2148.09,10740.45,bank_transfer,Nyeri
+ORD-000147,2025-08-19,customer74@kenya.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,2,1761.3,3522.6,mpesa,Busia
+ORD-000148,2025-10-11,customer115@yahoo.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,1,15360.89,15360.89,mpesa,Meru
+ORD-000149,2025-11-06,customer26@yahoo.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,4,1065.66,4262.64,mpesa,Bungoma
+ORD-000150,2025-09-04,customer132@gmail.com,SKU-ELEC-004,Smart Watch,Electronics,1,19749.14,19749.14,mpesa,Malindi
+ORD-000151,2025-10-26,customer117@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,2,129845.23,259690.46,mpesa,Eldoret
+ORD-000152,2025-08-30,customer30@kenya.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,4,79599.79,318399.16,mpesa,Machakos
+ORD-000153,2025-09-16,customer54@yahoo.com,SKU-CLOTH-003,Running Shoes,Clothing,3,5739.49,17218.47,bank_transfer,Nairobi
+ORD-000154,2025-09-20,customer140@yahoo.com,SKU-HOME-005,Air Purifier,Home & Kitchen,4,14852.72,59410.88,mpesa,Nyeri
+ORD-000155,2025-10-22,customer140@yahoo.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,2,4561.18,9122.36,mpesa,Thika
+ORD-000156,2025-09-19,customer7@kenya.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,1,1737.51,1737.51,mpesa,Eldoret
+ORD-000157,2025-09-23,customer152@gmail.com,SKU-ELEC-003,Wireless Headphones,Electronics,1,8783.79,8783.79,bank_transfer,Kisumu
+ORD-000158,2025-08-08,customer9@yahoo.com,SKU-CLOTH-004,Winter Jacket,Clothing,4,8159.42,32637.68,mpesa,Thika
+ORD-000159,2025-08-17,customer7@kenya.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,1,15025.0,15025.0,mpesa,Kakamega
+ORD-000160,2025-08-22,customer26@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,1,20404.67,20404.67,mpesa,Machakos
+ORD-000161,2025-11-04,customer41@gmail.com,SKU-ELEC-002,Laptop Ultra,Electronics,1,129718.25,129718.25,mpesa,Kisumu
+ORD-000162,2025-10-31,customer120@yahoo.com,SKU-BOOK-002,Data Science Book,Books,4,2576.84,10307.36,mpesa,Mombasa
+ORD-000163,2025-09-29,customer118@yahoo.co.ke,SKU-BOOK-003,Design Patterns,Books,4,2511.41,10045.64,mpesa,Nairobi
+ORD-000164,2025-10-04,customer14@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,1,4828.75,4828.75,paystack,Machakos
+ORD-000165,2025-09-24,customer168@gmail.com,SKU-HOME-002,Blender Pro,Home & Kitchen,3,9183.25,27549.75,paystack,Eldoret
+ORD-000166,2025-09-18,customer3@gmail.com,SKU-ELEC-005,Tablet Max,Electronics,1,35181.02,35181.02,bank_transfer,Kakamega
+ORD-000167,2025-08-28,customer117@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,5,8681.13,43405.65,mpesa,Kakamega
+ORD-000168,2025-08-24,customer92@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,2,8614.66,17229.32,other,Eldoret
+ORD-000169,2025-08-22,customer177@outlook.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,3,1072.38,3217.14,mpesa,Thika
+ORD-000170,2025-11-03,customer87@outlook.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,3,7382.26,22146.78,paystack,Eldoret
+ORD-000171,2025-09-12,customer147@yahoo.co.ke,SKU-BOOK-003,Design Patterns,Books,2,1859.27,3718.54,mpesa,Busia
+ORD-000172,2025-08-09,customer128@kenya.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,5111.87,20447.48,other,Bungoma
+ORD-000173,2025-09-14,customer101@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,5,8883.06,44415.3,mpesa,Eldoret
+ORD-000174,2025-09-20,customer104@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,2,8713.94,17427.88,mpesa,Bungoma
+ORD-000175,2025-10-03,customer129@outlook.com,SKU-BOOK-002,Data Science Book,Books,1,2836.46,2836.46,card,Machakos
+ORD-000176,2025-09-09,customer74@kenya.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,3,3633.06,10899.18,mpesa,Bungoma
+ORD-000177,2025-10-24,customer117@kenya.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,2,79974.7,159949.4,mpesa,Thika
+ORD-000178,2025-10-08,customer197@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,1,8529.4,8529.4,paystack,Nakuru
+ORD-000179,2025-08-27,customer54@yahoo.com,SKU-ELEC-001,Smartphone Pro,Electronics,3,79975.31,239925.93,mpesa,Bungoma
+ORD-000180,2025-10-01,customer34@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,1,129536.82,129536.82,mpesa,Garissa
+ORD-000181,2025-09-25,customer130@outlook.com,SKU-ELEC-001,Smartphone Pro,Electronics,5,79763.32,398816.6,paystack,Machakos
+ORD-000182,2025-09-30,customer82@gmail.com,SKU-BOOK-005,DevOps Handbook,Books,2,2724.29,5448.58,mpesa,Machakos
+ORD-000183,2025-10-11,customer92@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,4,129803.27,519213.08,other,Nyeri
+ORD-000184,2025-08-24,customer144@outlook.com,SKU-ELEC-001,Smartphone Pro,Electronics,1,79686.83,79686.83,mpesa,Meru
+ORD-000185,2025-09-09,customer153@kenya.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,4,79920.0,319680.0,mpesa,Malindi
+ORD-000186,2025-08-15,customer36@gmail.com,SKU-BOOK-003,Design Patterns,Books,5,2426.43,12132.15,mpesa,Mombasa
+ORD-000187,2025-09-23,customer147@yahoo.co.ke,SKU-BOOK-002,Data Science Book,Books,3,2821.34,8464.02,paystack,Meru
+ORD-000188,2025-09-17,customer45@kenya.co.ke,SKU-BOOK-002,Data Science Book,Books,5,2741.56,13707.8,paystack,Bungoma
+ORD-000189,2025-08-15,customer66@yahoo.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,5,1149.69,5748.45,mpesa,Thika
+ORD-000190,2025-10-06,customer107@yahoo.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,5,14809.35,74046.75,mpesa,Kakamega
+ORD-000191,2025-08-15,customer23@gmail.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,5,3805.97,19029.85,mpesa,Eldoret
+ORD-000192,2025-10-18,customer62@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,4,2816.15,11264.6,other,Bungoma
+ORD-000193,2025-09-12,customer56@outlook.com,SKU-BOOK-003,Design Patterns,Books,4,1923.21,7692.84,mpesa,Kisumu
+ORD-000194,2025-09-03,customer159@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,1,20496.95,20496.95,card,Thika
+ORD-000195,2025-08-31,customer153@kenya.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,1,5872.63,5872.63,mpesa,Mombasa
+ORD-000196,2025-10-11,customer147@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,2,3204.49,6408.98,mpesa,Kitale
+ORD-000197,2025-08-29,customer122@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,3,7104.53,21313.59,mpesa,Meru
+ORD-000198,2025-09-05,customer177@outlook.com,SKU-BOOK-004,System Architecture,Books,5,2978.78,14893.9,bank_transfer,Bungoma
+ORD-000199,2025-08-15,customer31@yahoo.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,2,1596.34,3192.68,other,Nakuru
+ORD-000200,2025-10-02,customer199@kenya.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,1,1891.57,1891.57,mpesa,Busia
+ORD-000201,2025-09-04,customer170@kenya.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,4,15124.92,60499.68,mpesa,Kitale
+ORD-000202,2025-09-14,customer133@yahoo.com,SKU-HOME-002,Blender Pro,Home & Kitchen,5,9173.17,45865.85,mpesa,Meru
+ORD-000203,2025-10-28,customer144@outlook.com,SKU-CLOTH-002,Denim Jeans,Clothing,2,3950.33,7900.66,mpesa,Machakos
+ORD-000204,2025-10-15,customer64@yahoo.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,2,4713.49,9426.98,mpesa,Meru
+ORD-000205,2025-08-29,customer48@yahoo.com,SKU-CLOTH-004,Winter Jacket,Clothing,5,7545.6,37728.0,mpesa,Busia
+ORD-000206,2025-08-29,customer195@yahoo.com,SKU-BOOK-002,Data Science Book,Books,3,2277.88,6833.64,mpesa,Mombasa
+ORD-000207,2025-08-09,customer104@kenya.co.ke,SKU-ELEC-005,Tablet Max,Electronics,4,34695.53,138782.12,mpesa,Nakuru
+ORD-000208,2025-09-20,customer184@gmail.com,SKU-CLOTH-002,Denim Jeans,Clothing,4,3503.56,14014.24,card,Kitale
+ORD-000209,2025-10-28,customer101@kenya.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,4,15135.62,60542.48,mpesa,Bungoma
+ORD-000210,2025-09-03,customer112@kenya.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,5,15263.4,76317.0,paystack,Garissa
+ORD-000211,2025-10-16,customer130@outlook.com,SKU-HOME-002,Blender Pro,Home & Kitchen,3,9102.27,27306.81,mpesa,Machakos
+ORD-000212,2025-09-07,customer2@yahoo.com,SKU-CLOTH-003,Running Shoes,Clothing,5,6024.41,30122.05,mpesa,Kitale
+ORD-000213,2025-10-24,customer16@yahoo.com,SKU-BOOK-001,Programming Guide,Books,3,1513.85,4541.55,bank_transfer,Busia
+ORD-000214,2025-08-23,customer115@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,2,19641.44,39282.88,mpesa,Busia
+ORD-000215,2025-09-29,customer169@yahoo.com,SKU-ELEC-003,Wireless Headphones,Electronics,5,9135.2,45676.0,mpesa,Nairobi
+ORD-000216,2025-09-18,customer37@kenya.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,5,80041.28,400206.4,mpesa,Kisumu
+ORD-000217,2025-08-27,customer76@kenya.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,1,8277.25,8277.25,paystack,Malindi
+ORD-000218,2025-10-08,customer110@kenya.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1071.57,4286.28,mpesa,Machakos
+ORD-000219,2025-09-04,customer191@gmail.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,7117.03,35585.15,mpesa,Machakos
+ORD-000220,2025-09-01,customer155@yahoo.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,5,1498.66,7493.3,mpesa,Kakamega
+ORD-000221,2025-10-07,customer82@gmail.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,4,3140.5,12562.0,mpesa,Busia
+ORD-000222,2025-09-20,customer80@yahoo.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1775.57,7102.28,mpesa,Nairobi
+ORD-000223,2025-11-03,customer125@yahoo.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,2,130085.41,260170.82,mpesa,Bungoma
+ORD-000224,2025-08-22,customer117@kenya.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,4,3853.42,15413.68,bank_transfer,Thika
+ORD-000225,2025-08-20,customer29@yahoo.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,4,587.73,2350.92,mpesa,Eldoret
+ORD-000226,2025-10-24,customer99@outlook.com,SKU-CLOTH-005,Baseball Cap,Clothing,4,863.03,3452.12,mpesa,Bungoma
+ORD-000227,2025-09-17,customer49@kenya.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,1,5665.78,5665.78,mpesa,Garissa
+ORD-000228,2025-08-20,customer196@yahoo.com,SKU-CLOTH-003,Running Shoes,Clothing,3,5553.77,16661.31,mpesa,Meru
+ORD-000229,2025-08-19,customer39@outlook.com,SKU-BOOK-002,Data Science Book,Books,2,2433.17,4866.34,mpesa,Mombasa
+ORD-000230,2025-09-28,customer153@kenya.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,2,1201.88,2403.76,mpesa,Kakamega
+ORD-000231,2025-10-06,customer161@outlook.com,SKU-BOOK-003,Design Patterns,Books,5,2511.12,12555.6,card,Nakuru
+ORD-000232,2025-09-15,customer3@gmail.com,SKU-ELEC-002,Laptop Ultra,Electronics,2,130085.73,260171.46,other,Thika
+ORD-000233,2025-10-11,customer65@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,4,3259.6,13038.4,mpesa,Nairobi
+ORD-000234,2025-09-27,customer182@yahoo.com,SKU-CLOTH-002,Denim Jeans,Clothing,2,4144.56,8289.12,mpesa,Machakos
+ORD-000235,2025-08-17,customer117@kenya.co.ke,SKU-ELEC-004,Smart Watch,Electronics,2,19807.03,39614.06,mpesa,Bungoma
+ORD-000236,2025-10-21,customer138@yahoo.com,SKU-CLOTH-005,Baseball Cap,Clothing,2,509.37,1018.74,mpesa,Kitale
+ORD-000237,2025-10-08,customer157@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,1,9261.4,9261.4,mpesa,Kitale
+ORD-000238,2025-10-18,customer87@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,1,129586.01,129586.01,mpesa,Kisumu
+ORD-000239,2025-08-20,customer136@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,3,8695.19,26085.57,card,Kisumu
+ORD-000240,2025-10-06,customer158@outlook.com,SKU-BOOK-001,Programming Guide,Books,1,2329.5,2329.5,card,Nakuru
+ORD-000241,2025-09-18,customer52@yahoo.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,2,80295.43,160590.86,mpesa,Machakos
+ORD-000242,2025-09-25,customer74@kenya.co.ke,SKU-BOOK-001,Programming Guide,Books,5,2248.62,11243.1,mpesa,Thika
+ORD-000243,2025-08-25,customer101@kenya.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,5,4745.63,23728.15,paystack,Eldoret
+ORD-000244,2025-10-28,customer37@kenya.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,5,15426.39,77131.95,card,Kitale
+ORD-000245,2025-10-06,customer109@kenya.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,3,7795.25,23385.75,mpesa,Nyeri
+ORD-000246,2025-08-21,customer77@yahoo.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,3,819.85,2459.55,mpesa,Nyeri
+ORD-000247,2025-10-11,customer168@gmail.com,SKU-BOOK-003,Design Patterns,Books,1,2367.86,2367.86,bank_transfer,Nyeri
+ORD-000248,2025-08-09,customer146@outlook.com,SKU-BOOK-005,DevOps Handbook,Books,3,2768.03,8304.09,mpesa,Nairobi
+ORD-000249,2025-09-11,customer137@yahoo.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,5,3286.74,16433.7,mpesa,Malindi
+ORD-000250,2025-09-13,customer125@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,2,3433.83,6867.66,mpesa,Mombasa
+ORD-000251,2025-11-05,customer91@yahoo.com,SKU-BOOK-001,Programming Guide,Books,5,1750.7,8753.5,bank_transfer,Nairobi
+ORD-000252,2025-09-05,customer174@gmail.com,SKU-BOOK-001,Programming Guide,Books,2,2341.45,4682.9,mpesa,Nakuru
+ORD-000253,2025-09-15,customer67@gmail.com,SKU-HOME-002,Blender Pro,Home & Kitchen,1,9090.7,9090.7,paystack,Nairobi
+ORD-000254,2025-08-17,customer77@yahoo.co.ke,SKU-BOOK-002,Data Science Book,Books,4,2791.56,11166.24,other,Kitale
+ORD-000255,2025-08-27,customer146@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,2,129999.42,259998.84,mpesa,Malindi
+ORD-000256,2025-10-18,customer54@yahoo.com,SKU-HOME-002,Blender Pro,Home & Kitchen,4,9471.6,37886.4,mpesa,Machakos
+ORD-000257,2025-10-16,customer50@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,3,14834.6,44503.8,mpesa,Bungoma
+ORD-000258,2025-10-15,customer103@yahoo.co.ke,SKU-BOOK-004,System Architecture,Books,3,2711.61,8134.83,card,Thika
+ORD-000259,2025-09-27,customer94@outlook.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,5,1457.91,7289.55,mpesa,Nakuru
+ORD-000260,2025-09-01,customer196@yahoo.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,3,6830.88,20492.64,mpesa,Kitale
+ORD-000261,2025-09-20,customer3@gmail.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,4,3634.88,14539.52,mpesa,Eldoret
+ORD-000262,2025-08-31,customer56@outlook.com,SKU-CLOTH-005,Baseball Cap,Clothing,4,1108.97,4435.88,mpesa,Kakamega
+ORD-000263,2025-10-03,customer167@gmail.com,SKU-CLOTH-005,Baseball Cap,Clothing,1,541.68,541.68,mpesa,Garissa
+ORD-000264,2025-10-24,customer27@yahoo.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,1,15272.26,15272.26,bank_transfer,Kisumu
+ORD-000265,2025-11-04,customer185@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,4,7470.86,29883.44,mpesa,Garissa
+ORD-000266,2025-09-20,customer65@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,1,19540.07,19540.07,mpesa,Thika
+ORD-000267,2025-09-18,customer103@yahoo.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,5,8269.55,41347.75,mpesa,Kitale
+ORD-000268,2025-09-04,customer197@kenya.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,3,4225.83,12677.49,mpesa,Machakos
+ORD-000269,2025-10-05,customer138@yahoo.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,1,1795.22,1795.22,mpesa,Thika
+ORD-000270,2025-10-25,customer116@yahoo.co.ke,SKU-BOOK-001,Programming Guide,Books,3,2102.34,6307.02,other,Thika
+ORD-000271,2025-10-03,customer37@kenya.co.ke,SKU-BOOK-003,Design Patterns,Books,5,2640.65,13203.25,bank_transfer,Kakamega
+ORD-000272,2025-10-20,customer78@kenya.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,2,5433.93,10867.86,mpesa,Kisumu
+ORD-000273,2025-10-04,customer54@yahoo.com,SKU-CLOTH-004,Winter Jacket,Clothing,2,7717.86,15435.72,mpesa,Nyeri
+ORD-000274,2025-09-08,customer166@gmail.com,SKU-BOOK-002,Data Science Book,Books,1,2722.89,2722.89,mpesa,Kisumu
+ORD-000275,2025-10-09,customer190@gmail.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,1,1100.17,1100.17,card,Meru
+ORD-000276,2025-10-18,customer106@yahoo.co.ke,SKU-BOOK-004,System Architecture,Books,3,2353.37,7060.11,mpesa,Nakuru
+ORD-000277,2025-09-24,customer131@yahoo.co.ke,SKU-BOOK-001,Programming Guide,Books,4,1857.37,7429.48,mpesa,Nakuru
+ORD-000278,2025-08-25,customer11@gmail.com,SKU-BOOK-005,DevOps Handbook,Books,2,3402.03,6804.06,mpesa,Garissa
+ORD-000279,2025-10-22,customer109@kenya.co.ke,SKU-BOOK-001,Programming Guide,Books,3,2258.91,6776.73,mpesa,Meru
+ORD-000280,2025-10-13,customer90@yahoo.com,SKU-BOOK-002,Data Science Book,Books,4,2704.95,10819.8,other,Mombasa
+ORD-000281,2025-09-16,customer53@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,5,8542.09,42710.45,other,Kitale
+ORD-000282,2025-10-04,customer188@outlook.com,SKU-ELEC-004,Smart Watch,Electronics,2,19892.88,39785.76,mpesa,Nakuru
+ORD-000283,2025-09-14,customer97@yahoo.com,SKU-CLOTH-003,Running Shoes,Clothing,1,5888.5,5888.5,mpesa,Eldoret
+ORD-000284,2025-08-10,customer120@yahoo.com,SKU-BOOK-002,Data Science Book,Books,2,2477.72,4955.44,mpesa,Bungoma
+ORD-000285,2025-10-26,customer25@gmail.com,SKU-CLOTH-002,Denim Jeans,Clothing,1,4079.73,4079.73,paystack,Meru
+ORD-000286,2025-08-14,customer192@yahoo.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,2,1318.39,2636.78,other,Bungoma
+ORD-000287,2025-09-09,customer150@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,5,20245.71,101228.55,mpesa,Nairobi
+ORD-000288,2025-09-19,customer128@kenya.co.ke,SKU-ELEC-004,Smart Watch,Electronics,5,19929.7,99648.5,mpesa,Bungoma
+ORD-000289,2025-10-05,customer36@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,2,4742.98,9485.96,paystack,Machakos
+ORD-000290,2025-10-04,customer143@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,1,129673.01,129673.01,other,Nakuru
+ORD-000291,2025-09-22,customer159@yahoo.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,5,3671.39,18356.95,bank_transfer,Nyeri
+ORD-000292,2025-08-22,customer18@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,2,4745.3,9490.6,other,Machakos
+ORD-000293,2025-09-11,customer140@yahoo.com,SKU-BOOK-004,System Architecture,Books,5,3216.37,16081.85,mpesa,Nakuru
+ORD-000294,2025-10-21,customer183@gmail.com,SKU-ELEC-004,Smart Watch,Electronics,2,19794.35,39588.7,mpesa,Busia
+ORD-000295,2025-08-09,customer6@gmail.com,SKU-CLOTH-005,Baseball Cap,Clothing,4,725.01,2900.04,mpesa,Kisumu
+ORD-000296,2025-08-10,customer25@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,4,15141.93,60567.72,other,Mombasa
+ORD-000297,2025-09-08,customer112@kenya.co.ke,SKU-BOOK-003,Design Patterns,Books,2,2455.32,4910.64,bank_transfer,Thika
+ORD-000298,2025-09-13,customer58@gmail.com,SKU-ELEC-001,Smartphone Pro,Electronics,5,80172.57,400862.85,card,Nyeri
+ORD-000299,2025-08-14,customer52@yahoo.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,6580.63,32903.15,mpesa,Malindi
+ORD-000300,2025-10-25,customer165@yahoo.com,SKU-HOME-005,Air Purifier,Home & Kitchen,2,14947.81,29895.62,mpesa,Meru
+ORD-000301,2025-10-18,customer199@kenya.co.ke,SKU-ELEC-004,Smart Watch,Electronics,3,20069.52,60208.56,mpesa,Malindi
+ORD-000302,2025-09-09,customer106@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,3,2502.86,7508.58,other,Malindi
+ORD-000303,2025-11-04,customer136@outlook.com,SKU-BOOK-005,DevOps Handbook,Books,3,2809.03,8427.09,mpesa,Garissa
+ORD-000304,2025-09-07,customer184@gmail.com,SKU-BOOK-001,Programming Guide,Books,4,2333.05,9332.2,mpesa,Garissa
+ORD-000305,2025-11-05,customer149@yahoo.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,7145.69,35728.45,mpesa,Eldoret
+ORD-000306,2025-09-19,customer90@yahoo.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3173.85,6347.7,mpesa,Thika
+ORD-000307,2025-09-11,customer62@yahoo.co.ke,SKU-BOOK-001,Programming Guide,Books,2,1973.52,3947.04,mpesa,Kisumu
+ORD-000308,2025-09-21,customer97@yahoo.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,2,1823.55,3647.1,mpesa,Busia
+ORD-000309,2025-08-10,customer34@kenya.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,5004.34,20017.36,paystack,Nakuru
+ORD-000310,2025-09-07,customer126@outlook.com,SKU-ELEC-005,Tablet Max,Electronics,1,34737.46,34737.46,mpesa,Busia
+ORD-000311,2025-11-01,customer84@kenya.co.ke,SKU-BOOK-004,System Architecture,Books,3,3223.98,9671.94,mpesa,Busia
+ORD-000312,2025-10-21,customer83@kenya.co.ke,SKU-BOOK-004,System Architecture,Books,1,3123.42,3123.42,mpesa,Kitale
+ORD-000313,2025-09-20,customer41@gmail.com,SKU-ELEC-003,Wireless Headphones,Electronics,2,9232.01,18464.02,mpesa,Busia
+ORD-000314,2025-08-12,customer93@yahoo.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,3,14891.35,44674.05,mpesa,Kisumu
+ORD-000315,2025-09-25,customer33@kenya.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,3,5302.53,15907.59,mpesa,Kisumu
+ORD-000316,2025-10-23,customer21@yahoo.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,5,15200.86,76004.3,mpesa,Kitale
+ORD-000317,2025-10-13,customer28@kenya.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,4,6434.29,25737.16,card,Nyeri
+ORD-000318,2025-09-19,customer179@gmail.com,SKU-BOOK-004,System Architecture,Books,4,2492.28,9969.12,mpesa,Thika
+ORD-000319,2025-08-27,customer168@gmail.com,SKU-HOME-002,Blender Pro,Home & Kitchen,5,8557.13,42785.65,mpesa,Nyeri
+ORD-000320,2025-10-29,customer70@kenya.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,1,1171.56,1171.56,other,Nakuru
+ORD-000321,2025-08-16,customer105@outlook.com,SKU-CLOTH-005,Baseball Cap,Clothing,3,1491.93,4475.79,mpesa,Thika
+ORD-000322,2025-08-14,customer55@yahoo.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1233.73,4934.92,mpesa,Busia
+ORD-000323,2025-09-05,customer133@yahoo.com,SKU-CLOTH-002,Denim Jeans,Clothing,1,4023.89,4023.89,other,Nyeri
+ORD-000324,2025-09-19,customer130@outlook.com,SKU-BOOK-001,Programming Guide,Books,5,2115.8,10579.0,mpesa,Garissa
+ORD-000325,2025-09-21,customer65@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,3,4704.66,14113.98,mpesa,Garissa
+ORD-000326,2025-10-12,customer90@yahoo.com,SKU-BOOK-004,System Architecture,Books,1,3242.81,3242.81,mpesa,Mombasa
+ORD-000327,2025-09-02,customer86@gmail.com,SKU-CLOTH-003,Running Shoes,Clothing,3,6057.41,18172.23,mpesa,Nakuru
+ORD-000328,2025-08-26,customer79@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,5,129696.79,648483.95,mpesa,Mombasa
+ORD-000329,2025-08-19,customer188@outlook.com,SKU-BOOK-004,System Architecture,Books,4,2844.61,11378.44,paystack,Bungoma
+ORD-000330,2025-10-14,customer133@yahoo.com,SKU-BOOK-002,Data Science Book,Books,3,2885.15,8655.45,mpesa,Nakuru
+ORD-000331,2025-09-30,customer77@yahoo.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3406.59,6813.18,mpesa,Machakos
+ORD-000332,2025-10-08,customer41@gmail.com,SKU-CLOTH-005,Baseball Cap,Clothing,2,931.54,1863.08,mpesa,Eldoret
+ORD-000333,2025-11-01,customer192@yahoo.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,2,5851.79,11703.58,mpesa,Malindi
+ORD-000334,2025-09-30,customer108@yahoo.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,3,5452.53,16357.59,card,Busia
+ORD-000335,2025-10-18,customer40@yahoo.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,1,6513.56,6513.56,mpesa,Busia
+ORD-000336,2025-08-19,customer43@gmail.com,SKU-BOOK-005,DevOps Handbook,Books,4,3466.4,13865.6,mpesa,Eldoret
+ORD-000337,2025-10-10,customer115@yahoo.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,3,130440.06,391320.18,mpesa,Malindi
+ORD-000338,2025-08-28,customer107@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,1,2943.53,2943.53,mpesa,Machakos
+ORD-000339,2025-08-29,customer24@outlook.com,SKU-BOOK-003,Design Patterns,Books,2,2296.1,4592.2,mpesa,Kitale
+ORD-000340,2025-08-09,customer85@outlook.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,3,4873.97,14621.91,mpesa,Mombasa
+ORD-000341,2025-08-25,customer61@kenya.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,2,866.7,1733.4,mpesa,Kakamega
+ORD-000342,2025-09-15,customer185@kenya.co.ke,SKU-BOOK-003,Design Patterns,Books,5,2073.02,10365.1,mpesa,Meru
+ORD-000343,2025-10-16,customer4@yahoo.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,5,1602.64,8013.2,mpesa,Nairobi
+ORD-000344,2025-11-04,customer39@outlook.com,SKU-CLOTH-004,Winter Jacket,Clothing,3,8398.73,25196.19,mpesa,Bungoma
+ORD-000345,2025-10-15,customer158@outlook.com,SKU-BOOK-001,Programming Guide,Books,5,1735.48,8677.4,mpesa,Kisumu
+ORD-000346,2025-09-08,customer142@kenya.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,1,5099.46,5099.46,card,Kisumu
+ORD-000347,2025-10-08,customer185@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,4,8527.43,34109.72,mpesa,Nakuru
+ORD-000348,2025-08-16,customer76@kenya.co.ke,SKU-BOOK-002,Data Science Book,Books,5,2687.6,13438.0,card,Bungoma
+ORD-000349,2025-10-09,customer66@yahoo.com,SKU-ELEC-001,Smartphone Pro,Electronics,1,80406.62,80406.62,mpesa,Bungoma
+ORD-000350,2025-11-01,customer146@outlook.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1565.93,6263.72,other,Thika
+ORD-000351,2025-11-04,customer1@outlook.com,SKU-BOOK-001,Programming Guide,Books,4,2498.24,9992.96,mpesa,Eldoret
+ORD-000352,2025-08-19,customer31@yahoo.com,SKU-BOOK-002,Data Science Book,Books,5,2346.88,11734.4,mpesa,Malindi
+ORD-000353,2025-10-06,customer71@yahoo.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,4,3042.59,12170.36,mpesa,Kitale
+ORD-000354,2025-10-01,customer39@outlook.com,SKU-CLOTH-002,Denim Jeans,Clothing,2,4013.4,8026.8,mpesa,Nairobi
+ORD-000355,2025-10-14,customer34@kenya.co.ke,SKU-BOOK-003,Design Patterns,Books,1,1924.48,1924.48,other,Eldoret
+ORD-000356,2025-09-21,customer153@kenya.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,4,14811.35,59245.4,paystack,Meru
+ORD-000357,2025-10-11,customer17@yahoo.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,5,1245.36,6226.8,mpesa,Busia
+ORD-000358,2025-09-12,customer66@yahoo.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,4,3712.26,14849.04,bank_transfer,Nyeri
+ORD-000359,2025-08-09,customer129@outlook.com,SKU-BOOK-005,DevOps Handbook,Books,2,3234.01,6468.02,mpesa,Malindi
+ORD-000360,2025-10-24,customer117@kenya.co.ke,SKU-BOOK-003,Design Patterns,Books,3,2023.31,6069.93,mpesa,Bungoma
+ORD-000361,2025-08-21,customer119@kenya.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,2,8077.49,16154.98,mpesa,Kisumu
+ORD-000362,2025-09-09,customer84@kenya.co.ke,SKU-ELEC-003,Wireless Headphones,Electronics,2,8981.27,17962.54,mpesa,Eldoret
+ORD-000363,2025-10-20,customer72@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,3,14737.48,44212.44,mpesa,Nairobi
+ORD-000364,2025-09-28,customer177@outlook.com,SKU-BOOK-003,Design Patterns,Books,2,2224.26,4448.52,mpesa,Bungoma
+ORD-000365,2025-08-17,customer23@gmail.com,SKU-CLOTH-004,Winter Jacket,Clothing,2,8354.24,16708.48,card,Eldoret
+ORD-000366,2025-08-24,customer112@kenya.co.ke,SKU-BOOK-002,Data Science Book,Books,3,2576.06,7728.18,mpesa,Kakamega
+ORD-000367,2025-09-04,customer33@kenya.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,3,3186.8,9560.4,other,Nyeri
+ORD-000368,2025-10-26,customer49@kenya.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,3,3161.08,9483.24,mpesa,Nakuru
+ORD-000369,2025-09-23,customer70@kenya.co.ke,SKU-BOOK-002,Data Science Book,Books,5,2335.54,11677.7,mpesa,Eldoret
+ORD-000370,2025-08-26,customer195@yahoo.com,SKU-BOOK-001,Programming Guide,Books,4,1673.32,6693.28,mpesa,Kitale
+ORD-000371,2025-08-26,customer30@kenya.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,1,3665.8,3665.8,card,Nakuru
+ORD-000372,2025-09-23,customer117@kenya.co.ke,SKU-BOOK-003,Design Patterns,Books,1,2226.89,2226.89,bank_transfer,Kitale
+ORD-000373,2025-09-19,customer34@kenya.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,1,8212.93,8212.93,mpesa,Mombasa
+ORD-000374,2025-08-11,customer85@outlook.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,4916.59,19666.36,mpesa,Kakamega
+ORD-000375,2025-08-23,customer147@yahoo.co.ke,SKU-BOOK-002,Data Science Book,Books,2,2434.33,4868.66,other,Machakos
+ORD-000376,2025-11-04,customer18@gmail.com,SKU-BOOK-003,Design Patterns,Books,4,1971.24,7884.96,card,Garissa
+ORD-000377,2025-08-30,customer37@kenya.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,2,14824.68,29649.36,mpesa,Nairobi
+ORD-000378,2025-08-15,customer6@gmail.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,1,6907.66,6907.66,mpesa,Kisumu
+ORD-000379,2025-09-29,customer90@yahoo.com,SKU-CLOTH-004,Winter Jacket,Clothing,5,8268.55,41342.75,mpesa,Malindi
+ORD-000380,2025-08-21,customer91@yahoo.com,SKU-BOOK-005,DevOps Handbook,Books,2,3056.73,6113.46,mpesa,Mombasa
+ORD-000381,2025-10-29,customer132@gmail.com,SKU-BOOK-004,System Architecture,Books,1,2958.37,2958.37,other,Nairobi
+ORD-000382,2025-09-27,customer118@yahoo.co.ke,SKU-BOOK-001,Programming Guide,Books,3,1885.06,5655.18,paystack,Machakos
+ORD-000383,2025-08-27,customer184@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,3,5428.71,16286.13,mpesa,Mombasa
+ORD-000384,2025-08-18,customer55@yahoo.co.ke,SKU-BOOK-004,System Architecture,Books,2,2481.39,4962.78,mpesa,Nairobi
+ORD-000385,2025-10-08,customer155@yahoo.com,SKU-ELEC-004,Smart Watch,Electronics,3,20282.63,60847.89,paystack,Mombasa
+ORD-000386,2025-08-15,customer74@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,4,6942.52,27770.08,mpesa,Garissa
+ORD-000387,2025-10-18,customer20@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,1,129813.25,129813.25,mpesa,Kitale
+ORD-000388,2025-08-31,customer55@yahoo.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,4,3410.79,13643.16,mpesa,Busia
+ORD-000389,2025-08-25,customer146@outlook.com,SKU-CLOTH-004,Winter Jacket,Clothing,2,8286.84,16573.68,mpesa,Nairobi
+ORD-000390,2025-09-20,customer12@kenya.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,1,4298.48,4298.48,mpesa,Nakuru
+ORD-000391,2025-10-09,customer181@yahoo.com,SKU-ELEC-004,Smart Watch,Electronics,4,20191.67,80766.68,mpesa,Eldoret
+ORD-000392,2025-08-10,customer188@outlook.com,SKU-HOME-005,Air Purifier,Home & Kitchen,2,15056.13,30112.26,mpesa,Garissa
+ORD-000393,2025-09-28,customer181@yahoo.com,SKU-CLOTH-002,Denim Jeans,Clothing,5,4076.95,20384.75,mpesa,Machakos
+ORD-000394,2025-09-02,customer94@outlook.com,SKU-CLOTH-005,Baseball Cap,Clothing,5,1370.86,6854.3,mpesa,Bungoma
+ORD-000395,2025-09-09,customer129@outlook.com,SKU-ELEC-004,Smart Watch,Electronics,4,19573.64,78294.56,mpesa,Thika
+ORD-000396,2025-10-05,customer138@yahoo.com,SKU-BOOK-005,DevOps Handbook,Books,3,3066.47,9199.41,paystack,Kisumu
+ORD-000397,2025-09-19,customer116@yahoo.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,5,9359.21,46796.05,bank_transfer,Kitale
+ORD-000398,2025-10-17,customer62@yahoo.co.ke,SKU-BOOK-003,Design Patterns,Books,1,2577.22,2577.22,mpesa,Eldoret
+ORD-000399,2025-09-15,customer122@kenya.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,3,1613.67,4841.01,mpesa,Malindi
+ORD-000400,2025-09-07,customer159@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,3,19735.95,59207.85,mpesa,Mombasa
+ORD-000401,2025-10-27,customer5@yahoo.com,SKU-HOME-002,Blender Pro,Home & Kitchen,5,9199.66,45998.3,mpesa,Busia
+ORD-000402,2025-09-02,customer130@outlook.com,SKU-ELEC-005,Tablet Max,Electronics,5,35116.55,175582.75,mpesa,Busia
+ORD-000403,2025-10-09,customer89@yahoo.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1730.21,6920.84,card,Eldoret
+ORD-000404,2025-08-12,customer138@yahoo.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,3,3633.28,10899.84,mpesa,Bungoma
+ORD-000405,2025-10-26,customer143@outlook.com,SKU-BOOK-003,Design Patterns,Books,5,2176.05,10880.25,mpesa,Meru
+ORD-000406,2025-09-22,customer176@outlook.com,SKU-ELEC-001,Smartphone Pro,Electronics,1,80412.6,80412.6,mpesa,Nyeri
+ORD-000407,2025-08-31,customer103@yahoo.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,2,3896.91,7793.82,mpesa,Thika
+ORD-000408,2025-08-26,customer71@yahoo.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3629.49,7258.98,mpesa,Eldoret
+ORD-000409,2025-09-12,customer55@yahoo.co.ke,SKU-BOOK-003,Design Patterns,Books,2,2723.89,5447.78,other,Nairobi
+ORD-000410,2025-09-09,customer37@kenya.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,4,5761.92,23047.68,mpesa,Mombasa
+ORD-000411,2025-09-26,customer36@gmail.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,1,3493.29,3493.29,mpesa,Nakuru
+ORD-000412,2025-09-29,customer4@yahoo.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,4,9004.18,36016.72,mpesa,Nakuru
+ORD-000413,2025-08-17,customer94@outlook.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,3,1215.23,3645.69,other,Nyeri
+ORD-000414,2025-09-23,customer188@outlook.com,SKU-CLOTH-005,Baseball Cap,Clothing,5,1125.96,5629.8,mpesa,Busia
+ORD-000415,2025-09-02,customer143@outlook.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3689.82,7379.64,mpesa,Nairobi
+ORD-000416,2025-09-28,customer147@yahoo.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3046.21,6092.42,mpesa,Eldoret
+ORD-000417,2025-09-12,customer166@gmail.com,SKU-BOOK-003,Design Patterns,Books,1,2421.96,2421.96,card,Malindi
+ORD-000418,2025-09-17,customer125@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,1,4704.55,4704.55,mpesa,Machakos
+ORD-000419,2025-09-19,customer102@outlook.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,1,1128.03,1128.03,paystack,Mombasa
+ORD-000420,2025-09-16,customer188@outlook.com,SKU-BOOK-005,DevOps Handbook,Books,3,2791.05,8373.15,mpesa,Bungoma
+ORD-000421,2025-09-03,customer86@gmail.com,SKU-ELEC-004,Smart Watch,Electronics,5,19869.34,99346.7,bank_transfer,Kitale
+ORD-000422,2025-10-12,customer64@yahoo.com,SKU-ELEC-004,Smart Watch,Electronics,1,19768.32,19768.32,mpesa,Meru
+ORD-000423,2025-09-08,customer132@gmail.com,SKU-ELEC-003,Wireless Headphones,Electronics,3,8502.46,25507.38,mpesa,Kisumu
+ORD-000424,2025-09-09,customer164@gmail.com,SKU-BOOK-001,Programming Guide,Books,4,2005.11,8020.44,other,Kisumu
+ORD-000425,2025-11-01,customer121@gmail.com,SKU-BOOK-004,System Architecture,Books,1,3203.92,3203.92,other,Eldoret
+ORD-000426,2025-10-09,customer10@yahoo.com,SKU-BOOK-005,DevOps Handbook,Books,3,3477.58,10432.74,mpesa,Garissa
+ORD-000427,2025-08-27,customer172@yahoo.co.ke,SKU-ELEC-003,Wireless Headphones,Electronics,5,9039.5,45197.5,mpesa,Kisumu
+ORD-000428,2025-08-14,customer171@gmail.com,SKU-CLOTH-003,Running Shoes,Clothing,5,5782.56,28912.8,paystack,Nyeri
+ORD-000429,2025-10-28,customer151@yahoo.com,SKU-CLOTH-003,Running Shoes,Clothing,5,6332.68,31663.4,mpesa,Garissa
+ORD-000430,2025-09-23,customer200@gmail.com,SKU-BOOK-001,Programming Guide,Books,1,1911.97,1911.97,mpesa,Garissa
+ORD-000431,2025-08-25,customer180@outlook.com,SKU-ELEC-005,Tablet Max,Electronics,1,35130.81,35130.81,card,Garissa
+ORD-000432,2025-10-01,customer169@yahoo.com,SKU-HOME-005,Air Purifier,Home & Kitchen,1,14553.64,14553.64,mpesa,Kisumu
+ORD-000433,2025-09-15,customer130@outlook.com,SKU-ELEC-005,Tablet Max,Electronics,1,35339.75,35339.75,mpesa,Nyeri
+ORD-000434,2025-11-04,customer11@gmail.com,SKU-ELEC-005,Tablet Max,Electronics,4,34986.53,139946.12,mpesa,Nyeri
+ORD-000435,2025-08-19,customer44@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,2,9286.1,18572.2,mpesa,Meru
+ORD-000436,2025-10-17,customer53@kenya.co.ke,SKU-ELEC-005,Tablet Max,Electronics,4,34739.17,138956.68,mpesa,Busia
+ORD-000437,2025-10-12,customer38@yahoo.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,2,6259.3,12518.6,paystack,Eldoret
+ORD-000438,2025-08-24,customer138@yahoo.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,5,4568.88,22844.4,mpesa,Kisumu
+ORD-000439,2025-10-01,customer42@yahoo.com,SKU-HOME-005,Air Purifier,Home & Kitchen,1,15168.89,15168.89,paystack,Kitale
+ORD-000440,2025-10-01,customer150@yahoo.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,5,8073.32,40366.6,mpesa,Busia
+ORD-000441,2025-09-19,customer174@gmail.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,3,1372.49,4117.47,paystack,Nairobi
+ORD-000442,2025-09-08,customer61@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,5,130448.17,652240.85,mpesa,Garissa
+ORD-000443,2025-10-25,customer86@gmail.com,SKU-BOOK-004,System Architecture,Books,5,3034.74,15173.7,paystack,Nakuru
+ORD-000444,2025-09-16,customer131@yahoo.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,4,15210.78,60843.12,bank_transfer,Nakuru
+ORD-000445,2025-09-09,customer181@yahoo.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,1,5356.68,5356.68,paystack,Eldoret
+ORD-000446,2025-10-30,customer113@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,3,129628.16,388884.48,mpesa,Malindi
+ORD-000447,2025-09-25,customer72@gmail.com,SKU-ELEC-004,Smart Watch,Electronics,3,19647.8,58943.4,other,Bungoma
+ORD-000448,2025-08-19,customer90@yahoo.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,2,1350.07,2700.14,card,Mombasa
+ORD-000449,2025-10-28,customer14@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,5145.14,20580.56,mpesa,Nairobi
+ORD-000450,2025-08-17,customer37@kenya.co.ke,SKU-BOOK-004,System Architecture,Books,2,2797.56,5595.12,bank_transfer,Machakos
+ORD-000451,2025-08-12,customer114@yahoo.com,SKU-CLOTH-004,Winter Jacket,Clothing,1,8079.09,8079.09,card,Garissa
+ORD-000452,2025-09-03,customer57@outlook.com,SKU-BOOK-001,Programming Guide,Books,5,2394.32,11971.6,card,Eldoret
+ORD-000453,2025-09-06,customer16@yahoo.com,SKU-CLOTH-003,Running Shoes,Clothing,3,5883.02,17649.06,mpesa,Kitale
+ORD-000454,2025-10-02,customer107@yahoo.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,3,8199.93,24599.79,bank_transfer,Garissa
+ORD-000455,2025-10-26,customer80@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,3,4815.02,14445.06,mpesa,Meru
+ORD-000456,2025-09-04,customer19@kenya.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,2,8194.16,16388.32,mpesa,Nakuru
+ORD-000457,2025-10-31,customer48@yahoo.com,SKU-CLOTH-002,Denim Jeans,Clothing,5,3616.1,18080.5,other,Nakuru
+ORD-000458,2025-11-05,customer56@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,1,8936.67,8936.67,mpesa,Meru
+ORD-000459,2025-08-19,customer1@outlook.com,SKU-ELEC-004,Smart Watch,Electronics,2,20180.18,40360.36,other,Kakamega
+ORD-000460,2025-10-21,customer153@kenya.co.ke,SKU-BOOK-004,System Architecture,Books,4,2609.27,10437.08,mpesa,Kitale
+ORD-000461,2025-10-29,customer125@yahoo.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,3,129965.96,389897.88,paystack,Machakos
+ORD-000462,2025-09-02,customer74@kenya.co.ke,SKU-BOOK-004,System Architecture,Books,1,2872.39,2872.39,mpesa,Eldoret
+ORD-000463,2025-10-01,customer149@yahoo.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,4,5751.03,23004.12,mpesa,Meru
+ORD-000464,2025-09-20,customer149@yahoo.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,5,3927.75,19638.75,mpesa,Mombasa
+ORD-000465,2025-10-04,customer85@outlook.com,SKU-ELEC-004,Smart Watch,Electronics,1,19674.51,19674.51,card,Malindi
+ORD-000466,2025-10-15,customer148@yahoo.com,SKU-CLOTH-004,Winter Jacket,Clothing,2,8051.21,16102.42,other,Nairobi
+ORD-000467,2025-09-09,customer154@outlook.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,3,3122.36,9367.08,mpesa,Nairobi
+ORD-000468,2025-08-14,customer73@kenya.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,5,6220.0,3.11e4,mpesa,Mombasa
+ORD-000469,2025-08-16,customer30@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,2,7335.09,14670.18,paystack,Malindi
+ORD-000470,2025-10-10,customer160@kenya.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,4,14827.64,59310.56,card,Nakuru
+ORD-000471,2025-09-17,customer149@yahoo.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,4,79647.43,318589.72,mpesa,Thika
+ORD-000472,2025-09-29,customer54@yahoo.com,SKU-ELEC-003,Wireless Headphones,Electronics,2,8681.94,17363.88,mpesa,Nyeri
+ORD-000473,2025-08-24,customer50@gmail.com,SKU-BOOK-001,Programming Guide,Books,4,2235.64,8942.56,mpesa,Busia
+ORD-000474,2025-10-23,customer30@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,1,129695.79,129695.79,card,Nakuru
+ORD-000475,2025-08-12,customer162@outlook.com,SKU-CLOTH-002,Denim Jeans,Clothing,1,3805.96,3805.96,paystack,Kisumu
+ORD-000476,2025-09-27,customer13@yahoo.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,2,825.16,1650.32,mpesa,Mombasa
+ORD-000477,2025-09-12,customer193@yahoo.co.ke,SKU-BOOK-001,Programming Guide,Books,5,1907.64,9538.2,mpesa,Busia
+ORD-000478,2025-08-12,customer146@outlook.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,2,1903.98,3807.96,mpesa,Busia
+ORD-000479,2025-10-11,customer63@yahoo.com,SKU-BOOK-004,System Architecture,Books,5,3151.34,15756.7,mpesa,Busia
+ORD-000480,2025-08-23,customer85@outlook.com,SKU-CLOTH-005,Baseball Cap,Clothing,2,1437.37,2874.74,paystack,Nakuru
+ORD-000481,2025-08-28,customer50@gmail.com,SKU-ELEC-002,Laptop Ultra,Electronics,4,129715.11,518860.44,bank_transfer,Meru
+ORD-000482,2025-09-29,customer99@outlook.com,SKU-ELEC-004,Smart Watch,Electronics,3,20354.49,61063.47,card,Eldoret
+ORD-000483,2025-11-05,customer41@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,4,14934.39,59737.56,bank_transfer,Meru
+ORD-000484,2025-10-01,customer94@outlook.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,4,7060.51,28242.04,mpesa,Kakamega
+ORD-000485,2025-10-31,customer67@gmail.com,SKU-ELEC-003,Wireless Headphones,Electronics,3,9112.54,27337.62,mpesa,Busia
+ORD-000486,2025-10-10,customer19@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,2,9228.24,18456.48,mpesa,Garissa
+ORD-000487,2025-09-14,customer39@outlook.com,SKU-BOOK-002,Data Science Book,Books,1,2871.41,2871.41,mpesa,Kakamega
+ORD-000488,2025-08-21,customer155@yahoo.com,SKU-BOOK-005,DevOps Handbook,Books,4,3359.77,13439.08,mpesa,Busia
+ORD-000489,2025-09-13,customer80@yahoo.co.ke,SKU-ELEC-003,Wireless Headphones,Electronics,5,8702.83,43514.15,mpesa,Nyeri
+ORD-000490,2025-10-23,customer166@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,5,5203.16,26015.8,mpesa,Bungoma
+ORD-000491,2025-10-07,customer166@gmail.com,SKU-CLOTH-003,Running Shoes,Clothing,1,5813.01,5813.01,mpesa,Thika
+ORD-000492,2025-08-11,customer176@outlook.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3866.19,7732.38,bank_transfer,Bungoma
+ORD-000493,2025-09-17,customer49@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,4,7342.97,29371.88,mpesa,Kitale
+ORD-000494,2025-10-04,customer38@yahoo.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1900.74,7602.96,mpesa,Kitale
+ORD-000495,2025-09-16,customer118@yahoo.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,2,9010.72,18021.44,mpesa,Nakuru
+ORD-000496,2025-08-31,customer68@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,3,8883.26,26649.78,mpesa,Eldoret
+ORD-000497,2025-08-13,customer176@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,5,129712.93,648564.65,mpesa,Bungoma
+ORD-000498,2025-10-14,customer35@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,5,4917.66,24588.3,card,Eldoret
+ORD-000499,2025-08-17,customer198@yahoo.co.ke,SKU-ELEC-005,Tablet Max,Electronics,5,34778.39,173891.95,bank_transfer,Meru
+ORD-000500,2025-10-26,customer146@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,1,9039.72,9039.72,mpesa,Garissa
+ORD-000501,2025-09-25,customer190@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,4592.44,18369.76,card,Machakos
+ORD-000502,2025-09-13,customer73@kenya.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,1,7878.3,7878.3,mpesa,Nyeri
+ORD-000503,2025-08-28,customer102@outlook.com,SKU-BOOK-003,Design Patterns,Books,4,2382.34,9529.36,other,Mombasa
+ORD-000504,2025-10-26,customer23@gmail.com,SKU-BOOK-002,Data Science Book,Books,4,2501.54,10006.16,bank_transfer,Eldoret
+ORD-000505,2025-09-25,customer75@yahoo.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3997.1,7994.2,mpesa,Kisumu
+ORD-000506,2025-11-03,customer58@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,1,14866.39,14866.39,card,Thika
+ORD-000507,2025-08-27,customer76@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,7284.14,36420.7,mpesa,Garissa
+ORD-000508,2025-09-03,customer49@kenya.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,2,4021.17,8042.34,mpesa,Nyeri
+ORD-000509,2025-09-22,customer77@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,1,20255.09,20255.09,paystack,Meru
+ORD-000510,2025-09-23,customer95@yahoo.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,3,6526.71,19580.13,paystack,Busia
+ORD-000511,2025-09-19,customer199@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,6760.42,33802.1,mpesa,Bungoma
+ORD-000512,2025-09-30,customer175@yahoo.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,3,6000.47,18001.41,mpesa,Meru
+ORD-000513,2025-09-26,customer153@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,1,130392.27,130392.27,mpesa,Meru
+ORD-000514,2025-08-22,customer176@outlook.com,SKU-ELEC-004,Smart Watch,Electronics,4,20036.6,80146.4,mpesa,Eldoret
+ORD-000515,2025-10-15,customer179@gmail.com,SKU-BOOK-001,Programming Guide,Books,3,1544.9,4634.7,mpesa,Busia
+ORD-000516,2025-09-27,customer116@yahoo.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,5,7837.31,39186.55,mpesa,Meru
+ORD-000517,2025-10-26,customer150@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,1,2513.24,2513.24,mpesa,Thika
+ORD-000518,2025-08-21,customer10@yahoo.com,SKU-BOOK-005,DevOps Handbook,Books,5,3327.65,16638.25,mpesa,Kakamega
+ORD-000519,2025-08-09,customer180@outlook.com,SKU-HOME-005,Air Purifier,Home & Kitchen,5,14804.65,74023.25,mpesa,Nyeri
+ORD-000520,2025-09-20,customer75@yahoo.com,SKU-CLOTH-005,Baseball Cap,Clothing,2,862.5,1725.0,mpesa,Mombasa
+ORD-000521,2025-08-10,customer62@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,1,3293.57,3293.57,mpesa,Eldoret
+ORD-000522,2025-09-26,customer38@yahoo.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,4,79562.53,318250.12,mpesa,Nairobi
+ORD-000523,2025-10-14,customer178@outlook.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3337.72,6675.44,mpesa,Kitale
+ORD-000524,2025-08-09,customer98@gmail.com,SKU-HOME-002,Blender Pro,Home & Kitchen,5,8670.11,43350.55,mpesa,Nakuru
+ORD-000525,2025-09-03,customer142@kenya.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,1,80469.8,80469.8,other,Nakuru
+ORD-000526,2025-11-02,customer107@yahoo.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,1,4410.25,4410.25,paystack,Nyeri
+ORD-000527,2025-10-02,customer180@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,2,130138.05,260276.1,mpesa,Malindi
+ORD-000528,2025-09-28,customer152@gmail.com,SKU-BOOK-003,Design Patterns,Books,2,2070.97,4141.94,paystack,Kisumu
+ORD-000529,2025-09-29,customer24@outlook.com,SKU-ELEC-005,Tablet Max,Electronics,2,34896.19,69792.38,mpesa,Nairobi
+ORD-000530,2025-08-25,customer15@outlook.com,SKU-BOOK-001,Programming Guide,Books,2,1612.3,3224.6,paystack,Kakamega
+ORD-000531,2025-09-07,customer144@outlook.com,SKU-CLOTH-003,Running Shoes,Clothing,4,6379.46,25517.84,other,Nyeri
+ORD-000532,2025-11-02,customer152@gmail.com,SKU-CLOTH-004,Winter Jacket,Clothing,3,7595.38,22786.14,mpesa,Meru
+ORD-000533,2025-09-14,customer38@yahoo.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,7312.33,36561.65,mpesa,Nakuru
+ORD-000534,2025-08-22,customer148@yahoo.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,1,7314.86,7314.86,mpesa,Eldoret
+ORD-000535,2025-08-20,customer95@yahoo.com,SKU-HOME-002,Blender Pro,Home & Kitchen,4,8810.73,35242.92,mpesa,Nakuru
+ORD-000536,2025-08-30,customer92@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,5,129645.47,648227.35,mpesa,Nyeri
+ORD-000537,2025-09-27,customer3@gmail.com,SKU-BOOK-003,Design Patterns,Books,3,2694.33,8082.99,mpesa,Kakamega
+ORD-000538,2025-08-20,customer76@kenya.co.ke,SKU-BOOK-005,DevOps Handbook,Books,3,2566.19,7698.57,card,Malindi
+ORD-000539,2025-10-30,customer174@gmail.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,6658.07,33290.35,mpesa,Mombasa
+ORD-000540,2025-08-30,customer34@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,1,130335.41,130335.41,other,Eldoret
+ORD-000541,2025-10-14,customer179@gmail.com,SKU-ELEC-004,Smart Watch,Electronics,3,20261.46,60784.38,mpesa,Kisumu
+ORD-000542,2025-09-18,customer142@kenya.co.ke,SKU-ELEC-004,Smart Watch,Electronics,5,19667.46,98337.3,mpesa,Kakamega
+ORD-000543,2025-10-08,customer23@gmail.com,SKU-CLOTH-003,Running Shoes,Clothing,5,6330.18,31650.9,card,Malindi
+ORD-000544,2025-09-11,customer73@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,2,6793.64,13587.28,mpesa,Eldoret
+ORD-000545,2025-08-29,customer45@kenya.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,4,7803.13,31212.52,card,Thika
+ORD-000546,2025-09-07,customer142@kenya.co.ke,SKU-ELEC-003,Wireless Headphones,Electronics,1,9164.24,9164.24,mpesa,Kakamega
+ORD-000547,2025-11-02,customer134@gmail.com,SKU-BOOK-005,DevOps Handbook,Books,1,3001.0,3001.0,paystack,Nairobi
+ORD-000548,2025-10-12,customer72@gmail.com,SKU-BOOK-005,DevOps Handbook,Books,4,3349.97,13399.88,mpesa,Kitale
+ORD-000549,2025-10-08,customer36@gmail.com,SKU-BOOK-001,Programming Guide,Books,3,1612.38,4837.14,bank_transfer,Bungoma
+ORD-000550,2025-10-18,customer78@kenya.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,4,4033.78,16135.12,mpesa,Malindi
+ORD-000551,2025-08-31,customer59@yahoo.co.ke,SKU-ELEC-005,Tablet Max,Electronics,4,35123.55,140494.2,bank_transfer,Malindi
+ORD-000552,2025-10-26,customer48@yahoo.com,SKU-CLOTH-004,Winter Jacket,Clothing,1,8136.29,8136.29,mpesa,Mombasa
+ORD-000553,2025-10-20,customer114@yahoo.com,SKU-BOOK-005,DevOps Handbook,Books,3,2985.48,8956.44,mpesa,Nakuru
+ORD-000554,2025-08-29,customer89@yahoo.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,1,3819.28,3819.28,mpesa,Meru
+ORD-000555,2025-08-12,customer174@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,2,15198.74,30397.48,mpesa,Eldoret
+ORD-000556,2025-09-15,customer179@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,1,14868.3,14868.3,card,Busia
+ORD-000557,2025-08-27,customer122@kenya.co.ke,SKU-ELEC-003,Wireless Headphones,Electronics,3,8801.31,26403.93,other,Kisumu
+ORD-000558,2025-08-28,customer77@yahoo.co.ke,SKU-BOOK-004,System Architecture,Books,3,3118.42,9355.26,other,Meru
+ORD-000559,2025-09-09,customer50@gmail.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,3,7369.4,22108.2,mpesa,Thika
+ORD-000560,2025-08-30,customer45@kenya.co.ke,SKU-ELEC-005,Tablet Max,Electronics,2,34644.55,69289.1,bank_transfer,Nairobi
+ORD-000561,2025-08-20,customer84@kenya.co.ke,SKU-BOOK-001,Programming Guide,Books,1,1778.54,1778.54,mpesa,Kitale
+ORD-000562,2025-09-29,customer186@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,3,5427.72,16283.16,mpesa,Malindi
+ORD-000563,2025-08-23,customer60@outlook.com,SKU-BOOK-003,Design Patterns,Books,5,2555.4,12777.0,mpesa,Thika
+ORD-000564,2025-09-05,customer182@yahoo.com,SKU-BOOK-003,Design Patterns,Books,4,2643.31,10573.24,mpesa,Nyeri
+ORD-000565,2025-08-12,customer134@gmail.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,1,3548.18,3548.18,bank_transfer,Nakuru
+ORD-000566,2025-10-09,customer30@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,4,7101.12,28404.48,mpesa,Meru
+ORD-000567,2025-11-05,customer22@gmail.com,SKU-BOOK-005,DevOps Handbook,Books,4,3402.41,13609.64,mpesa,Mombasa
+ORD-000568,2025-10-04,customer69@yahoo.com,SKU-ELEC-005,Tablet Max,Electronics,1,35167.32,35167.32,other,Garissa
+ORD-000569,2025-11-01,customer49@kenya.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,4,3145.14,12580.56,paystack,Machakos
+ORD-000570,2025-10-21,customer16@yahoo.com,SKU-BOOK-003,Design Patterns,Books,4,2594.29,10377.16,mpesa,Bungoma
+ORD-000571,2025-09-21,customer52@yahoo.co.ke,SKU-BOOK-004,System Architecture,Books,4,2322.56,9290.24,bank_transfer,Busia
+ORD-000572,2025-10-04,customer148@yahoo.com,SKU-HOME-005,Air Purifier,Home & Kitchen,1,15205.14,15205.14,mpesa,Malindi
+ORD-000573,2025-11-03,customer186@yahoo.co.ke,SKU-ELEC-005,Tablet Max,Electronics,5,34789.03,173945.15,mpesa,Garissa
+ORD-000574,2025-10-20,customer130@outlook.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,6907.39,34536.95,paystack,Nakuru
+ORD-000575,2025-08-22,customer101@kenya.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,1,833.26,833.26,mpesa,Nyeri
+ORD-000576,2025-09-13,customer161@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,4,8660.78,34643.12,paystack,Malindi
+ORD-000577,2025-10-28,customer156@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,5,4955.49,24777.45,mpesa,Kisumu
+ORD-000578,2025-09-09,customer68@kenya.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,4,80062.0,320248.0,mpesa,Eldoret
+ORD-000579,2025-10-31,customer197@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,4,9238.94,36955.76,paystack,Kisumu
+ORD-000580,2025-10-28,customer191@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,4,14507.17,58028.68,mpesa,Thika
+ORD-000581,2025-09-03,customer141@gmail.com,SKU-CLOTH-002,Denim Jeans,Clothing,2,3650.29,7300.58,mpesa,Mombasa
+ORD-000582,2025-09-18,customer73@kenya.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,5,80241.87,401209.35,other,Nakuru
+ORD-000583,2025-09-15,customer136@outlook.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,5,1326.98,6634.9,mpesa,Nyeri
+ORD-000584,2025-10-02,customer131@yahoo.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,2,1042.39,2084.78,mpesa,Kakamega
+ORD-000585,2025-11-06,customer65@yahoo.co.ke,SKU-BOOK-004,System Architecture,Books,2,2876.03,5752.06,mpesa,Kisumu
+ORD-000586,2025-10-01,customer197@kenya.co.ke,SKU-ELEC-003,Wireless Headphones,Electronics,1,8618.62,8618.62,other,Machakos
+ORD-000587,2025-09-08,customer198@yahoo.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,3,14616.15,43848.45,mpesa,Mombasa
+ORD-000588,2025-11-06,customer99@outlook.com,SKU-ELEC-005,Tablet Max,Electronics,3,35030.92,105092.76,mpesa,Malindi
+ORD-000589,2025-09-11,customer68@kenya.co.ke,SKU-BOOK-004,System Architecture,Books,3,3179.57,9538.71,mpesa,Nairobi
+ORD-000590,2025-09-08,customer112@kenya.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,2,8308.61,16617.22,mpesa,Nairobi
+ORD-000591,2025-08-14,customer41@gmail.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,1,3474.19,3474.19,mpesa,Eldoret
+ORD-000592,2025-10-11,customer150@yahoo.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,3,3794.66,11383.98,other,Bungoma
+ORD-000593,2025-11-05,customer105@outlook.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,5358.81,21435.24,card,Nairobi
+ORD-000594,2025-08-09,customer53@kenya.co.ke,SKU-BOOK-005,DevOps Handbook,Books,1,3350.69,3350.69,mpesa,Thika
+ORD-000595,2025-08-14,customer123@yahoo.com,SKU-ELEC-001,Smartphone Pro,Electronics,4,79695.86,318783.44,mpesa,Busia
+ORD-000596,2025-11-04,customer149@yahoo.co.ke,SKU-BOOK-001,Programming Guide,Books,1,2423.8,2423.8,mpesa,Nyeri
+ORD-000597,2025-10-23,customer23@gmail.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1679.23,6716.92,mpesa,Thika
+ORD-000598,2025-09-21,customer128@kenya.co.ke,SKU-BOOK-003,Design Patterns,Books,5,1853.41,9267.05,paystack,Bungoma
+ORD-000599,2025-08-29,customer196@yahoo.com,SKU-HOME-002,Blender Pro,Home & Kitchen,2,9167.93,18335.86,mpesa,Nakuru
+ORD-000600,2025-09-07,customer22@gmail.com,SKU-CLOTH-003,Running Shoes,Clothing,3,6179.54,18538.62,mpesa,Machakos
+ORD-000601,2025-08-19,customer43@gmail.com,SKU-CLOTH-005,Baseball Cap,Clothing,5,614.02,3070.1,mpesa,Eldoret
+ORD-000602,2025-08-20,customer43@gmail.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,1,6993.28,6993.28,mpesa,Thika
+ORD-000603,2025-10-22,customer27@yahoo.co.ke,SKU-ELEC-003,Wireless Headphones,Electronics,4,9025.2,36100.8,mpesa,Bungoma
+ORD-000604,2025-10-28,customer85@outlook.com,SKU-CLOTH-003,Running Shoes,Clothing,3,6464.47,19393.41,mpesa,Garissa
+ORD-000605,2025-08-28,customer177@outlook.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3761.1,7522.2,other,Garissa
+ORD-000606,2025-09-25,customer57@outlook.com,SKU-CLOTH-002,Denim Jeans,Clothing,4,3704.54,14818.16,card,Busia
+ORD-000607,2025-09-13,customer12@kenya.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,4,6473.55,25894.2,paystack,Garissa
+ORD-000608,2025-10-26,customer175@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,4,19539.62,78158.48,card,Bungoma
+ORD-000609,2025-10-31,customer64@yahoo.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1835.42,7341.68,mpesa,Bungoma
+ORD-000610,2025-08-19,customer147@yahoo.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,5,80349.84,401749.2,paystack,Mombasa
+ORD-000611,2025-08-19,customer117@kenya.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,5,15358.84,76794.2,card,Machakos
+ORD-000612,2025-08-21,customer44@outlook.com,SKU-BOOK-005,DevOps Handbook,Books,2,3483.79,6967.58,mpesa,Bungoma
+ORD-000613,2025-11-01,customer191@gmail.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,1,1274.58,1274.58,mpesa,Kisumu
+ORD-000614,2025-10-27,customer176@outlook.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,3,6728.18,20184.54,paystack,Kisumu
+ORD-000615,2025-09-03,customer125@yahoo.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,5,3017.36,15086.8,other,Mombasa
+ORD-000616,2025-09-21,customer38@yahoo.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,2,4466.66,8933.32,mpesa,Meru
+ORD-000617,2025-10-08,customer163@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,1,4875.96,4875.96,mpesa,Nairobi
+ORD-000618,2025-08-08,customer65@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,1,4895.57,4895.57,bank_transfer,Nakuru
+ORD-000619,2025-08-15,customer97@yahoo.com,SKU-ELEC-004,Smart Watch,Electronics,2,19858.46,39716.92,card,Machakos
+ORD-000620,2025-10-05,customer9@yahoo.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,4,7475.98,29903.92,card,Busia
+ORD-000621,2025-09-01,customer179@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,5,5132.51,25662.55,card,Nairobi
+ORD-000622,2025-09-17,customer67@gmail.com,SKU-BOOK-004,System Architecture,Books,5,2666.92,13334.6,mpesa,Bungoma
+ORD-000623,2025-09-28,customer150@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,4,19587.36,78349.44,paystack,Meru
+ORD-000624,2025-08-18,customer99@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,5,129586.84,647934.2,mpesa,Nakuru
+ORD-000625,2025-08-16,customer137@yahoo.com,SKU-HOME-005,Air Purifier,Home & Kitchen,1,14787.02,14787.02,other,Nairobi
+ORD-000626,2025-09-06,customer145@kenya.co.ke,SKU-BOOK-005,DevOps Handbook,Books,1,2529.17,2529.17,mpesa,Busia
+ORD-000627,2025-08-23,customer120@yahoo.com,SKU-BOOK-004,System Architecture,Books,2,3161.34,6322.68,mpesa,Eldoret
+ORD-000628,2025-09-09,customer139@outlook.com,SKU-BOOK-001,Programming Guide,Books,4,2192.21,8768.84,paystack,Garissa
+ORD-000629,2025-08-19,customer32@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,5,4644.15,23220.75,mpesa,Busia
+ORD-000630,2025-09-16,customer12@kenya.co.ke,SKU-BOOK-005,DevOps Handbook,Books,1,3090.92,3090.92,mpesa,Thika
+ORD-000631,2025-08-29,customer193@yahoo.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,5,4154.27,20771.35,paystack,Nyeri
+ORD-000632,2025-10-20,customer6@gmail.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,7291.7,36458.5,other,Kisumu
+ORD-000633,2025-10-26,customer175@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,5,3096.54,15482.7,paystack,Kitale
+ORD-000634,2025-10-10,customer73@kenya.co.ke,SKU-BOOK-001,Programming Guide,Books,1,2190.14,2190.14,mpesa,Kitale
+ORD-000635,2025-08-21,customer87@outlook.com,SKU-ELEC-005,Tablet Max,Electronics,4,34716.57,138866.28,mpesa,Nyeri
+ORD-000636,2025-10-27,customer7@kenya.co.ke,SKU-ELEC-005,Tablet Max,Electronics,4,35087.53,140350.12,mpesa,Meru
+ORD-000637,2025-10-13,customer106@yahoo.co.ke,SKU-ELEC-005,Tablet Max,Electronics,1,34828.7,34828.7,paystack,Kakamega
+ORD-000638,2025-09-11,customer147@yahoo.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,5,80492.18,402460.9,mpesa,Bungoma
+ORD-000639,2025-10-28,customer136@outlook.com,SKU-HOME-005,Air Purifier,Home & Kitchen,4,14747.17,58988.68,mpesa,Thika
+ORD-000640,2025-08-27,customer86@gmail.com,SKU-ELEC-003,Wireless Headphones,Electronics,2,8771.56,17543.12,paystack,Mombasa
+ORD-000641,2025-08-10,customer174@gmail.com,SKU-CLOTH-005,Baseball Cap,Clothing,4,541.19,2164.76,mpesa,Bungoma
+ORD-000642,2025-09-29,customer129@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,3,129702.2,389106.6,mpesa,Kisumu
+ORD-000643,2025-09-12,customer71@yahoo.com,SKU-BOOK-002,Data Science Book,Books,3,2091.73,6275.19,card,Malindi
+ORD-000644,2025-10-13,customer50@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,5,5314.8,26574.0,mpesa,Bungoma
+ORD-000645,2025-10-06,customer43@gmail.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,2,6653.86,13307.72,mpesa,Kisumu
+ORD-000646,2025-10-22,customer111@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,5,8822.02,44110.1,mpesa,Nairobi
+ORD-000647,2025-08-15,customer48@yahoo.com,SKU-BOOK-001,Programming Guide,Books,3,1543.29,4629.87,bank_transfer,Kakamega
+ORD-000648,2025-09-08,customer15@outlook.com,SKU-BOOK-002,Data Science Book,Books,5,1999.22,9996.1,card,Eldoret
+ORD-000649,2025-10-15,customer46@outlook.com,SKU-CLOTH-002,Denim Jeans,Clothing,5,3920.1,19600.5,paystack,Thika
+ORD-000650,2025-10-07,customer92@kenya.co.ke,SKU-BOOK-002,Data Science Book,Books,4,2473.19,9892.76,mpesa,Bungoma
+ORD-000651,2025-10-11,customer100@yahoo.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,1,4575.43,4575.43,mpesa,Eldoret
+ORD-000652,2025-10-22,customer52@yahoo.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,2,7765.38,15530.76,mpesa,Kitale
+ORD-000653,2025-10-02,customer9@yahoo.com,SKU-HOME-005,Air Purifier,Home & Kitchen,4,14830.9,59323.6,mpesa,Bungoma
+ORD-000654,2025-09-09,customer83@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,7402.81,37014.05,other,Nakuru
+ORD-000655,2025-08-08,customer35@gmail.com,SKU-ELEC-001,Smartphone Pro,Electronics,1,79523.88,79523.88,mpesa,Garissa
+ORD-000656,2025-10-16,customer37@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,1,9044.93,9044.93,mpesa,Garissa
+ORD-000657,2025-11-03,customer30@kenya.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,5,5779.57,28897.85,mpesa,Nakuru
+ORD-000658,2025-10-27,customer16@yahoo.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,4,7390.27,29561.08,mpesa,Busia
+ORD-000659,2025-09-13,customer191@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,1,4522.03,4522.03,mpesa,Eldoret
+ORD-000660,2025-08-20,customer15@outlook.com,SKU-HOME-002,Blender Pro,Home & Kitchen,3,9069.77,27209.31,card,Nyeri
+ORD-000661,2025-08-13,customer25@gmail.com,SKU-BOOK-005,DevOps Handbook,Books,4,2945.14,11780.56,mpesa,Busia
+ORD-000662,2025-09-12,customer70@kenya.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,5,542.03,2710.15,other,Malindi
+ORD-000663,2025-08-14,customer40@yahoo.com,SKU-ELEC-005,Tablet Max,Electronics,4,34549.22,138196.88,paystack,Kisumu
+ORD-000664,2025-08-29,customer107@yahoo.co.ke,SKU-ELEC-005,Tablet Max,Electronics,2,35026.7,70053.4,mpesa,Mombasa
+ORD-000665,2025-08-19,customer61@kenya.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,4,3275.34,13101.36,mpesa,Kitale
+ORD-000666,2025-09-17,customer71@yahoo.com,SKU-BOOK-001,Programming Guide,Books,5,1792.72,8963.6,mpesa,Kakamega
+ORD-000667,2025-10-08,customer161@outlook.com,SKU-BOOK-003,Design Patterns,Books,3,2492.23,7476.69,bank_transfer,Garissa
+ORD-000668,2025-11-01,customer17@yahoo.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,5,129733.41,648667.05,mpesa,Eldoret
+ORD-000669,2025-08-12,customer131@yahoo.co.ke,SKU-BOOK-001,Programming Guide,Books,5,2182.83,10914.15,mpesa,Kitale
+ORD-000670,2025-09-21,customer65@yahoo.co.ke,SKU-BOOK-004,System Architecture,Books,1,2689.18,2689.18,mpesa,Meru
+ORD-000671,2025-09-13,customer140@yahoo.com,SKU-CLOTH-002,Denim Jeans,Clothing,3,3558.81,10676.43,mpesa,Bungoma
+ORD-000672,2025-10-20,customer106@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,2,20264.0,40528.0,mpesa,Meru
+ORD-000673,2025-10-12,customer85@outlook.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,1,3073.75,3073.75,mpesa,Kitale
+ORD-000674,2025-08-21,customer85@outlook.com,SKU-ELEC-001,Smartphone Pro,Electronics,1,79544.27,79544.27,mpesa,Kakamega
+ORD-000675,2025-09-18,customer58@gmail.com,SKU-ELEC-005,Tablet Max,Electronics,4,35297.22,141188.88,paystack,Nakuru
+ORD-000676,2025-09-15,customer17@yahoo.co.ke,SKU-ELEC-005,Tablet Max,Electronics,4,34527.57,138110.28,mpesa,Nyeri
+ORD-000677,2025-09-01,customer84@kenya.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,2,5679.53,11359.06,card,Eldoret
+ORD-000678,2025-08-19,customer73@kenya.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,2,4013.46,8026.92,mpesa,Malindi
+ORD-000679,2025-09-12,customer116@yahoo.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,3,4494.25,13482.75,mpesa,Bungoma
+ORD-000680,2025-09-22,customer4@yahoo.co.ke,SKU-ELEC-003,Wireless Headphones,Electronics,5,8629.41,43147.05,paystack,Nakuru
+ORD-000681,2025-11-01,customer162@outlook.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3367.53,6735.06,mpesa,Kakamega
+ORD-000682,2025-10-02,customer163@gmail.com,SKU-HOME-002,Blender Pro,Home & Kitchen,2,9367.38,18734.76,mpesa,Busia
+ORD-000683,2025-10-12,customer192@yahoo.co.ke,SKU-ELEC-003,Wireless Headphones,Electronics,2,9469.09,18938.18,other,Kitale
+ORD-000684,2025-08-21,customer19@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,4,6534.61,26138.44,card,Mombasa
+ORD-000685,2025-10-26,customer158@outlook.com,SKU-ELEC-004,Smart Watch,Electronics,5,19515.96,97579.8,mpesa,Thika
+ORD-000686,2025-09-03,customer28@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,3,130153.75,390461.25,mpesa,Thika
+ORD-000687,2025-09-22,customer185@kenya.co.ke,SKU-BOOK-003,Design Patterns,Books,3,2687.53,8062.59,card,Thika
+ORD-000688,2025-09-16,customer156@yahoo.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,4,7165.53,28662.12,mpesa,Kisumu
+ORD-000689,2025-10-21,customer4@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,4,2972.22,11888.88,bank_transfer,Nyeri
+ORD-000690,2025-08-20,customer98@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,3,14595.4,43786.2,mpesa,Busia
+ORD-000691,2025-08-30,customer18@gmail.com,SKU-CLOTH-002,Denim Jeans,Clothing,2,4300.72,8601.44,mpesa,Nakuru
+ORD-000692,2025-09-11,customer144@outlook.com,SKU-CLOTH-004,Winter Jacket,Clothing,2,7745.45,15490.9,mpesa,Meru
+ORD-000693,2025-09-27,customer62@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,2,19838.33,39676.66,other,Nakuru
+ORD-000694,2025-08-09,customer78@kenya.co.ke,SKU-BOOK-003,Design Patterns,Books,4,2050.23,8200.92,mpesa,Bungoma
+ORD-000695,2025-09-01,customer12@kenya.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,2,1451.65,2903.3,bank_transfer,Mombasa
+ORD-000696,2025-08-14,customer130@outlook.com,SKU-BOOK-005,DevOps Handbook,Books,2,3123.72,6247.44,mpesa,Nyeri
+ORD-000697,2025-09-15,customer123@yahoo.com,SKU-ELEC-005,Tablet Max,Electronics,3,35170.86,105512.58,bank_transfer,Garissa
+ORD-000698,2025-10-29,customer79@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,5,130123.93,650619.65,mpesa,Nyeri
+ORD-000699,2025-09-19,customer21@yahoo.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,3,15315.52,45946.56,mpesa,Nairobi
+ORD-000700,2025-10-06,customer35@gmail.com,SKU-ELEC-002,Laptop Ultra,Electronics,2,130232.66,260465.32,mpesa,Nairobi
+ORD-000701,2025-10-30,customer114@yahoo.com,SKU-HOME-005,Air Purifier,Home & Kitchen,1,15196.58,15196.58,mpesa,Thika
+ORD-000702,2025-08-24,customer10@yahoo.com,SKU-CLOTH-002,Denim Jeans,Clothing,5,4209.96,21049.8,mpesa,Mombasa
+ORD-000703,2025-08-26,customer34@kenya.co.ke,SKU-BOOK-003,Design Patterns,Books,5,2253.55,11267.75,mpesa,Mombasa
+ORD-000704,2025-09-01,customer147@yahoo.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,1,3974.02,3974.02,mpesa,Eldoret
+ORD-000705,2025-08-30,customer87@outlook.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,5,4611.41,23057.05,mpesa,Busia
+ORD-000706,2025-09-03,customer119@kenya.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,5,4369.49,21847.45,paystack,Kisumu
+ORD-000707,2025-08-30,customer67@gmail.com,SKU-BOOK-004,System Architecture,Books,1,3061.64,3061.64,mpesa,Busia
+ORD-000708,2025-10-16,customer161@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,3,9342.22,28026.66,paystack,Kitale
+ORD-000709,2025-11-03,customer164@gmail.com,SKU-ELEC-003,Wireless Headphones,Electronics,1,9392.77,9392.77,mpesa,Eldoret
+ORD-000710,2025-10-27,customer115@yahoo.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,2,1332.06,2664.12,paystack,Kakamega
+ORD-000711,2025-11-02,customer65@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,4,19821.06,79284.24,mpesa,Nyeri
+ORD-000712,2025-10-10,customer65@yahoo.co.ke,SKU-BOOK-001,Programming Guide,Books,4,1906.45,7625.8,mpesa,Bungoma
+ORD-000713,2025-08-27,customer1@outlook.com,SKU-BOOK-003,Design Patterns,Books,2,1879.0,3758.0,mpesa,Meru
+ORD-000714,2025-08-19,customer200@gmail.com,SKU-ELEC-002,Laptop Ultra,Electronics,3,129988.83,389966.49,other,Machakos
+ORD-000715,2025-08-24,customer117@kenya.co.ke,SKU-BOOK-005,DevOps Handbook,Books,3,3138.85,9416.55,mpesa,Kisumu
+ORD-000716,2025-10-27,customer120@yahoo.com,SKU-BOOK-001,Programming Guide,Books,1,2490.7,2490.7,mpesa,Thika
+ORD-000717,2025-10-25,customer128@kenya.co.ke,SKU-BOOK-002,Data Science Book,Books,3,2359.41,7078.23,card,Mombasa
+ORD-000718,2025-10-11,customer170@kenya.co.ke,SKU-BOOK-002,Data Science Book,Books,3,2986.78,8960.34,card,Nakuru
+ORD-000719,2025-09-02,customer188@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,3,130395.5,391186.5,paystack,Meru
+ORD-000720,2025-08-24,customer199@kenya.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,3,1527.48,4582.44,mpesa,Nyeri
+ORD-000721,2025-09-18,customer174@gmail.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,5,3281.39,16406.95,mpesa,Eldoret
+ORD-000722,2025-10-20,customer53@kenya.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,2,79626.57,159253.14,mpesa,Kakamega
+ORD-000723,2025-09-05,customer42@yahoo.com,SKU-CLOTH-004,Winter Jacket,Clothing,3,7844.11,23532.33,mpesa,Bungoma
+ORD-000724,2025-09-20,customer5@yahoo.com,SKU-HOME-002,Blender Pro,Home & Kitchen,2,8536.28,17072.56,mpesa,Kisumu
+ORD-000725,2025-11-02,customer25@gmail.com,SKU-BOOK-001,Programming Guide,Books,4,2365.64,9462.56,mpesa,Kisumu
+ORD-000726,2025-09-25,customer124@yahoo.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,1,1200.41,1200.41,card,Malindi
+ORD-000727,2025-09-12,customer151@yahoo.com,SKU-BOOK-001,Programming Guide,Books,5,2310.41,11552.05,mpesa,Machakos
+ORD-000728,2025-10-10,customer70@kenya.co.ke,SKU-BOOK-001,Programming Guide,Books,1,1835.59,1835.59,mpesa,Garissa
+ORD-000729,2025-10-03,customer47@gmail.com,SKU-ELEC-005,Tablet Max,Electronics,1,34824.39,34824.39,mpesa,Kisumu
+ORD-000730,2025-09-16,customer148@yahoo.com,SKU-BOOK-005,DevOps Handbook,Books,4,2542.34,10169.36,mpesa,Machakos
+ORD-000731,2025-08-22,customer80@yahoo.co.ke,SKU-BOOK-001,Programming Guide,Books,4,1787.75,7151.0,paystack,Kakamega
+ORD-000732,2025-08-19,customer187@gmail.com,SKU-BOOK-005,DevOps Handbook,Books,2,3205.2,6410.4,card,Bungoma
+ORD-000733,2025-11-04,customer11@gmail.com,SKU-ELEC-002,Laptop Ultra,Electronics,2,129696.59,259393.18,mpesa,Mombasa
+ORD-000734,2025-11-02,customer86@gmail.com,SKU-ELEC-001,Smartphone Pro,Electronics,4,79695.08,318780.32,mpesa,Kakamega
+ORD-000735,2025-08-13,customer113@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,3,130421.83,391265.49,mpesa,Nyeri
+ORD-000736,2025-09-23,customer9@yahoo.com,SKU-CLOTH-002,Denim Jeans,Clothing,4,4267.87,17071.48,other,Mombasa
+ORD-000737,2025-10-31,customer139@outlook.com,SKU-HOME-005,Air Purifier,Home & Kitchen,4,14936.47,59745.88,paystack,Nairobi
+ORD-000738,2025-08-28,customer144@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,5,9489.52,47447.6,mpesa,Garissa
+ORD-000739,2025-08-16,customer185@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,3,6988.47,20965.41,mpesa,Kitale
+ORD-000740,2025-10-26,customer87@outlook.com,SKU-BOOK-005,DevOps Handbook,Books,5,2956.48,14782.4,other,Nyeri
+ORD-000741,2025-08-31,customer117@kenya.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,3,612.94,1838.82,other,Kitale
+ORD-000742,2025-09-11,customer138@yahoo.com,SKU-BOOK-002,Data Science Book,Books,4,2796.53,11186.12,card,Busia
+ORD-000743,2025-09-11,customer173@yahoo.com,SKU-BOOK-003,Design Patterns,Books,5,2340.55,11702.75,other,Kitale
+ORD-000744,2025-10-19,customer9@yahoo.com,SKU-ELEC-005,Tablet Max,Electronics,4,35223.1,140892.4,mpesa,Kitale
+ORD-000745,2025-09-03,customer74@kenya.co.ke,SKU-BOOK-002,Data Science Book,Books,3,2262.42,6787.26,mpesa,Meru
+ORD-000746,2025-09-12,customer65@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,2,19657.76,39315.52,mpesa,Thika
+ORD-000747,2025-10-22,customer196@yahoo.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,5,3265.04,16325.2,mpesa,Machakos
+ORD-000748,2025-09-05,customer35@gmail.com,SKU-BOOK-001,Programming Guide,Books,2,2216.23,4432.46,mpesa,Machakos
+ORD-000749,2025-09-12,customer76@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,2,130171.99,260343.98,mpesa,Garissa
+ORD-000750,2025-10-08,customer131@yahoo.co.ke,SKU-ELEC-005,Tablet Max,Electronics,4,34929.33,139717.32,mpesa,Thika
+ORD-000751,2025-09-03,customer26@yahoo.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,5,3534.57,17672.85,mpesa,Kakamega
+ORD-000752,2025-08-14,customer96@gmail.com,SKU-BOOK-004,System Architecture,Books,5,3195.02,15975.1,mpesa,Kisumu
+ORD-000753,2025-11-01,customer15@outlook.com,SKU-CLOTH-002,Denim Jeans,Clothing,3,4053.24,12159.72,card,Eldoret
+ORD-000754,2025-08-14,customer70@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,1,129882.29,129882.29,card,Nairobi
+ORD-000755,2025-10-03,customer124@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,2,19971.29,39942.58,mpesa,Garissa
+ORD-000756,2025-08-08,customer148@yahoo.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,2,1318.3,2636.6,mpesa,Garissa
+ORD-000757,2025-08-26,customer134@gmail.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3586.37,7172.74,mpesa,Nairobi
+ORD-000758,2025-11-06,customer16@yahoo.com,SKU-ELEC-001,Smartphone Pro,Electronics,4,79854.14,319416.56,mpesa,Mombasa
+ORD-000759,2025-10-08,customer42@yahoo.com,SKU-BOOK-003,Design Patterns,Books,4,2717.33,10869.32,mpesa,Kakamega
+ORD-000760,2025-08-25,customer156@yahoo.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,2,1610.95,3221.9,mpesa,Nakuru
+ORD-000761,2025-11-06,customer81@outlook.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,2,6686.9,13373.8,mpesa,Meru
+ORD-000762,2025-09-25,customer142@kenya.co.ke,SKU-BOOK-001,Programming Guide,Books,3,2212.41,6637.23,mpesa,Bungoma
+ORD-000763,2025-11-06,customer43@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,3,5311.98,15935.94,mpesa,Eldoret
+ORD-000764,2025-09-07,customer23@gmail.com,SKU-CLOTH-003,Running Shoes,Clothing,1,6164.24,6164.24,mpesa,Eldoret
+ORD-000765,2025-08-27,customer122@kenya.co.ke,SKU-BOOK-005,DevOps Handbook,Books,4,3480.35,13921.4,mpesa,Machakos
+ORD-000766,2025-09-23,customer112@kenya.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,1,4473.6,4473.6,mpesa,Busia
+ORD-000767,2025-08-12,customer12@kenya.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,4,3140.0,12560.0,card,Meru
+ORD-000768,2025-09-26,customer200@gmail.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,6940.87,34704.35,mpesa,Busia
+ORD-000769,2025-10-10,customer6@gmail.com,SKU-ELEC-002,Laptop Ultra,Electronics,4,129910.39,519641.56,mpesa,Busia
+ORD-000770,2025-10-20,customer69@yahoo.com,SKU-ELEC-004,Smart Watch,Electronics,2,19891.65,39783.3,paystack,Kakamega
+ORD-000771,2025-08-18,customer38@yahoo.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,5,79618.22,398091.1,mpesa,Eldoret
+ORD-000772,2025-08-17,customer111@outlook.com,SKU-ELEC-001,Smartphone Pro,Electronics,3,80052.01,240156.03,mpesa,Nakuru
+ORD-000773,2025-09-22,customer140@yahoo.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,3,1236.31,3708.93,mpesa,Machakos
+ORD-000774,2025-10-26,customer101@kenya.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,1,6425.97,6425.97,mpesa,Bungoma
+ORD-000775,2025-08-16,customer175@yahoo.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,4,80040.88,320163.52,mpesa,Thika
+ORD-000776,2025-09-05,customer199@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,3,129822.57,389467.71,other,Kitale
+ORD-000777,2025-10-30,customer86@gmail.com,SKU-ELEC-002,Laptop Ultra,Electronics,1,129869.07,129869.07,mpesa,Nakuru
+ORD-000778,2025-08-13,customer114@yahoo.com,SKU-CLOTH-004,Winter Jacket,Clothing,4,7808.13,31232.52,mpesa,Nakuru
+ORD-000779,2025-10-09,customer120@yahoo.com,SKU-BOOK-003,Design Patterns,Books,4,2058.44,8233.76,other,Kakamega
+ORD-000780,2025-08-28,customer30@kenya.co.ke,SKU-BOOK-005,DevOps Handbook,Books,1,2839.57,2839.57,mpesa,Kitale
+ORD-000781,2025-10-22,customer58@gmail.com,SKU-BOOK-004,System Architecture,Books,3,2720.92,8162.76,paystack,Kitale
+ORD-000782,2025-10-06,customer170@kenya.co.ke,SKU-BOOK-001,Programming Guide,Books,1,1945.22,1945.22,other,Bungoma
+ORD-000783,2025-08-29,customer34@kenya.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,3,1626.95,4880.85,mpesa,Bungoma
+ORD-000784,2025-09-09,customer158@outlook.com,SKU-CLOTH-002,Denim Jeans,Clothing,5,3948.18,19740.9,mpesa,Nairobi
+ORD-000785,2025-10-09,customer86@gmail.com,SKU-BOOK-004,System Architecture,Books,2,3213.64,6427.28,mpesa,Kisumu
+ORD-000786,2025-09-16,customer30@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,3,9183.41,27550.23,mpesa,Kitale
+ORD-000787,2025-08-18,customer178@outlook.com,SKU-CLOTH-005,Baseball Cap,Clothing,5,1272.08,6360.4,mpesa,Machakos
+ORD-000788,2025-09-12,customer81@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,5,9446.19,47230.95,card,Thika
+ORD-000789,2025-09-24,customer166@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,4,15015.54,60062.16,mpesa,Garissa
+ORD-000790,2025-08-08,customer57@outlook.com,SKU-CLOTH-005,Baseball Cap,Clothing,2,878.54,1757.08,mpesa,Malindi
+ORD-000791,2025-09-26,customer139@outlook.com,SKU-ELEC-005,Tablet Max,Electronics,3,34885.44,104656.32,mpesa,Garissa
+ORD-000792,2025-10-19,customer200@gmail.com,SKU-BOOK-004,System Architecture,Books,5,2559.0,12795.0,mpesa,Mombasa
+ORD-000793,2025-10-21,customer162@outlook.com,SKU-CLOTH-005,Baseball Cap,Clothing,1,1321.32,1321.32,bank_transfer,Kakamega
+ORD-000794,2025-10-15,customer42@yahoo.com,SKU-HOME-002,Blender Pro,Home & Kitchen,1,9076.79,9076.79,mpesa,Kisumu
+ORD-000795,2025-08-25,customer41@gmail.com,SKU-CLOTH-004,Winter Jacket,Clothing,2,7644.87,15289.74,mpesa,Thika
+ORD-000796,2025-11-04,customer183@gmail.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,4,3010.06,12040.24,mpesa,Nyeri
+ORD-000797,2025-09-06,customer18@gmail.com,SKU-ELEC-003,Wireless Headphones,Electronics,4,8510.69,34042.76,mpesa,Bungoma
+ORD-000798,2025-09-25,customer28@kenya.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,5,4787.47,23937.35,mpesa,Kisumu
+ORD-000799,2025-11-01,customer116@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,1,3290.08,3290.08,mpesa,Busia
+ORD-000800,2025-10-09,customer124@yahoo.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1741.3,6965.2,mpesa,Garissa
+ORD-000801,2025-09-28,customer123@yahoo.com,SKU-BOOK-004,System Architecture,Books,4,2383.6,9534.4,card,Bungoma
+ORD-000802,2025-09-29,customer30@kenya.co.ke,SKU-BOOK-002,Data Science Book,Books,3,2985.89,8957.67,card,Eldoret
+ORD-000803,2025-10-27,customer187@gmail.com,SKU-CLOTH-002,Denim Jeans,Clothing,5,4105.67,20528.35,other,Eldoret
+ORD-000804,2025-10-31,customer171@gmail.com,SKU-CLOTH-004,Winter Jacket,Clothing,1,8287.72,8287.72,mpesa,Mombasa
+ORD-000805,2025-09-19,customer12@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,3,6554.09,19662.27,mpesa,Nairobi
+ORD-000806,2025-10-13,customer142@kenya.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,2,8195.19,16390.38,mpesa,Garissa
+ORD-000807,2025-08-21,customer78@kenya.co.ke,SKU-BOOK-005,DevOps Handbook,Books,2,3141.71,6283.42,card,Bungoma
+ORD-000808,2025-08-10,customer105@outlook.com,SKU-BOOK-001,Programming Guide,Books,2,1569.0,3138.0,mpesa,Eldoret
+ORD-000809,2025-09-02,customer50@gmail.com,SKU-BOOK-002,Data Science Book,Books,2,2867.06,5734.12,card,Garissa
+ORD-000810,2025-09-27,customer180@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,4,130272.3,521089.2,mpesa,Mombasa
+ORD-000811,2025-09-28,customer68@kenya.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,3,1289.84,3869.52,mpesa,Kisumu
+ORD-000812,2025-08-26,customer2@yahoo.com,SKU-BOOK-001,Programming Guide,Books,1,2035.77,2035.77,mpesa,Nairobi
+ORD-000813,2025-08-26,customer21@yahoo.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,3,8303.96,24911.88,other,Bungoma
+ORD-000814,2025-11-04,customer3@gmail.com,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3763.16,7526.32,mpesa,Nairobi
+ORD-000815,2025-09-08,customer19@kenya.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,5,1221.28,6106.4,card,Kakamega
+ORD-000816,2025-08-14,customer11@gmail.com,SKU-CLOTH-005,Baseball Cap,Clothing,5,507.52,2537.6,mpesa,Kakamega
+ORD-000817,2025-08-15,customer127@kenya.co.ke,SKU-ELEC-004,Smart Watch,Electronics,3,20004.13,60012.39,mpesa,Garissa
+ORD-000818,2025-08-13,customer147@yahoo.co.ke,SKU-ELEC-005,Tablet Max,Electronics,4,35299.04,141196.16,other,Machakos
+ORD-000819,2025-10-11,customer27@yahoo.co.ke,SKU-BOOK-004,System Architecture,Books,2,2325.21,4650.42,mpesa,Meru
+ORD-000820,2025-10-26,customer93@yahoo.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1186.46,4745.84,other,Garissa
+ORD-000821,2025-08-17,customer83@kenya.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,4,6283.08,25132.32,paystack,Mombasa
+ORD-000822,2025-10-10,customer130@outlook.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,4529.2,18116.8,mpesa,Kitale
+ORD-000823,2025-08-17,customer141@gmail.com,SKU-ELEC-002,Laptop Ultra,Electronics,1,130428.76,130428.76,mpesa,Kakamega
+ORD-000824,2025-10-11,customer144@outlook.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,5,1365.98,6829.9,card,Busia
+ORD-000825,2025-11-05,customer111@outlook.com,SKU-BOOK-003,Design Patterns,Books,1,2303.29,2303.29,mpesa,Eldoret
+ORD-000826,2025-10-27,customer158@outlook.com,SKU-CLOTH-003,Running Shoes,Clothing,2,6329.49,12658.98,bank_transfer,Bungoma
+ORD-000827,2025-09-04,customer44@outlook.com,SKU-CLOTH-005,Baseball Cap,Clothing,1,1459.34,1459.34,mpesa,Malindi
+ORD-000828,2025-08-09,customer121@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,2,15167.2,30334.4,mpesa,Kisumu
+ORD-000829,2025-11-06,customer45@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,4,8922.68,35690.72,paystack,Machakos
+ORD-000830,2025-10-12,customer122@kenya.co.ke,SKU-BOOK-005,DevOps Handbook,Books,1,3369.65,3369.65,mpesa,Machakos
+ORD-000831,2025-10-10,customer108@yahoo.com,SKU-ELEC-005,Tablet Max,Electronics,3,34829.73,104489.19,mpesa,Nyeri
+ORD-000832,2025-09-16,customer126@outlook.com,SKU-ELEC-005,Tablet Max,Electronics,2,34613.05,69226.1,bank_transfer,Busia
+ORD-000833,2025-08-14,customer193@yahoo.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,1,1376.73,1376.73,paystack,Machakos
+ORD-000834,2025-10-23,customer39@outlook.com,SKU-BOOK-004,System Architecture,Books,1,3184.13,3184.13,mpesa,Garissa
+ORD-000835,2025-10-14,customer24@outlook.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,1,6873.98,6873.98,mpesa,Kisumu
+ORD-000836,2025-09-04,customer137@yahoo.com,SKU-BOOK-002,Data Science Book,Books,3,2928.22,8784.66,mpesa,Kisumu
+ORD-000837,2025-09-11,customer72@gmail.com,SKU-CLOTH-005,Baseball Cap,Clothing,5,652.88,3264.4,mpesa,Eldoret
+ORD-000838,2025-08-24,customer38@yahoo.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,4,8248.63,32994.52,mpesa,Kakamega
+ORD-000839,2025-08-20,customer26@yahoo.co.ke,SKU-BOOK-003,Design Patterns,Books,2,2784.1,5568.2,mpesa,Eldoret
+ORD-000840,2025-10-18,customer163@gmail.com,SKU-BOOK-001,Programming Guide,Books,2,1950.36,3900.72,mpesa,Thika
+ORD-000841,2025-11-03,customer177@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,4,9402.05,37608.2,bank_transfer,Garissa
+ORD-000842,2025-10-25,customer48@yahoo.com,SKU-BOOK-005,DevOps Handbook,Books,2,2710.67,5421.34,mpesa,Busia
+ORD-000843,2025-09-14,customer199@kenya.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,4,3964.85,15859.4,bank_transfer,Busia
+ORD-000844,2025-08-26,customer57@outlook.com,SKU-BOOK-003,Design Patterns,Books,1,1895.0,1895.0,mpesa,Thika
+ORD-000845,2025-09-22,customer59@yahoo.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,5,6529.06,32645.3,mpesa,Malindi
+ORD-000846,2025-09-25,customer71@yahoo.com,SKU-BOOK-004,System Architecture,Books,2,2432.88,4865.76,other,Nairobi
+ORD-000847,2025-10-31,customer33@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,3,8509.09,25527.27,other,Nairobi
+ORD-000848,2025-10-24,customer200@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,4703.9,18815.6,mpesa,Garissa
+ORD-000849,2025-10-07,customer5@yahoo.com,SKU-BOOK-001,Programming Guide,Books,4,2391.3,9565.2,card,Machakos
+ORD-000850,2025-10-24,customer52@yahoo.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,3,9047.67,27143.01,mpesa,Kitale
+ORD-000851,2025-08-18,customer38@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,4,3076.94,12307.76,other,Bungoma
+ORD-000852,2025-10-27,customer123@yahoo.com,SKU-ELEC-002,Laptop Ultra,Electronics,5,129603.81,648019.05,mpesa,Kakamega
+ORD-000853,2025-09-12,customer100@yahoo.com,SKU-ELEC-001,Smartphone Pro,Electronics,5,79871.36,399356.8,mpesa,Malindi
+ORD-000854,2025-08-18,customer141@gmail.com,SKU-CLOTH-005,Baseball Cap,Clothing,5,1395.69,6978.45,mpesa,Kisumu
+ORD-000855,2025-10-01,customer155@yahoo.com,SKU-ELEC-001,Smartphone Pro,Electronics,3,79839.56,239518.68,mpesa,Garissa
+ORD-000856,2025-08-30,customer47@gmail.com,SKU-ELEC-001,Smartphone Pro,Electronics,3,80101.02,240303.06,bank_transfer,Malindi
+ORD-000857,2025-08-30,customer131@yahoo.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,1,9209.6,9209.6,mpesa,Kisumu
+ORD-000858,2025-08-08,customer2@yahoo.com,SKU-ELEC-002,Laptop Ultra,Electronics,2,130061.48,260122.96,mpesa,Garissa
+ORD-000859,2025-10-20,customer198@yahoo.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,2,14880.39,29760.78,mpesa,Nakuru
+ORD-000860,2025-10-03,customer87@outlook.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,4950.98,19803.92,mpesa,Eldoret
+ORD-000861,2025-10-12,customer165@yahoo.com,SKU-CLOTH-004,Winter Jacket,Clothing,1,8066.11,8066.11,bank_transfer,Nyeri
+ORD-000862,2025-10-25,customer45@kenya.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,3,1001.31,3003.93,mpesa,Nyeri
+ORD-000863,2025-10-13,customer101@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,1,6892.7,6892.7,other,Meru
+ORD-000864,2025-10-13,customer18@gmail.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,3,1263.37,3790.11,card,Kakamega
+ORD-000865,2025-09-29,customer176@outlook.com,SKU-CLOTH-003,Running Shoes,Clothing,2,5600.85,11201.7,mpesa,Kisumu
+ORD-000866,2025-09-01,customer68@kenya.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,4,3398.96,13595.84,mpesa,Kisumu
+ORD-000867,2025-09-27,customer22@gmail.com,SKU-ELEC-004,Smart Watch,Electronics,1,19629.34,19629.34,paystack,Busia
+ORD-000868,2025-09-20,customer183@gmail.com,SKU-CLOTH-005,Baseball Cap,Clothing,3,835.44,2506.32,bank_transfer,Eldoret
+ORD-000869,2025-10-23,customer117@kenya.co.ke,SKU-BOOK-002,Data Science Book,Books,2,2811.37,5622.74,card,Thika
+ORD-000870,2025-10-09,customer113@kenya.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,3,80387.96,241163.88,mpesa,Thika
+ORD-000871,2025-10-21,customer157@kenya.co.ke,SKU-BOOK-002,Data Science Book,Books,2,2858.8,5717.6,mpesa,Eldoret
+ORD-000872,2025-08-19,customer24@outlook.com,SKU-CLOTH-002,Denim Jeans,Clothing,1,4349.65,4349.65,mpesa,Malindi
+ORD-000873,2025-08-29,customer172@yahoo.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,5,3504.39,17521.95,other,Kitale
+ORD-000874,2025-09-25,customer166@gmail.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,1,1471.83,1471.83,mpesa,Kakamega
+ORD-000875,2025-09-09,customer107@yahoo.co.ke,SKU-ELEC-005,Tablet Max,Electronics,1,34897.53,34897.53,mpesa,Kakamega
+ORD-000876,2025-08-28,customer88@gmail.com,SKU-ELEC-004,Smart Watch,Electronics,5,20015.67,100078.35,mpesa,Nakuru
+ORD-000877,2025-08-23,customer155@yahoo.com,SKU-CLOTH-005,Baseball Cap,Clothing,3,1230.1,3690.3,other,Thika
+ORD-000878,2025-10-12,customer12@kenya.co.ke,SKU-BOOK-003,Design Patterns,Books,5,2180.25,10901.25,mpesa,Kakamega
+ORD-000879,2025-09-24,customer123@yahoo.com,SKU-ELEC-003,Wireless Headphones,Electronics,5,8628.48,43142.4,bank_transfer,Busia
+ORD-000880,2025-09-03,customer127@kenya.co.ke,SKU-HOME-005,Air Purifier,Home & Kitchen,3,15498.31,46494.93,mpesa,Kakamega
+ORD-000881,2025-09-19,customer20@outlook.com,SKU-ELEC-001,Smartphone Pro,Electronics,5,80392.49,401962.45,mpesa,Kisumu
+ORD-000882,2025-08-12,customer36@gmail.com,SKU-CLOTH-005,Baseball Cap,Clothing,5,897.75,4488.75,mpesa,Kisumu
+ORD-000883,2025-08-30,customer97@yahoo.com,SKU-BOOK-001,Programming Guide,Books,5,1556.6,7783.0,mpesa,Busia
+ORD-000884,2025-10-19,customer190@gmail.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,2,6668.03,13336.06,card,Nairobi
+ORD-000885,2025-09-15,customer89@yahoo.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,2,3346.9,6693.8,mpesa,Busia
+ORD-000886,2025-10-03,customer89@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,5,2555.45,12777.25,mpesa,Nairobi
+ORD-000887,2025-10-24,customer47@gmail.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,3,1534.7,4604.1,mpesa,Nakuru
+ORD-000888,2025-09-04,customer35@gmail.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1323.16,5292.64,mpesa,Nakuru
+ORD-000889,2025-11-03,customer44@outlook.com,SKU-CLOTH-004,Winter Jacket,Clothing,1,8324.0,8324.0,mpesa,Nakuru
+ORD-000890,2025-10-02,customer94@outlook.com,SKU-HOME-002,Blender Pro,Home & Kitchen,2,9495.72,18991.44,paystack,Kakamega
+ORD-000891,2025-08-23,customer19@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,4,130365.33,521461.32,mpesa,Nyeri
+ORD-000892,2025-10-03,customer180@outlook.com,SKU-CLOTH-002,Denim Jeans,Clothing,4,3663.11,14652.44,mpesa,Busia
+ORD-000893,2025-10-28,customer56@outlook.com,SKU-BOOK-004,System Architecture,Books,4,2365.64,9462.56,mpesa,Garissa
+ORD-000894,2025-09-19,customer109@kenya.co.ke,SKU-ELEC-005,Tablet Max,Electronics,4,34529.84,138119.36,mpesa,Kitale
+ORD-000895,2025-08-16,customer195@yahoo.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,1,7159.11,7159.11,mpesa,Nyeri
+ORD-000896,2025-10-25,customer155@yahoo.com,SKU-HOME-001,Coffee Maker,Home & Kitchen,1,7245.06,7245.06,mpesa,Nyeri
+ORD-000897,2025-08-26,customer18@gmail.com,SKU-CLOTH-005,Baseball Cap,Clothing,2,649.38,1298.76,paystack,Kitale
+ORD-000898,2025-09-20,customer36@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,1,5054.1,5054.1,card,Eldoret
+ORD-000899,2025-09-03,customer44@outlook.com,SKU-BOOK-002,Data Science Book,Books,3,2151.14,6453.42,card,Kakamega
+ORD-000900,2025-09-18,customer160@kenya.co.ke,SKU-BOOK-005,DevOps Handbook,Books,5,2674.93,13374.65,mpesa,Thika
+ORD-000901,2025-08-23,customer195@yahoo.com,SKU-HOME-005,Air Purifier,Home & Kitchen,4,15483.49,61933.96,bank_transfer,Nairobi
+ORD-000902,2025-09-20,customer39@outlook.com,SKU-CLOTH-004,Winter Jacket,Clothing,3,7843.89,23531.67,mpesa,Garissa
+ORD-000903,2025-10-27,customer191@gmail.com,SKU-ELEC-004,Smart Watch,Electronics,2,19963.5,39927.0,mpesa,Kakamega
+ORD-000904,2025-08-08,customer69@yahoo.com,SKU-CLOTH-003,Running Shoes,Clothing,3,6334.88,19004.64,bank_transfer,Kisumu
+ORD-000905,2025-08-23,customer59@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,3,4695.13,14085.39,paystack,Eldoret
+ORD-000906,2025-08-22,customer96@gmail.com,SKU-HOME-002,Blender Pro,Home & Kitchen,4,8800.35,35201.4,mpesa,Eldoret
+ORD-000907,2025-10-31,customer195@yahoo.com,SKU-CLOTH-003,Running Shoes,Clothing,2,5897.59,11795.18,mpesa,Mombasa
+ORD-000908,2025-10-08,customer46@outlook.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,1,1584.07,1584.07,mpesa,Kisumu
+ORD-000909,2025-10-22,customer69@yahoo.com,SKU-ELEC-001,Smartphone Pro,Electronics,1,79820.27,79820.27,card,Kisumu
+ORD-000910,2025-09-13,customer189@yahoo.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,2,1466.26,2932.52,paystack,Nyeri
+ORD-000911,2025-08-31,customer36@gmail.com,SKU-ELEC-002,Laptop Ultra,Electronics,2,129665.72,259331.44,mpesa,Busia
+ORD-000912,2025-09-13,customer192@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,5,3438.74,17193.7,card,Kisumu
+ORD-000913,2025-11-05,customer1@outlook.com,SKU-BOOK-005,DevOps Handbook,Books,5,2634.72,13173.6,mpesa,Nakuru
+ORD-000914,2025-10-08,customer62@yahoo.co.ke,SKU-ELEC-005,Tablet Max,Electronics,2,35021.01,70042.02,mpesa,Eldoret
+ORD-000915,2025-08-30,customer141@gmail.com,SKU-BOOK-003,Design Patterns,Books,4,1995.43,7981.72,mpesa,Mombasa
+ORD-000916,2025-10-08,customer171@gmail.com,SKU-ELEC-004,Smart Watch,Electronics,4,20141.81,80567.24,mpesa,Thika
+ORD-000917,2025-09-23,customer120@yahoo.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,1,4979.8,4979.8,card,Malindi
+ORD-000918,2025-08-25,customer72@gmail.com,SKU-CLOTH-004,Winter Jacket,Clothing,5,7707.0,38535.0,card,Garissa
+ORD-000919,2025-08-17,customer178@outlook.com,SKU-HOME-002,Blender Pro,Home & Kitchen,5,8609.4,43047.0,mpesa,Thika
+ORD-000920,2025-09-28,customer60@outlook.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,5,5493.32,27466.6,mpesa,Nairobi
+ORD-000921,2025-09-26,customer70@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,1,6706.82,6706.82,mpesa,Nyeri
+ORD-000922,2025-09-24,customer185@kenya.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,3,1096.33,3288.99,mpesa,Kisumu
+ORD-000923,2025-08-30,customer122@kenya.co.ke,SKU-BOOK-005,DevOps Handbook,Books,3,2953.03,8859.09,bank_transfer,Busia
+ORD-000924,2025-10-10,customer78@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,5,130200.18,651000.9,paystack,Meru
+ORD-000925,2025-10-16,customer170@kenya.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,1,4507.95,4507.95,mpesa,Nyeri
+ORD-000926,2025-09-14,customer147@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,2,5455.39,10910.78,mpesa,Machakos
+ORD-000927,2025-08-19,customer145@kenya.co.ke,SKU-ELEC-005,Tablet Max,Electronics,2,35255.05,70510.1,mpesa,Kisumu
+ORD-000928,2025-08-24,customer153@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,1,129541.97,129541.97,mpesa,Meru
+ORD-000929,2025-08-08,customer53@kenya.co.ke,SKU-BOOK-001,Programming Guide,Books,3,2348.29,7044.87,mpesa,Meru
+ORD-000930,2025-08-24,customer53@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,2,130243.33,260486.66,card,Kitale
+ORD-000931,2025-10-03,customer184@gmail.com,SKU-ELEC-003,Wireless Headphones,Electronics,5,9428.4,47142.0,mpesa,Nyeri
+ORD-000932,2025-09-02,customer171@gmail.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,3,1650.91,4952.73,mpesa,Malindi
+ORD-000933,2025-09-10,customer70@kenya.co.ke,SKU-CLOTH-005,Baseball Cap,Clothing,2,714.32,1428.64,other,Malindi
+ORD-000934,2025-09-13,customer118@yahoo.co.ke,SKU-BOOK-004,System Architecture,Books,3,2740.74,8222.22,card,Nairobi
+ORD-000935,2025-10-01,customer160@kenya.co.ke,SKU-HOME-001,Coffee Maker,Home & Kitchen,1,6789.69,6789.69,bank_transfer,Kitale
+ORD-000936,2025-09-22,customer121@gmail.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,5,4503.02,22515.1,mpesa,Meru
+ORD-000937,2025-09-07,customer7@kenya.co.ke,SKU-ELEC-001,Smartphone Pro,Electronics,5,79741.8,398709.0,mpesa,Nairobi
+ORD-000938,2025-08-26,customer86@gmail.com,SKU-HOME-005,Air Purifier,Home & Kitchen,3,15227.13,45681.39,bank_transfer,Meru
+ORD-000939,2025-08-12,customer150@yahoo.co.ke,SKU-CLOTH-004,Winter Jacket,Clothing,5,8480.8,42404.0,mpesa,Kisumu
+ORD-000940,2025-11-03,customer63@yahoo.com,SKU-ELEC-003,Wireless Headphones,Electronics,1,8829.66,8829.66,mpesa,Eldoret
+ORD-000941,2025-08-19,customer25@gmail.com,SKU-CLOTH-003,Running Shoes,Clothing,1,6472.24,6472.24,mpesa,Nairobi
+ORD-000942,2025-08-19,customer91@yahoo.com,SKU-HOME-002,Blender Pro,Home & Kitchen,2,8720.61,17441.22,mpesa,Busia
+ORD-000943,2025-10-12,customer104@kenya.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,4,1028.02,4112.08,mpesa,Eldoret
+ORD-000944,2025-10-21,customer67@gmail.com,SKU-BOOK-003,Design Patterns,Books,2,2314.18,4628.36,card,Kitale
+ORD-000945,2025-09-06,customer151@yahoo.com,SKU-ELEC-005,Tablet Max,Electronics,2,34658.11,69316.22,mpesa,Malindi
+ORD-000946,2025-10-29,customer27@yahoo.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,3,130056.79,390170.37,card,Mombasa
+ORD-000947,2025-10-12,customer60@outlook.com,SKU-BOOK-005,DevOps Handbook,Books,2,3396.5,6793.0,mpesa,Nairobi
+ORD-000948,2025-09-11,customer55@yahoo.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,4,6263.77,25055.08,mpesa,Bungoma
+ORD-000949,2025-09-02,customer108@yahoo.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,4726.11,18904.44,bank_transfer,Meru
+ORD-000950,2025-09-02,customer97@yahoo.com,SKU-BOOK-002,Data Science Book,Books,5,2049.33,10246.65,mpesa,Thika
+ORD-000951,2025-09-18,customer51@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,5,129617.36,648086.8,paystack,Busia
+ORD-000952,2025-10-30,customer155@yahoo.com,SKU-BOOK-005,DevOps Handbook,Books,2,2876.77,5753.54,mpesa,Mombasa
+ORD-000953,2025-09-24,customer154@outlook.com,SKU-ELEC-002,Laptop Ultra,Electronics,5,129648.63,648243.15,mpesa,Nakuru
+ORD-000954,2025-08-21,customer18@gmail.com,SKU-BOOK-003,Design Patterns,Books,2,1936.19,3872.38,mpesa,Kisumu
+ORD-000955,2025-09-01,customer147@yahoo.co.ke,SKU-BOOK-004,System Architecture,Books,4,2661.18,10644.72,mpesa,Eldoret
+ORD-000956,2025-08-09,customer67@gmail.com,SKU-ELEC-003,Wireless Headphones,Electronics,2,8533.42,17066.84,mpesa,Mombasa
+ORD-000957,2025-10-02,customer51@kenya.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,5,6407.96,32039.8,mpesa,Kisumu
+ORD-000958,2025-09-14,customer76@kenya.co.ke,SKU-ELEC-002,Laptop Ultra,Electronics,4,129581.46,518325.84,mpesa,Meru
+ORD-000959,2025-11-06,customer69@yahoo.com,SKU-HOME-002,Blender Pro,Home & Kitchen,5,9122.39,45611.95,mpesa,Busia
+ORD-000960,2025-08-11,customer94@outlook.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,2,5042.19,10084.38,paystack,Nakuru
+ORD-000961,2025-10-14,customer67@gmail.com,SKU-BOOK-004,System Architecture,Books,2,2720.99,5441.98,card,Mombasa
+ORD-000962,2025-10-07,customer3@gmail.com,SKU-HOME-002,Blender Pro,Home & Kitchen,5,8639.72,43198.6,mpesa,Kisumu
+ORD-000963,2025-08-23,customer112@kenya.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,5,3025.61,15128.05,mpesa,Nakuru
+ORD-000964,2025-08-29,customer180@outlook.com,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,3,5006.31,15018.93,paystack,Nakuru
+ORD-000965,2025-09-28,customer130@outlook.com,SKU-ELEC-004,Smart Watch,Electronics,4,20043.56,80174.24,mpesa,Kitale
+ORD-000966,2025-08-10,customer6@gmail.com,SKU-ELEC-002,Laptop Ultra,Electronics,4,129823.9,519295.6,mpesa,Machakos
+ORD-000967,2025-10-19,customer48@yahoo.com,SKU-BOOK-003,Design Patterns,Books,4,2576.61,10306.44,mpesa,Machakos
+ORD-000968,2025-09-03,customer160@kenya.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,5276.49,21105.96,bank_transfer,Malindi
+ORD-000969,2025-08-13,customer161@outlook.com,SKU-BOOK-002,Data Science Book,Books,3,2375.44,7126.32,other,Eldoret
+ORD-000970,2025-10-08,customer73@kenya.co.ke,SKU-ELEC-005,Tablet Max,Electronics,2,34604.81,69209.62,mpesa,Nakuru
+ORD-000971,2025-08-27,customer103@yahoo.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,5,8586.89,42934.45,other,Nyeri
+ORD-000972,2025-09-20,customer8@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,5,5426.0,27130.0,mpesa,Meru
+ORD-000973,2025-08-08,customer130@outlook.com,SKU-ELEC-005,Tablet Max,Electronics,2,34560.43,69120.86,paystack,Kisumu
+ORD-000974,2025-10-09,customer155@yahoo.com,SKU-CLOTH-005,Baseball Cap,Clothing,3,1083.56,3250.68,mpesa,Meru
+ORD-000975,2025-09-03,customer82@gmail.com,SKU-CLOTH-001,Cotton T-Shirt,Clothing,1,1541.1,1541.1,mpesa,Nairobi
+ORD-000976,2025-09-02,customer99@outlook.com,SKU-BOOK-003,Design Patterns,Books,4,2296.34,9185.36,mpesa,Eldoret
+ORD-000977,2025-09-08,customer104@kenya.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,5,1688.46,8442.3,mpesa,Nyeri
+ORD-000978,2025-10-30,customer90@yahoo.com,SKU-CLOTH-005,Baseball Cap,Clothing,5,1333.62,6668.1,mpesa,Malindi
+ORD-000979,2025-10-27,customer73@kenya.co.ke,SKU-HOME-002,Blender Pro,Home & Kitchen,5,8528.14,42640.7,mpesa,Bungoma
+ORD-000980,2025-08-18,customer193@yahoo.co.ke,SKU-BOOK-001,Programming Guide,Books,5,1598.94,7994.7,mpesa,Eldoret
+ORD-000981,2025-10-17,customer23@gmail.com,SKU-HOME-002,Blender Pro,Home & Kitchen,5,9138.4,45692.0,mpesa,Meru
+ORD-000982,2025-10-12,customer101@kenya.co.ke,SKU-CLOTH-002,Denim Jeans,Clothing,4,4378.56,17514.24,other,Nyeri
+ORD-000983,2025-10-07,customer131@yahoo.co.ke,SKU-CLOTH-003,Running Shoes,Clothing,2,5683.34,11366.68,bank_transfer,Kakamega
+ORD-000984,2025-08-29,customer66@yahoo.com,SKU-BOOK-005,DevOps Handbook,Books,2,2822.88,5645.76,mpesa,Malindi
+ORD-000985,2025-10-06,customer131@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,3,3185.22,9555.66,mpesa,Eldoret
+ORD-000986,2025-11-05,customer123@yahoo.com,SKU-ELEC-001,Smartphone Pro,Electronics,4,80272.62,321090.48,mpesa,Garissa
+ORD-000987,2025-10-03,customer22@gmail.com,SKU-BOOK-005,DevOps Handbook,Books,3,3239.94,9719.82,bank_transfer,Kitale
+ORD-000988,2025-11-05,customer153@kenya.co.ke,SKU-ELEC-005,Tablet Max,Electronics,3,34724.05,104172.15,mpesa,Kisumu
+ORD-000989,2025-09-29,customer5@yahoo.com,SKU-CLOTH-004,Winter Jacket,Clothing,5,8293.78,41468.9,mpesa,Nyeri
+ORD-000990,2025-09-05,customer159@yahoo.co.ke,SKU-BOOK-002,Data Science Book,Books,5,2225.26,11126.3,mpesa,Kisumu
+ORD-000991,2025-10-05,customer90@yahoo.com,SKU-ELEC-003,Wireless Headphones,Electronics,5,9007.54,45037.7,mpesa,Busia
+ORD-000992,2025-09-26,customer198@yahoo.co.ke,SKU-ELEC-005,Tablet Max,Electronics,3,34682.88,104048.64,mpesa,Meru
+ORD-000993,2025-08-13,customer8@yahoo.co.ke,SKU-HOME-003,Bed Sheets Set,Home & Kitchen,1,3059.04,3059.04,mpesa,Bungoma
+ORD-000994,2025-10-14,customer124@yahoo.co.ke,SKU-BOOK-005,DevOps Handbook,Books,4,2604.59,10418.36,mpesa,Nairobi
+ORD-000995,2025-10-31,customer93@yahoo.co.ke,SKU-ELEC-004,Smart Watch,Electronics,2,19512.88,39025.76,mpesa,Nakuru
+ORD-000996,2025-09-28,customer73@kenya.co.ke,SKU-BOOK-005,DevOps Handbook,Books,1,3113.35,3113.35,paystack,Garissa
+ORD-000997,2025-10-23,customer158@outlook.com,SKU-ELEC-003,Wireless Headphones,Electronics,3,8831.57,26494.71,mpesa,Kitale
+ORD-000998,2025-08-15,customer27@yahoo.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,5,1162.02,5810.1,mpesa,Garissa
+ORD-000999,2025-09-23,customer89@yahoo.co.ke,SKU-HOME-004,Kitchen Knife Set,Home & Kitchen,4,5357.58,21430.32,mpesa,Nyeri
+ORD-001000,2025-09-22,customer27@yahoo.co.ke,SKU-CLOTH-001,Cotton T-Shirt,Clothing,5,1619.31,8096.55,other,Bungoma

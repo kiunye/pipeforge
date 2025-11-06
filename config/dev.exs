@@ -104,6 +104,7 @@ config :phoenix_live_view,
 # Configure Oban for development
 config :pipeforge, Oban,
   engine: Oban.Engines.Basic,
+  repo: PipeForge.Repo,
   queues: [rollups: 5, alerts: 2, default: 5],
   plugins: [
     {Oban.Plugins.Cron,

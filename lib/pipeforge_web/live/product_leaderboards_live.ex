@@ -12,6 +12,7 @@ defmodule PipeForgeWeb.ProductLeaderboardsLive do
       |> assign(:products, [])
       |> assign(:sort_by, "revenue")
       |> assign(:page, 1)
+      |> assign(:per_page, @per_page)
       |> assign(:total_count, 0)
       |> assign(:loading, false)
       |> assign(:filters, %{category: nil, payment_method: nil})
@@ -165,133 +166,164 @@ defmodule PipeForgeWeb.ProductLeaderboardsLive do
     ~H"""
     <div id="download-csv-hook" phx-hook="DownloadCSV">
       <Layouts.app flash={@flash}>
-      <div class="max-w-7xl mx-auto px-4 py-8">
-        <div class="mb-8">
-          <div class="flex justify-between items-center mb-4">
-            <h1 class="text-3xl font-bold">Product Leaderboards</h1>
-            <button
-              phx-click="export_csv"
-              class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
-            >
-              Export CSV
-            </button>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-            <div class="flex items-center space-x-4 mb-4">
-              <span class="text-sm font-medium text-gray-700">Sort by:</span>
+      <div class="min-h-screen bg-gray-50">
+        <div class="w-full px-4 sm:px-6 lg:px-8 py-6">
+          <!-- Header Section -->
+          <div class="mb-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+              <div>
+                <h1 class="text-3xl font-bold text-gray-900 mb-1">Product Leaderboards</h1>
+                <p class="text-gray-600 text-sm">Top performing products ranked by revenue and sales</p>
+              </div>
               <button
-                phx-click="sort"
-                phx-value-sort_by="revenue"
-                class={[
-                  "px-4 py-2 rounded-lg transition-colors",
-                  if(@sort_by == "revenue",
-                    do: "bg-blue-600 text-white",
-                    else: "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                  )
-                ]}
+                phx-click="export_csv"
+                class="px-4 py-2 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors flex items-center gap-2"
               >
-                Revenue
-              </button>
-              <button
-                phx-click="sort"
-                phx-value-sort_by="units"
-                class={[
-                  "px-4 py-2 rounded-lg transition-colors",
-                  if(@sort_by == "units",
-                    do: "bg-blue-600 text-white",
-                    else: "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                  )
-                ]}
-              >
-                Units Sold
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Export CSV
               </button>
             </div>
-          </div>
 
-          <div class="bg-white rounded-lg shadow-md p-6">
-            <div :if={@loading} class="text-center py-8">
-              <p class="text-gray-500">Loading products...</p>
+            <!-- Sort Controls Card -->
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-6">
+              <div class="flex flex-wrap items-center gap-4">
+                <span class="text-sm font-medium text-gray-700">Sort by:</span>
+                <div class="flex gap-2">
+                  <button
+                    phx-click="sort"
+                    phx-value-sort_by="revenue"
+                    class={[
+                      "px-4 py-2 rounded-lg font-medium transition-colors",
+                      if(@sort_by == "revenue",
+                        do: "bg-gray-900 text-white",
+                        else: "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      )
+                    ]}
+                  >
+                    Revenue
+                  </button>
+                  <button
+                    phx-click="sort"
+                    phx-value-sort_by="units"
+                    class={[
+                      "px-4 py-2 rounded-lg font-medium transition-colors",
+                      if(@sort_by == "units",
+                        do: "bg-gray-900 text-white",
+                        else: "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      )
+                    ]}
+                  >
+                    Units Sold
+                  </button>
+                </div>
+              </div>
             </div>
 
-            <div :if={not @loading}>
-              <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
-                  <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Rank
-                    </th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      SKU
-                    </th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Name
-                    </th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Category
-                    </th>
-                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Total Revenue
-                    </th>
-                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Units Sold
-                    </th>
-                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Orders
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                  <tr :for={{product, idx} <- Enum.with_index(@products, 1)} class="hover:bg-gray-50">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      <%= (@page - 1) * @per_page + idx %>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      <%= product.sku %>
-                    </td>
-                    <td class="px-6 py-4 text-sm text-gray-900">
-                      <%= product.name %>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      <%= product.category || "-" %>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-right font-medium">
-                      <%= format_currency(product.total_revenue) %>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-right">
-                      <%= product.total_units || 0 %>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right">
-                      <%= product.order_count || 0 %>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div :if={@products == []} class="text-center py-8">
-                <p class="text-gray-500">No products found.</p>
+            <!-- Main Table Card -->
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+              <div :if={@loading} class="text-center py-16">
+                <div class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-gray-300 border-t-gray-900"></div>
+                <p class="mt-4 text-gray-600">Loading products...</p>
               </div>
 
-              <div :if={@products != []} class="mt-4 flex items-center justify-between">
-                <div class="text-sm text-gray-700">
-                  Showing <%= (@page - 1) * @per_page + 1 %> to
-                  <%= min(@page * @per_page, @total_count) %> of <%= @total_count %> products
+              <div :if={not @loading}>
+                <div class="overflow-x-auto">
+                  <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                      <tr>
+                        <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Rank</th>
+                        <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">SKU</th>
+                        <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Name</th>
+                        <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Category</th>
+                        <th class="px-6 py-3 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider">Total Revenue</th>
+                        <th class="px-6 py-3 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider">Units Sold</th>
+                        <th class="px-6 py-3 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider">Orders</th>
+                      </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                      <tr
+                        :for={{product, idx} <- Enum.with_index(@products, 1)}
+                        class="hover:bg-gray-50 transition-colors"
+                      >
+                        <td class="px-6 py-4 whitespace-nowrap">
+                          <div class="flex items-center gap-2">
+                            <span class={[
+                              "text-sm font-semibold",
+                              if(idx <= 3, do: "text-gray-900", else: "text-gray-700")
+                            ]}>
+                              <%= (@page - 1) * @per_page + idx %>
+                            </span>
+                          </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                          <span class="text-sm font-mono text-gray-600 bg-gray-100 px-2 py-1 rounded">
+                            <%= product.sku %>
+                          </span>
+                        </td>
+                        <td class="px-6 py-4">
+                          <div class="text-sm font-medium text-gray-900">
+                            <%= product.name %>
+                          </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                          <span class={[
+                            "inline-flex items-center px-2.5 py-1 rounded text-xs font-medium",
+                            category_badge_class(product.category)
+                          ]}>
+                            <%= product.category || "-" %>
+                          </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right">
+                          <div class="text-sm font-semibold text-gray-900">
+                            <%= format_currency(product.total_revenue) %>
+                          </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right">
+                          <span class="text-sm font-medium text-gray-900">
+                            <%= format_number(product.total_units || 0) %>
+                          </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right">
+                          <span class="text-sm text-gray-700">
+                            <%= product.order_count || 0 %>
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-                <div class="flex space-x-2">
-                  <a
-                    :if={@page > 1}
-                    href={build_leaderboard_path(%{@assigns | page: @page - 1})}
-                    class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50"
-                  >
-                    Previous
-                  </a>
-                  <a
-                    :if={@page < @total_pages}
-                    href={build_leaderboard_path(%{@assigns | page: @page + 1})}
-                    class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50"
-                  >
-                    Next
-                  </a>
+
+                <div :if={@products == []} class="text-center py-16">
+                  <p class="text-gray-500">No products found.</p>
+                </div>
+
+                <!-- Pagination -->
+                <div :if={@products != []} class="bg-gray-50 px-6 py-4 border-t border-gray-200">
+                  <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="text-sm text-gray-700">
+                      Showing <span class="font-medium"><%= (@page - 1) * @per_page + 1 %></span> to
+                      <span class="font-medium"><%= min(@page * @per_page, @total_count) %></span> of
+                      <span class="font-medium"><%= @total_count %></span> products
+                    </div>
+                    <div class="flex gap-2">
+                      <a
+                        :if={@page > 1}
+                        href={build_leaderboard_path(%{@assigns | page: @page - 1})}
+                        class="px-4 py-2 bg-white border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors"
+                      >
+                        Previous
+                      </a>
+                      <a
+                        :if={@page < @total_pages}
+                        href={build_leaderboard_path(%{@assigns | page: @page + 1})}
+                        class="px-4 py-2 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
+                      >
+                        Next
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -302,6 +334,12 @@ defmodule PipeForgeWeb.ProductLeaderboardsLive do
     </div>
     """
   end
+
+  defp category_badge_class("Electronics"), do: "bg-blue-100 text-blue-800"
+  defp category_badge_class("Home & Kitchen"), do: "bg-orange-100 text-orange-800"
+  defp category_badge_class("Clothing"), do: "bg-pink-100 text-pink-800"
+  defp category_badge_class("Books"), do: "bg-purple-100 text-purple-800"
+  defp category_badge_class(_), do: "bg-gray-100 text-gray-800"
 
   defp format_currency(%Decimal{} = amount) do
     amount
@@ -316,4 +354,12 @@ defmodule PipeForgeWeb.ProductLeaderboardsLive do
   end
 
   defp format_currency(amount), do: "$#{amount || "0.00"}"
+
+  defp format_number(number) when is_integer(number) do
+    number
+    |> Integer.to_string()
+    |> String.replace(~r/(\d)(?=(\d{3})+(?!\d))/, "\\1,")
+  end
+
+  defp format_number(number), do: to_string(number || 0)
 end

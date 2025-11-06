@@ -1,7 +1,7 @@
 defmodule PipeForgeWeb.CSVUploadLive do
   use PipeForgeWeb, :live_view
 
-  alias PipeForge.Ingestion.{FileHasher, IngestionFile, Producer}
+  alias PipeForge.Ingestion.{CSVValidator, FileHasher, IngestionFile, Producer}
   alias PipeForge.{Repo, Storage}
 
   @impl true
@@ -155,27 +155,36 @@ defmodule PipeForgeWeb.CSVUploadLive do
         if byte_size(content) == 0 do
           {:error, "File is empty"}
         else
-          # Parse just the first line to check header
-          rows = NimbleCSV.RFC4180.parse_string(content)
+          # Remove BOM if present (UTF-8 BOM is EF BB BF)
+          content = remove_bom(content)
 
-          if Enum.empty?(rows) do
-            {:error, "CSV file has no rows"}
+          # NimbleCSV.parse_string/1 automatically skips the header row,
+          # so we need to extract it manually from the first line
+          Logger.info("CSV content preview (first 200 chars): #{String.slice(content, 0..200)}")
+
+          # Get the first line as the header
+          header_line =
+            content
+            |> String.split("\n", parts: 2)
+            |> List.first()
+            |> String.trim()
+
+          if header_line == "" or is_nil(header_line) do
+            {:error, "CSV file has no header row"}
           else
-            header = Enum.at(rows, 0)
-            Logger.info("Verifying CSV header: #{inspect(header)}")
+            # Parse just the header line to get column names
+            [header_row] = NimbleCSV.RFC4180.parse_string(header_line <> "\n", skip_headers: false)
+            Logger.info("Extracted CSV header: #{inspect(header_row)}")
 
-            # Check if first row looks like a header (contains expected column names)
-            header_str = Enum.join(header, ",") |> String.downcase()
-            expected_columns = ["order_ref", "order_date", "customer_email", "product_sku"]
+            # Validate the header
+            case CSVValidator.validate_header(header_row) do
+              {:ok, _header_map} ->
+                Logger.info("CSV header validation passed")
+                :ok
 
-            has_header = Enum.any?(expected_columns, fn col -> String.contains?(header_str, col) end)
-
-            if has_header do
-              Logger.info("CSV header validation passed")
-              :ok
-            else
-              Logger.error("CSV header validation failed. First row: #{inspect(header)}")
-              {:error, "CSV file appears to be missing header row. First row looks like data: #{inspect(Enum.take(header, 3))}"}
+              {:error, :missing_columns, missing} ->
+                Logger.error("CSV header validation failed. Missing columns: #{inspect(missing)}. Header: #{inspect(header_row)}")
+                {:error, "Invalid CSV file: Missing required columns: #{inspect(missing)}. Ensure the CSV file has a header row as the first line."}
             end
           end
         end
@@ -184,6 +193,9 @@ defmodule PipeForgeWeb.CSVUploadLive do
         {:error, "Failed to read file: #{inspect(reason)}"}
     end
   end
+
+  defp remove_bom(<<0xEF, 0xBB, 0xBF, rest::binary>>), do: rest
+  defp remove_bom(content), do: content
 
   defp hash_file(path) when is_binary(path) do
     case FileHasher.hash_file(path) do

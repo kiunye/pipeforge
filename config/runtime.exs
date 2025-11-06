@@ -39,6 +39,7 @@ end
 if config_env() == :prod do
   config :pipeforge, Oban,
     engine: Oban.Engines.Basic,
+    repo: PipeForge.Repo,
     queues: [rollups: 10, alerts: 5, default: 10],
     plugins: [
       {Oban.Plugins.Cron,

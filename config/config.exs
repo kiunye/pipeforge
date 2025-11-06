@@ -55,6 +55,7 @@ config :phoenix, :json_library, Jason
 # Configure Oban for background jobs
 config :pipeforge, Oban,
   engine: Oban.Engines.Basic,
+  repo: PipeForge.Repo,
   queues: [rollups: 10, alerts: 5, default: 10],
   plugins: [
     {Oban.Plugins.Cron,

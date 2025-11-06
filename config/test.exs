@@ -26,6 +26,7 @@ config :phoenix, :plug_init_mode, :runtime
 # Configure Oban for testing (disable cron, use in-memory queues)
 config :pipeforge, Oban,
   engine: Oban.Engines.Basic,
+  repo: PipeForge.Repo,
   queues: false,
   plugins: false
 
