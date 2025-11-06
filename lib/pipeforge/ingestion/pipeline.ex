@@ -145,17 +145,19 @@ defmodule PipeForge.Ingestion.Pipeline do
 
   defp persist_failed_records(invalid_rows, ingestion_file_id) when is_list(invalid_rows) do
     Enum.each(invalid_rows, fn {row_number, raw_row, errors} ->
-      %FailedRecord{}
-      |> FailedRecord.changeset(%{
-        ingestion_file_id: ingestion_file_id,
-        row_number: row_number,
-        raw_data: Enum.with_index(raw_row) |> Enum.into(%{}),
-        error_reasons: List.wrap(errors),
-        retry_count: 0,
-        status: "pending"
-      })
-      |> Repo.insert()
-      |> case do
+      raw_data_map = Enum.with_index(raw_row) |> Enum.into(%{})
+
+      changeset =
+        FailedRecord.changeset(%FailedRecord{}, %{
+          ingestion_file_id: ingestion_file_id,
+          row_number: row_number,
+          raw_data: raw_data_map,
+          error_reasons: List.wrap(errors),
+          retry_count: 0,
+          status: "pending"
+        })
+
+      case Repo.insert(changeset) do
         {:ok, _} -> :ok
         {:error, _changeset} -> :ok
       end

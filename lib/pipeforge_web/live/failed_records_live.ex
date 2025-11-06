@@ -146,7 +146,6 @@ defmodule PipeForgeWeb.FailedRecordsLive do
 
   defp replay_failed_record(%FailedRecord{ingestion_file: %IngestionFile{} = ingestion_file} = failed_record) do
     # Update failed record status
-    failed_record
     changeset =
       FailedRecord.changeset(failed_record, %{
         status: "retrying",

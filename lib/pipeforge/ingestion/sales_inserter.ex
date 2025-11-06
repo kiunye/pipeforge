@@ -87,23 +87,23 @@ defmodule PipeForge.Ingestion.SalesInserter do
       nil ->
         order_date_dt = parse_datetime(order_date)
 
-        %Order{}
-        |> Order.changeset(%{
-          order_ref: order_ref,
-          order_date: order_date_dt,
-          total_amount: parse_decimal(total_amount),
-          payment_method: normalize_payment_method(payment_method),
-          customer_id: customer.id
-        })
+        changeset =
+          Order.changeset(%Order{}, %{
+            order_ref: order_ref,
+            order_date: order_date_dt,
+            total_amount: parse_decimal(total_amount),
+            payment_method: normalize_payment_method(payment_method),
+            customer_id: customer.id
+          })
 
-    result = Repo.insert(changeset)
+        result = Repo.insert(changeset)
 
-    case result do
-      {:ok, order} ->
-        update_customer_order_dates(customer, order_date_dt)
-        {:ok, order}
+        case result do
+          {:ok, order} ->
+            update_customer_order_dates(customer, order_date_dt)
+            {:ok, order}
 
-      error ->
+          error ->
             error
         end
 
