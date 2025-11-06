@@ -108,7 +108,7 @@ defmodule PipeForge.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: ["deps.get", "ecto.setup", "assets.setup", "assets.build"],
+      setup: ["deps.get", "patch.rabbit_common", "ecto.setup", "assets.setup", "assets.build"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
@@ -118,6 +118,7 @@ defmodule PipeForge.MixProject do
         "esbuild pipeforge --minify",
         "phx.digest"
       ],
+      "patch.rabbit_common": ["run priv/scripts/patch_rabbit_common.exs"],
       precommit: [
         "deps.unlock --unused",
         "format",
