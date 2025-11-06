@@ -43,16 +43,20 @@ defmodule PipeForge.Alerts.SlackNotifier do
   def send_sales_alert(alert_type, current_value, previous_value, date, change_percent) do
     emoji = if change_percent < 0, do: ":warning:", else: ":rocket:"
     direction = if change_percent < 0, do: "dropped", else: "spiked"
+    change_abs = abs(change_percent)
+    change_str = change_abs |> :erlang.float_to_binary(decimals: 1)
+    change_sign = if change_percent < 0, do: "-", else: "+"
+    change_amount = current_value - previous_value
 
     message = """
     #{emoji} *Sales Alert: #{String.upcase(alert_type)}*
-    
-    Revenue #{direction} by #{abs(change_percent) |> :erlang.float_to_binary(decimals: 1)}%
-    
+
+    Revenue #{direction} by #{change_str}%
+
     *Date:* #{Date.to_iso8601(date)}
     *Current:* #{format_currency(current_value)}
     *Previous:* #{format_currency(previous_value)}
-    *Change:* #{format_currency(current_value - previous_value)} (#{if change_percent < 0, do: "-", else: "+"}#{abs(change_percent) |> :erlang.float_to_binary(decimals: 1)}%)
+    *Change:* #{format_currency(change_amount)} (#{change_sign}#{change_str}%)
     """
 
     send_message(message)
@@ -64,9 +68,9 @@ defmodule PipeForge.Alerts.SlackNotifier do
   def send_product_spike_alert(product_name, category, current_units, previous_units, date, change_percent) do
     message = """
     :rocket: *Product Performance Spike*
-    
+
     #{product_name} (#{category}) saw a #{change_percent |> :erlang.float_to_binary(decimals: 1)}% increase in units sold
-    
+
     *Date:* #{Date.to_iso8601(date)}
     *Current Units:* #{current_units}
     *Previous Units:* #{previous_units}
@@ -91,4 +95,3 @@ defmodule PipeForge.Alerts.SlackNotifier do
 
   defp format_currency(value), do: inspect(value)
 end
-

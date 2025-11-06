@@ -147,13 +147,14 @@ defmodule PipeForgeWeb.FailedRecordsLive do
   defp replay_failed_record(%FailedRecord{ingestion_file: %IngestionFile{} = ingestion_file} = failed_record) do
     # Update failed record status
     failed_record
-    |> FailedRecord.changeset(%{
-      status: "retrying",
-      retry_count: failed_record.retry_count + 1,
-      last_retried_at: DateTime.utc_now()
-    })
-    |> Repo.update()
-    |> case do
+    changeset =
+      FailedRecord.changeset(failed_record, %{
+        status: "retrying",
+        retry_count: failed_record.retry_count + 1,
+        last_retried_at: DateTime.utc_now()
+      })
+
+    case Repo.update(changeset) do
       {:ok, _} ->
         # Republish the file for processing
         Producer.publish_file(ingestion_file.id, ingestion_file.file_path, ingestion_file.filename)

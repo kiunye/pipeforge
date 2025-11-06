@@ -50,13 +50,16 @@ defmodule PipeForge.Alerts.EmailNotifier do
     if recipients && length(recipients) > 0 do
       subject = "Product Performance Spike: #{product_name} - #{change_percent |> :erlang.float_to_binary(decimals: 1)}% increase"
 
+      html_body = build_product_html_body(product_name, category, current_units, previous_units, date, change_percent)
+      text_body = build_product_text_body(product_name, category, current_units, previous_units, date, change_percent)
+
       email =
         Email.new()
         |> Email.to(recipients)
         |> Email.from({"PipeForge Alerts", get_from_email()})
         |> Email.subject(subject)
-        |> Email.html_body(build_product_html_body(product_name, category, current_units, previous_units, date, change_percent))
-        |> Email.text_body(build_product_text_body(product_name, category, current_units, previous_units, date, change_percent))
+        |> Email.html_body(html_body)
+        |> Email.text_body(text_body)
 
       case deliver(email) do
         {:ok, _} ->
@@ -224,4 +227,3 @@ defmodule PipeForge.Alerts.EmailNotifier do
 
   defp format_currency(value), do: inspect(value)
 end
-

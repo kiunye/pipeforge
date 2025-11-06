@@ -3,7 +3,7 @@ defmodule PipeForge.Ingestion.SalesInserter do
   Handles idempotent insertion of sales data from CSV rows.
   """
 
-  alias PipeForge.{Repo, Sales}
+  alias PipeForge.Repo
   alias PipeForge.Sales.{Customer, Order, OrderItem, Product}
   alias PipeForge.Ingestion.FileHasher
 
@@ -95,13 +95,15 @@ defmodule PipeForge.Ingestion.SalesInserter do
           payment_method: normalize_payment_method(payment_method),
           customer_id: customer.id
         })
-        |> Repo.insert()
-        |> case do
-          {:ok, order} ->
-            update_customer_order_dates(customer, order_date_dt)
-            {:ok, order}
 
-          error ->
+    result = Repo.insert(changeset)
+
+    case result do
+      {:ok, order} ->
+        update_customer_order_dates(customer, order_date_dt)
+        {:ok, order}
+
+      error ->
             error
         end
 
@@ -112,7 +114,7 @@ defmodule PipeForge.Ingestion.SalesInserter do
 
   defp get_or_create_order_item(
          %{
-           "order_ref" => order_ref,
+           "order_ref" => _order_ref,
            "quantity" => quantity,
            "unit_price" => unit_price,
            "total_amount" => total_amount
@@ -196,10 +198,9 @@ defmodule PipeForge.Ingestion.SalesInserter do
   defp parse_datetime(value), do: value || DateTime.utc_now()
 
   defp normalize_payment_method(method) when is_binary(method) do
-    method
-    |> String.downcase()
-    |> String.trim()
-    |> case do
+    normalized = method |> String.downcase() |> String.trim()
+
+    case normalized do
       "mpesa" -> "mpesa"
       "paystack" -> "paystack"
       "card" -> "card"

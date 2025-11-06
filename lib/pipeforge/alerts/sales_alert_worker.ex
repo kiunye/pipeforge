@@ -8,7 +8,8 @@ defmodule PipeForge.Alerts.SalesAlertWorker do
 
   require Logger
   import Ecto.Query
-  alias PipeForge.{Repo, Alerts}
+  alias PipeForge.Alerts
+  alias PipeForge.Repo
   alias PipeForge.Rollups.SalesAggregateDaily
   alias PipeForge.Sales.Order
 
@@ -118,14 +119,20 @@ defmodule PipeForge.Alerts.SalesAlertWorker do
       |> Enum.into(%{}, fn %{product_id: id, total_units: units} -> {id, units} end)
 
     # Check each current product for spikes
-    Enum.each(current_products, fn %{product_id: product_id, total_units: current_units, product_name: name, category: category} ->
+    Enum.each(current_products, fn %{
+                                     product_id: product_id,
+                                     total_units: current_units,
+                                     product_name: name,
+                                     category: category
+                                   } ->
       previous_units = Map.get(previous_map, product_id, 0)
 
       if previous_units > 0 do
         change_percent = ((current_units - previous_units) / previous_units) * 100
 
         if change_percent >= @product_spike_threshold do
-          Logger.info("Product performance spike detected: #{name} - #{change_percent |> :erlang.float_to_binary(decimals: 1)}%")
+          change_str = change_percent |> :erlang.float_to_binary(decimals: 1)
+          Logger.info("Product performance spike detected: #{name} - #{change_str}%")
           Alerts.EmailNotifier.send_product_spike_alert(name, category, current_units, previous_units, date, change_percent)
           Alerts.SlackNotifier.send_product_spike_alert(name, category, current_units, previous_units, date, change_percent)
         end
@@ -139,16 +146,21 @@ defmodule PipeForge.Alerts.SalesAlertWorker do
     start_datetime = DateTime.new!(date, ~T[00:00:00], "Etc/UTC")
     end_datetime = DateTime.new!(date, ~T[23:59:59], "Etc/UTC")
 
-    from(o in Order,
-      where: o.order_date >= ^start_datetime and o.order_date <= ^end_datetime,
-      select: sum(o.total_amount)
-    )
-    |> Repo.one()
-    |> case do
-      nil -> Decimal.new("0")
-      value -> value
-    end
-    |> Decimal.to_float()
+    query =
+      from(o in Order,
+        where: o.order_date >= ^start_datetime and o.order_date <= ^end_datetime,
+        select: sum(o.total_amount)
+      )
+
+    result = Repo.one(query)
+
+    decimal_value =
+      case result do
+        nil -> Decimal.new("0")
+        value -> value
+      end
+
+    Decimal.to_float(decimal_value)
   end
 
   defp get_top_products_by_units(date, limit) do

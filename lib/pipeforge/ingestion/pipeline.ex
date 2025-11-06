@@ -190,7 +190,7 @@ defmodule PipeForge.Ingestion.Pipeline do
           rows = NimbleCSV.RFC4180.parse_string(content)
           Logger.info("Parsed CSV: #{length(rows)} rows found (including header)")
 
-          if length(rows) == 0 do
+          if Enum.empty?(rows) do
             Logger.error("CSV parsing resulted in empty rows")
             {:error, "CSV file appears to be empty or invalid"}
           else

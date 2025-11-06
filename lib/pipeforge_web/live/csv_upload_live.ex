@@ -100,7 +100,8 @@ defmodule PipeForgeWeb.CSVUploadLive do
               with {:ok, content_hash} <- hash_file(path),
                    {:ok, existing_file} <- check_duplicate_or_existing(content_hash),
                    {:ok, file_key} <- upload_to_storage(path, entry.client_name),
-                   {:ok, ingestion_file} <- get_or_update_ingestion_record(existing_file, entry, file_key, content_hash),
+                   {:ok, ingestion_file} <-
+                     get_or_update_ingestion_record(existing_file, entry, file_key, content_hash),
                    :ok <- Producer.publish_file(ingestion_file.id, file_key, entry.client_name) do
                 Logger.info("Successfully uploaded and queued: #{entry.client_name}")
                 {:ok, ingestion_file}
@@ -153,7 +154,7 @@ defmodule PipeForgeWeb.CSVUploadLive do
           # Parse just the first line to check header
           rows = NimbleCSV.RFC4180.parse_string(content)
 
-          if length(rows) == 0 do
+          if Enum.empty?(rows) do
             {:error, "CSV file has no rows"}
           else
             header = Enum.at(rows, 0)
@@ -180,7 +181,7 @@ defmodule PipeForgeWeb.CSVUploadLive do
     end
   end
 
-  defp process_upload([], socket) do
+  defp process_upload([], _socket) do
     {:error, "No entries to process"}
   end
 
